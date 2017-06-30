@@ -6,7 +6,6 @@ export default class MainLayout extends Component {
     return (
       <div>
         <Navigation />
-
       </div>
     );
   }
