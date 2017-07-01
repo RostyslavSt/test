@@ -13,3 +13,13 @@ export default class DashboardListDevice extends React.Component {
     );
   }
 }
+
+// function DashboardListDevice (props) {
+//   return (
+//     <section className="list-device">
+//         list device
+//     </section>
+//   );
+// }
+
+// export default DashboardListDevice;
