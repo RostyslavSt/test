@@ -1,0 +1,23 @@
+.dashboard-content {
+  width: 70%;
+  height: 500px;
+  border: 1px solid blue;
+  background-image: url('../../img/dash_content.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.dashboard-content-row1 {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid red;
+  width: 100%;
+}
+
+.dashboard-content-row2 {
+  display: flex;
+  border: 1px solid green;
+  width: 100%;
+  justify-content: center;
+}
