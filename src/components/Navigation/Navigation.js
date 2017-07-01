@@ -5,7 +5,7 @@ import {
 
 import './Navigation.scss';
 
-export default class SideBar extends Component {
+export default class Navigation extends Component {
   render () {
     return (
       <ul className="navigation">
