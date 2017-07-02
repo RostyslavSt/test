@@ -1,10 +1,9 @@
 require('./scss/index.scss');
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import DeviceList from './pages/DeviceList/DeviceList';
 
-export class index extends Component {
-  render () {
-    return (
-      <div></div>
-    );
-  }
-}
+ReactDOM.render(
+  <DeviceList />,
+  document.getElementById('root')
+);
