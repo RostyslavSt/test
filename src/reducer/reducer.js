@@ -1,3 +1,11 @@
 export function itemReducer (state, action) {
-  return state;
+  switch (action.type) {
+    case 'CHANGE_STATUS':
+      let device = state[action.index];
+      device.status = !device.status;
+      return state;
+    default:
+      return state;
+  }
 }
+

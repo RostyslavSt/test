@@ -6,6 +6,7 @@ import FilterSelect from '../../components/FilterSelect/FilterSelect';
 import Search from '../../components/Search/Search';
 import { options } from '../../data/constants';
 import { searchItem, filterItems } from '../../utils/utils';
+import {ChangeStatus} from '../../actions/actionsCreator';
 require('./DeviceList.scss');
 
 class DeviceList extends React.Component {
@@ -20,6 +21,9 @@ class DeviceList extends React.Component {
     };
     this.handleSearchResult = (searchValue) => {
       this.setState({ searchValue });
+    };
+    this.changeStatus = (index) => {
+      this.props.dispatch(ChangeStatus(index));
     };
   }
 
@@ -54,7 +58,8 @@ class DeviceList extends React.Component {
           ).filter(item => searchItem(item, searchValue)
           ).map((item, i) => {
             return (
-              <DeviceListItem data={item} key={i} match={match}/>
+              <DeviceListItem data={item} key={i} match={match} index={i} 
+                              changeStatus={this.changeStatus}/>
             );
           })
           }
