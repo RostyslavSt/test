@@ -1,7 +1,10 @@
+import React from 'react';
+
 export const searchItem = (item, searchValue) => {
   if (item.name.toLowerCase().includes(searchValue)) {
     return true;
   }
+  return false;
 };
 
 export const filterItems = (item, filterOption) => {
@@ -12,4 +15,5 @@ export const filterItems = (item, filterOption) => {
   } else if (filterOption === 'off') {
     return item.status === false;
   }
+  return false;
 };

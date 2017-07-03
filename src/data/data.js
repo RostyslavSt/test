@@ -2,7 +2,7 @@ export const data = [
   {
     id: 1,
     name: 'fridge',
-    item: [
+    items: [
       {
         id: 1,
         name: 'Button',
@@ -16,7 +16,7 @@ export const data = [
   {
     id: 2,
     name: 'microwave',
-    item: [
+    items: [
       {
         id: 1,
         name: 'Temperature',
@@ -30,28 +30,80 @@ export const data = [
   {
     id: 3,
     name: 'alarm',
-    item: {},
+    items: [
+      {
+        id: 1,
+        name: 'Button',
+        data: {},
+        type: 'button'
+      },
+      {
+        id: 1,
+        name: 'Range',
+        data: {},
+        type: 'range'
+      }
+    ],
     status: true,
     location: 'roof'
   },
   {
     id: 4,
     name: 'car',
-    item: {},
+    items: [
+      {
+        id: 1,
+        name: 'Button',
+        data: {},
+        type: 'button'
+      },
+      {
+        id: 1,
+        name: 'Range',
+        data: {},
+        type: 'range'
+      }
+    ],
     status: true,
     location: 'parking'
   },
   {
     id: 5,
     name: 'coffemachine',
-    item: {},
+    items: [
+      {
+        id: 1,
+        name: 'Button',
+        data: {},
+        type: 'button'
+      },
+      {
+        id: 1,
+        name: 'Range',
+        data: {},
+        type: 'range'
+      }
+    ],
     status: false,
     location: 'kitchen'
   },
   {
     id: 6,
     name: 'washmachine',
-    item: {},
+    items: [
+      {
+        id: 1,
+        name: 'Button',
+        data: {},
+        type: 'button'
+      },
+      {
+        id: 1,
+        name: 'Button',
+        data: {},
+        type: 'button'
+      }
+    ],
     status: true,
     location: 'bathroom'
   }

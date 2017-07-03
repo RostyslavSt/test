@@ -23,16 +23,16 @@ class DeviceList extends React.Component {
   }
 
   render () {
-    console.log(filterItems);
     const searchValue = this.state.searchValue;
     const filterOption = this.state.filterOption;
+    const match = this.props.match;
 
     if (data.length === 0) {
       return (
         <main>
           <h1>Oops... there's nothing here.
             It looks like you need to add a device first.</h1>
-            <div>Add Device</div>
+          <div>Add Device</div>
         </main>
       );
     }
@@ -53,7 +53,7 @@ class DeviceList extends React.Component {
           ).filter(item => searchItem(item, searchValue)
           ).map((item, i) => {
             return (
-              <DeviceListItem data={item} key={i}/>
+              <DeviceListItem data={item} key={i} match={match}/>
             );
           })
           }
