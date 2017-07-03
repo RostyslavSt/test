@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import DeviceListItem from '../../components/DeviceListItem/DeviceListItem';
 import FilterSelect from '../../components/FilterSelect/FilterSelect';
 import Search from '../../components/Search/Search';
 import { options } from '../../data/constants';
-import { data } from '../../data/data';
 import { searchItem, filterItems } from '../../utils/utils';
+require('./DeviceList.scss');
 
 class DeviceList extends React.Component {
   constructor (props) {
@@ -27,7 +28,7 @@ class DeviceList extends React.Component {
     const filterOption = this.state.filterOption;
     const match = this.props.match;
 
-    if (data.length === 0) {
+    if (this.props.items.length === 0) {
       return (
         <main>
           <h1>Oops... there's nothing here.
@@ -47,9 +48,9 @@ class DeviceList extends React.Component {
         <Search
           handleSearch={this.handleSearchResult}
         />
-        <div>Add Device</div>
+        <Link to={'#'} className="add-item-button">+</Link>
         <section>
-          {data.filter(item => filterItems(item, filterOption)
+          {this.props.items.filter(item => filterItems(item, filterOption)
           ).filter(item => searchItem(item, searchValue)
           ).map((item, i) => {
             return (
@@ -63,4 +64,7 @@ class DeviceList extends React.Component {
   }
 }
 
-export default DeviceList;
+const mapStateToProps = state =>({
+  items: state
+});
+export default connect(mapStateToProps)(DeviceList);
