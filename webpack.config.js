@@ -50,7 +50,17 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                use: ['babel-loader', 'eslint-loader']
+                use: [
+                  {
+                    loader: 'babel-loader',
+                    query: {
+                      plugins: [
+                        'babel-plugin-transform-class-properties'
+                      ]
+                    }
+                  },
+                  'eslint-loader'
+                ]
             },
             {
                 test: /\.scss$/, 
