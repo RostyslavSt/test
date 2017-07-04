@@ -36,7 +36,7 @@ export default class TimerSettings extends React.Component {
       <p className="device_name">
       Timer</p>:
       null }
-      <div class="quantity">
+      <div className="quantity">
         {this.state.isTimerOn ?
           <input
             type="time"
@@ -61,7 +61,7 @@ export default class TimerSettings extends React.Component {
   }
 }
 
-TimerSettings.propTypes = {
-  value: PropTypes.string,
-  sendTimerValue: PropTypes.func.isRequired
-};
+// TimerSettings.propTypes = {
+//   value: PropTypes.string,
+//   sendTimerValue: PropTypes.func.isRequired
+// };

@@ -42,7 +42,7 @@ export default class ToggleSettings extends React.Component {
             checked={this.state.value}
           />
            <label className='onoffswitch-label'
-           for='myonoffswitch'
+           htmlFor='myonoffswitch'
            onClick={this.onChange}>
               <span className='onoffswitch-inner'></span>
               <span className='onoffswitch-switch'></span>
@@ -67,5 +67,5 @@ export default class ToggleSettings extends React.Component {
 
 ToggleSettings.propTypes = {
   checked: PropTypes.bool,
-  sendToggleValue: PropTypes.func.isRequired
+  sendToggleValue: PropTypes.func
 };

@@ -61,8 +61,8 @@ export default class RangeSettings extends React.Component {
   }
 }
 
-RangeSettings.propTypes = {
-  max: PropTypes.string,
-  min: PropTypes.string,
-  sendRangeValue: PropTypes.func.isRequired
-};
+// RangeSettings.propTypes = {
+//   max: PropTypes.string,
+//   min: PropTypes.string,
+//   sendRangeValue: PropTypes.func.isRequired
+// };

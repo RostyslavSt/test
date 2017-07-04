@@ -63,14 +63,11 @@ class DeviceForm extends React.Component {
     e.preventDefault();
     const newDevice = JSON.stringify(this.props.deviceProto);
 
-    this.resetForm();
+    this.props.resetProto();
 
     // console.log(this.props.deviceProto);
   };
 
-  resetForm () {
-    this.props.resetProto();
-  }
 
   render () {
     return (

@@ -49,7 +49,7 @@ export default class ValueSettings extends React.Component {
   }
 }
 
-ValueSettings.propTypes = {
-  value: PropTypes.string,
-  sendSearchValue: PropTypes.string.isRequired
-};
+// ValueSettings.propTypes = {
+//   value: PropTypes.string,
+//   sendSearchValue: PropTypes.string.isRequired
+// };
