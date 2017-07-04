@@ -1,9 +1,9 @@
 .add-item-button {
     margin: 15px;
-    display: block;
+    display: inline-block;
+    float:left;
     background-color: #f6a821;
     color:#333;
-    float:left;
     border-radius: 50%;
     font-size: 40px;
     line-height:50px;
@@ -17,4 +17,7 @@
 .add-item-button:hover{
     background-color: rgba(68, 70, 79, 1);
     color: #f6a821;
+}
+.controls{
+  height: 100px;
 }

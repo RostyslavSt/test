@@ -45,6 +45,7 @@ class DeviceList extends React.Component {
     return (
       <main>
         <h1>Yours devices</h1>
+      <div className="controls">
         <FilterSelect
           handleSelect={this.handleFilterSelect}
           options={options}
@@ -52,7 +53,9 @@ class DeviceList extends React.Component {
         <Search
           handleSearch={this.handleSearchResult}
         />
+      
         <Link to={'#'} className="add-item-button">+</Link>
+      </div>
         <section>
           {this.props.items.filter(item => filterItems(item, filterOption)
           ).filter(item => searchItem(item, searchValue)

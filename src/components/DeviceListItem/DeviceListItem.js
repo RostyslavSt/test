@@ -11,13 +11,10 @@ class DeviceListItem extends React.Component {
     this.state = {
       status: this.device.status
     };
-    
-    this.onStatusChange = this.onStatusChange.bind(this);
-  }
-  
-  onStatusChange (e) {
-    this.props.changeStatus(this.props.index);
-    this.setState({status: e.target.checked});
+    this.onStatusChange = (e) => {
+      this.props.changeStatus(this.props.index);
+      this.setState({status: e.target.checked});
+    };
   };
   
   render () {
@@ -25,14 +22,20 @@ class DeviceListItem extends React.Component {
       <div>
         <div className='device-item'>
           <div className='device-item__info'>
-            <p className='device-item__info-name'>{this.device.name}</p>
             <div className="device-item__info-status">
               <label className="switch">
-                <input type="checkbox" checked={this.state.checked} 
+                <input type="checkbox" checked={this.state.status} 
                       onChange={this.onStatusChange}/>
                 <div className="slider round"></div>
               </label>
             </div>
+            <Link className='device-item__info-name' to={{
+              pathname: this.match.url + 'device',
+              search: '?deviceName='+ this.device.name +
+                          '&id=' + this.device.id
+            }}>
+              <p>{this.device.name}</p>
+            </Link>               
           </div>
           <div className="device-item__description">
               <div className="device-item__description-location">
@@ -43,12 +46,6 @@ class DeviceListItem extends React.Component {
               </div>
           </div>
         </div>
-        <Link className='btn' to={{
-          pathname: this.match.url + 'device',
-          search: '?deviceName='+ this.device.name + '&id=' + this.device.id
-        }}>
-          Go to device!!!
-        </Link>
       </div>
     );
   }

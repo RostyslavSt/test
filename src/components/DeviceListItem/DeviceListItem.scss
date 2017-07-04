@@ -5,71 +5,50 @@
     height: 100px;
     background-color:rgba(68, 70, 79, 1);
     color: whitesmoke;
-
-    a {
-        
-    }
-
-    &__info {
-        // cdjb cnbkb
-
-        @media (min-width: 768px) {
-
-        }
-    }
-
-    &__blabla {
-        // свои стили
-    }
-}
-
-
-
-
-.device-item{
-    margin: 10px;
-    width: 500px;
-    height: 100px;
-    background-color:rgba(68, 70, 79, 1);
-    color: whitesmoke;
-}
-.device-item-name{
+    
+    &__info-name {      
+    text-decoration: none;
     text-transform: uppercase;
     padding: 20px;
-    width: 500px;
+    width: 100%;
     height: 60px;
-}absolute
-.device-item-status{
+    display:block; 
+    color:whitesmoke;
+            
+    }
+  
+    &__info-status {
     float: right;
-
-}
-.info{
+    margin:20px;
+    }
+  
+    &__description{
     padding: 10px;
     background-color: #2f323b;
     height: 40px;
     width: 100%;
     color: snow;
-}
-.device-item-location{
+  }
+  
+  &__description-location{
     float: left;
     margin-left: 10px;
-}
-.info-icon{
+  }
+  
+  &__description-icon{
+    cursor: pointer;
     float: right;
-    color: #f6a821;
-}
-.trash, .setting{
+    color: #f6a821;    
+  }
+  
+  &__description-icon-delete{
     padding: 0 10px;
     font-size: 15px;    
     display: block;
     float: left;
+  }
+  
 }
-
-
-
-
-
-
 .switch {
   position: relative;
   display: inline-block;
