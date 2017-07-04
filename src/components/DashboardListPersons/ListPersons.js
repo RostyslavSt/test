@@ -1,5 +1,5 @@
 import React from 'react';
-import './List_persons.scss';
+import './ListPersons.scss';
 
 export default class DashboardListPersons extends React.Component {
   constructor (props) {

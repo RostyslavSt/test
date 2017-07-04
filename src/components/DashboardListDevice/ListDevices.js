@@ -1,5 +1,5 @@
 import React from 'react';
-import './List_devices.scss';
+import './ListDevices.scss';
 
 export default class DashboardListDevice extends React.Component {
   constructor (props) {
