@@ -1,42 +1,78 @@
 [{
     "id":1,
     "name":"fridge",
-	"item":{},
+	"item":[
+		{
+			"id": 52,
+			"name": "Range",
+			"type": "range"
+		}
+	],
 	"status":false,
 	"location":"kitchen"
 },
 {
     "id":2,
     "name":"microwave",
-	"item":{},
+	"item":[
+		{
+			"id": 53,
+			"name": "Range",
+			"type": "range"
+		}
+	],
 	"status":false,
 	"location":"kitchen"
 },
 {
 	"id":3,
     "name":"alarm",
-	"item":{},
+	"item":[
+		{
+			"id": 54,
+			"name": "Range",
+			"type": "range"
+		}
+	],
 	"status":true,
 	"location":"roof"
 },
 {
 	"id":4,
     "name":"car",
-	"item":{},
+	"item":[
+		{
+			"id": 51,
+			"name": "Range",
+			"type": "range"
+		}
+	],
 	"status":true,
 	"location":"parking"
 },
 {
 	"id":5,
     "name":"coffemachine",
-	"item":{},
+	"item":[
+		{
+			"id": 4,
+			"name": "Range",
+			"type": "range"
+		}
+	],
 	"status":false,
 	"location":"kitchen"
 },
 {
 	"id":6,
     "name":"washmachine",
-	"item":{},
+	"item":[
+		{
+			"id": 5,
+			"name": "Range",
+			"type": "range"
+		}
+	],
 	"status":true,
 	"location":"bathroom"
 }]

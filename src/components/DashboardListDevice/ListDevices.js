@@ -13,7 +13,7 @@ export default class DashboardListDevice extends React.Component {
         list device
         {jsonData.map((item, key) => {
           return (<li key={key}>
-            {item.name} power: {item.status}
+            {item.name} power: {item.location}
             </li>);
         })
           }
