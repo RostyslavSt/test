@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 const itemsToChoose = [
   'Toggle',
   'Timer',
-  'Graph',
+  'LineChart',
   'Value',
   'Range'
 ];
@@ -61,10 +61,11 @@ class DeviceForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    let newDevice = JSON.stringify(this.props.deviceProto);
+    const newDevice = JSON.stringify(this.props.deviceProto);
 
     this.resetForm();
-    console.log(this.props.deviceProto);
+
+    // console.log(this.props.deviceProto);
   };
 
   resetForm () {

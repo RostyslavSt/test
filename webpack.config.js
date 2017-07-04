@@ -44,7 +44,8 @@ module.exports = {
     // devtool: 'inline-source-map',
     output: {
         filename: 'index_bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -55,7 +56,8 @@ module.exports = {
                     loader: 'babel-loader',
                     query: {
                       plugins: [
-                        'babel-plugin-transform-class-properties'
+                        'babel-plugin-transform-class-properties',
+                        'babel-plugin-transform-object-rest-spread'
                       ]
                     }
                   },
@@ -95,6 +97,7 @@ module.exports = {
         compress: true,
         hot: true,
         stats: "errors-only",
+        historyApiFallback: true,
         open: true
     },
     plugins: [
