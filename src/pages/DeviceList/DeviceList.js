@@ -12,6 +12,9 @@ require('./DeviceList.scss');
 class DeviceList extends React.Component {
   constructor (props) {
     super(props);
+
+    this.devices = [];
+
     this.state = {
       filterOption: 'all',
       searchValue: ''
@@ -41,28 +44,35 @@ class DeviceList extends React.Component {
         </main>
       );
     }
+    
+    this.devices = [];
+
+    this.props.items.map((item, index)=>{
+      if (filterItems(item, filterOption) && searchItem(item, searchValue)) {
+        this.devices.push(<DeviceListItem data={item} 
+                      key={index} match={match} index={index} 
+                        changeStatus={this.changeStatus}/>);
+      }
+    });
 
     return (
       <main>
         <h1>Yours devices</h1>
+      <div className="controls">
         <FilterSelect
           handleSelect={this.handleFilterSelect}
           options={options}
         />
         <Search
           handleSearch={this.handleSearchResult}
-        />      
+        />
+      
         <Link to={'#'} className="add-item-button">+</Link>
+      </div>
         <section>
-          {this.props.items.filter(item => filterItems(item, filterOption)
-          ).filter(item => searchItem(item, searchValue)
-          ).map((item, i) => {
-            return (
-              <DeviceListItem data={item} key={i} match={match} index={i} 
-                              changeStatus={this.changeStatus}/>
-            );
-          })
-          }
+          {this.devices.map((d, i) => {
+            return d;
+          })}
         </section>
       </main>
     );
