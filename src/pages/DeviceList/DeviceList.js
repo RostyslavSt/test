@@ -5,37 +5,49 @@ import DeviceListItem from '../../components/DeviceListItem/DeviceListItem';
 import FilterSelect from '../../components/FilterSelect/FilterSelect';
 import Search from '../../components/Search/Search';
 import { options } from '../../data/constants';
-import { searchItem, filterItems } from '../../utils/utils';
-import {ChangeStatus} from '../../actions/actionsCreator';
+import { filterAction } from '../../actions/filterAction';
+import { ChangeStatus } from '../../actions/actionsCreator';
+import { searchItem, fetchDevices } from '../../utils/utils';
+import { filterItems } from '../../selectors';
 require('./DeviceList.scss');
 
 class DeviceList extends React.Component {
   constructor (props) {
     super(props);
-
-    this.devices = [];
-
     this.state = {
-      filterOption: 'all',
       searchValue: ''
     };
     this.handleFilterSelect = (filterOption) => {
-      this.setState({ filterOption });
+      this.props.filterAction(filterOption);
     };
     this.handleSearchResult = (searchValue) => {
       this.setState({ searchValue });
     };
     this.changeStatus = (index) => {
-      this.props.dispatch(ChangeStatus(index));
+      this.props.changeStatus(index);
+      // ChangeStatus(index);
     };
   }
 
+  componentDidMount () {
+    let data;
+    if (this.props.items === []) {
+      fetchDevices().then((response) => {
+        console.log(response);
+        data = response;
+      }, (error) => {
+        console.log(error);
+      });
+    }
+  }
+
   render () {
+    console.log(this.props.devices);
     const searchValue = this.state.searchValue;
     const filterOption = this.state.filterOption;
     const match = this.props.match;
 
-    if (this.props.items.length === 0) {
+    if (this.props.devices.length === 0) {
       return (
         <main>
           <h1>Oops... there's nothing here.
@@ -44,16 +56,6 @@ class DeviceList extends React.Component {
         </main>
       );
     }
-    
-    this.devices = [];
-
-    this.props.items.map((item, index)=>{
-      if (filterItems(item, filterOption) && searchItem(item, searchValue)) {
-        this.devices.push(<DeviceListItem data={item} 
-                      key={index} match={match} index={index} 
-                        changeStatus={this.changeStatus}/>);
-      }
-    });
 
     return (
       <main>
@@ -65,12 +67,16 @@ class DeviceList extends React.Component {
         <Search
           handleSearch={this.handleSearchResult}
         />
-      
         <Link to={'#'} className="add-item-button">+</Link>
         <section>
-          {this.devices.map((d, i) => {
-            return d;
-          })}
+          {this.props.devices.filter(item => searchItem(item, searchValue)
+          ).map((item, i) => {
+            return (
+              <DeviceListItem data={item} key={i} index={i} 
+                match={match} changeStatus={this.changeStatus} />
+            );
+          })
+          }
         </section>
       </main>
     );
@@ -78,6 +84,14 @@ class DeviceList extends React.Component {
 }
 
 const mapStateToProps = state =>({
-  items: state
+  devices: filterItems(state),
+  filter: state.filterOption
+  // Сделать поиск через стейт
 });
-export default connect(mapStateToProps)(DeviceList);
+
+const mapDispatchToProps = (dispatch) => ({
+  filterAction: (filterOption) => dispatch(filterAction(filterOption)),
+  changeStatus: (index) => dispatch(ChangeStatus(index))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DeviceList);

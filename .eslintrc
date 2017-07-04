@@ -2,7 +2,8 @@
   "parser" : "babel-eslint",
   "env": {
     "node" : 1,
-    "browser" : 1
+    "browser" : 1,
+    "es6": true
   },
   "ecmaFeatures": {
     "jsx": 1,
