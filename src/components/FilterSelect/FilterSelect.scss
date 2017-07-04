@@ -3,7 +3,7 @@
     width: 150px;
     height: 50px;
     margin: 15px;
-  float:left;
+    float:left;
 }
 .filterBox select{
     font-family:'Roboto', sans-serif;
@@ -16,6 +16,7 @@
     border-radius: 5px;
     padding: 0 10px;
 	  outline: none;
+  cursor: pointer;
 }
 .filterBox select >option:hover{
 	background-color:#f6a821;
