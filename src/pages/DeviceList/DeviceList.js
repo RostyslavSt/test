@@ -58,7 +58,6 @@ class DeviceList extends React.Component {
     return (
       <main>
         <h1>Yours devices</h1>
-      <div className="controls">
         <FilterSelect
           handleSelect={this.handleFilterSelect}
           options={options}
@@ -68,7 +67,6 @@ class DeviceList extends React.Component {
         />
       
         <Link to={'#'} className="add-item-button">+</Link>
-      </div>
         <section>
           {this.devices.map((d, i) => {
             return d;
