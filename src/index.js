@@ -6,11 +6,13 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { combineReducers } from 'redux';
 import { deviceProto } from './redusers/deviceProtoReduser';
+import { devices } from './redusers/devicesReduser';
 import DeviceForm from './components/DeviceForm/deviceForm.js';
 import DeviceProto from './components/DeviceProto/DeviceProto.js';
 
 const commonReducer = combineReducers({
-  deviceProto: deviceProto
+  deviceProto: deviceProto,
+  devices: devices
 });
 const store = createStore(
   commonReducer,

@@ -6,6 +6,7 @@ import {
   setValue,
   resetProto
 } from '../../actions/deviceProtoActions';
+import { addDevice } from '../../actions/devicesActions';
 import { connect } from 'react-redux';
 
 const itemsToChoose = [
@@ -61,8 +62,7 @@ class DeviceForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const newDevice = JSON.stringify(this.props.deviceProto);
-
+    this.props.addDevice(this.props.deviceProto);
     this.props.resetProto();
 
     // console.log(this.props.deviceProto);
@@ -109,7 +109,8 @@ function mapDispatchToProps (dispatch) {
   return {
     setValue: bindActionCreators(setValue, dispatch),
     addItem:  bindActionCreators(addItem, dispatch),
-    resetProto: bindActionCreators(resetProto, dispatch)
+    resetProto: bindActionCreators(resetProto, dispatch),
+    addDevice: bindActionCreators(addDevice,dispatch)
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceForm);
