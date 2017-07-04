@@ -43,6 +43,7 @@ class DeviceForm extends React.Component {
     return (<p key={ index }>
       <input
         type="button"
+        className="sub-button form-button"
         onClick={ this.addItem }
         value={ label }
       />
@@ -71,7 +72,7 @@ class DeviceForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={ this.handleSubmit }>
+      <form className="device-form" onSubmit={ this.handleSubmit }>
         <h3>Add new device</h3>
         <div>
         <label>Name:</label> <br />
@@ -94,7 +95,7 @@ class DeviceForm extends React.Component {
           Device config:
           { this.createButtons() }
         </div>
-        <input type="submit" value="Add" />
+        <input className="main-button form-button" type="submit" value="Add" />
         <div>{ this.props.deviceProto.name } </div>
       </form>
     );
