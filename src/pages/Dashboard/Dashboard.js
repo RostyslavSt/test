@@ -1,10 +1,10 @@
 import React from 'react';
 import DashboardListDevices from
-'../../components/DashboardListDevice/ListDevices.js';
+'../../components/DashboardListDevice/ListDevices';
 import DashboardListPersons from
-'../../components/DashboardListPersons/ListPersons.js';
+'../../components/DashboardListPersons/ListPersons';
 import Notification from
-'../../components/DashboardNotification/Notification.js';
+'../../components/DashboardNotification/Notification';
 
 import './Dashboard.scss';
 
