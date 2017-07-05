@@ -13,5 +13,6 @@ export const filterItems = createSelector(
     } else if (filterOption === 'off') {
       return items.filter(item => item.status === false);
     }
+    return items;
   }
 );

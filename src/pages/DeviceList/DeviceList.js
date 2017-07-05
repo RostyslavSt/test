@@ -25,18 +25,6 @@ class DeviceList extends React.Component {
     this.changeStatus = (index) => {
       this.props.changeStatus(index);
     };
-  };
-
-  componentDidMount () {
-    let data;
-    if (this.props.items === []) {
-      fetchDevices().then((response) => {
-        console.log(response);
-        data = response;
-      }, (error) => {
-        console.log(error);
-      });
-    };
   }
 
   render () {
