@@ -1,10 +1,8 @@
-import { CHANGE_FILTER_OPTION, CHANGE_STATUS} from '../data/constants';
+import { CHANGE_FILTER_OPTION,
+  CHANGE_STATUS,
+  SEARCH_ITEM } from '../data/constants';
 import { combineReducers } from 'redux';
 import jsonData from '../data/data.json';
-
-function items (state = jsonData, action) {
-  return state;
-}
 
 const filterOption = (state = 'all', action) => {
   switch (action.type) {
@@ -15,21 +13,37 @@ const filterOption = (state = 'all', action) => {
   }
 };
 
-export function itemReducer (state = jsonData, action) {
+const itemReducer = (state = jsonData, action) => {
   switch (action.type) {
     case CHANGE_STATUS:
-      let device = state[action.index];
-      device.status = !device.status;
-      // return [state, Object.assign({},state[action.index])];
-      return state.slice();
+      const devices = state.slice();
+      let index = 0;
+
+      devices.map((item, i) => {
+        if (item.id === action.id) {
+          index = i;
+        }
+      });
+      devices[index].status = !devices[index].status;
+      return devices;
     default:
       return state;
   }
-}
+};
 
-const rootReducer = combineReducers({filterOption, itemReducer});
+const searchReducer = (state = '', action) => {
+  switch (action.type) {
+    case SEARCH_ITEM:
+      return action.searchValue;
+    default:
+      return state;
+  }
+};
+
+const rootReducer = combineReducers({
+  filterOption,
+  itemReducer,
+  searchReducer 
+});
 
 export default rootReducer;
-
-// в itemReducer перезаписывается стейт 
-// нужно создать новій єлемент массива, перезаписав в нем статус на основе старого стейта

@@ -7,6 +7,7 @@ import Search from '../../components/Search/Search';
 import { options } from '../../data/constants';
 import { filterAction } from '../../actions/filterAction';
 import { ChangeStatus } from '../../actions/actionsCreator';
+import { searchAction } from '../../actions/searchAction';
 import { searchItem, fetchDevices } from '../../utils/utils';
 import { filterItems } from '../../selectors';
 require('./DeviceList.scss');
@@ -14,20 +15,17 @@ require('./DeviceList.scss');
 class DeviceList extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {
-      searchValue: ''
-    };
+
     this.handleFilterSelect = (filterOption) => {
       this.props.filterAction(filterOption);
     };
     this.handleSearchResult = (searchValue) => {
-      this.setState({ searchValue });
+      this.props.findItems(searchValue);
     };
     this.changeStatus = (index) => {
       this.props.changeStatus(index);
-      // ChangeStatus(index);
     };
-  }
+  };
 
   componentDidMount () {
     let data;
@@ -38,45 +36,36 @@ class DeviceList extends React.Component {
       }, (error) => {
         console.log(error);
       });
-    }
+    };
   }
 
   render () {
-    console.log(this.props.devices);
-    const searchValue = this.state.searchValue;
-    const filterOption = this.state.filterOption;
+    const searchValue = this.props.search;
+    const filterOption = this.props.filterOption;
     const match = this.props.match;
 
-    if (this.props.devices.length === 0) {
-      return (
-        <main>
-          <h1>Oops... there's nothing here.
-            It looks like you need to add a device first.</h1>
-          <div>Add Device</div>
-        </main>
-      );
-    }
-
     return (
-      <main>
-        <h1>Yours devices</h1>
-        <FilterSelect
-          handleSelect={this.handleFilterSelect}
-          options={options}
-        />
-        <Search
-          handleSearch={this.handleSearchResult}
-        />
-        <Link to={'#'} className="add-item-button">+</Link>
-        <section>
-          {this.props.devices.filter(item => searchItem(item, searchValue)
-          ).map((item, i) => {
-            return (
-              <DeviceListItem data={item} key={i} index={i} 
-                match={match} changeStatus={this.changeStatus} />
-            );
-          })
-          }
+      <main className='device-list'>
+        <header className='device-list__header'>
+          <FilterSelect
+            handleSelect={this.handleFilterSelect}
+            options={options}
+          />
+          <Search
+            handleSearch={this.handleSearchResult}
+          />
+          <Link to={'#'} className="btn add-item-button">+</Link>
+        </header>
+        <section className='device-list__content'>
+          { this.props.devices.length === 0 ? <p>Nothing here</p> :
+            this.props.devices.filter(item => searchItem(item, searchValue)
+            ).map((item, i) => {
+              return (
+                <DeviceListItem data={item} key={i}
+                  match={match} changeStatus={this.props.changeStatus} />
+              );
+            })
+            }
         </section>
       </main>
     );
@@ -85,13 +74,14 @@ class DeviceList extends React.Component {
 
 const mapStateToProps = state =>({
   devices: filterItems(state),
-  filter: state.filterOption
-  // Сделать поиск через стейт
+  filter: state.filterOption,
+  search: state.searchReducer
 });
 
 const mapDispatchToProps = (dispatch) => ({
   filterAction: (filterOption) => dispatch(filterAction(filterOption)),
-  changeStatus: (index) => dispatch(ChangeStatus(index))
+  changeStatus: (index) => dispatch(ChangeStatus(index)),
+  findItems: (searchValue) => dispatch(searchAction(searchValue))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceList);

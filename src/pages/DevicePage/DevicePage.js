@@ -32,7 +32,7 @@ class DevicePage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  devices: state.items
+  devices: state.itemReducer
 });
 
 export default connect(mapStateToProps)(DevicePage);

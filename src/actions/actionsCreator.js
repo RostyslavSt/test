@@ -1,6 +1,6 @@
 import { CHANGE_STATUS } from '../data/constants';
 
-export const ChangeStatus = (index) => ({
+export const ChangeStatus = (id) => ({
   type: CHANGE_STATUS,
-  index
+  id
 });
