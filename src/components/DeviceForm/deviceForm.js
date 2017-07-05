@@ -111,7 +111,7 @@ function mapDispatchToProps (dispatch) {
     setValue: bindActionCreators(setValue, dispatch),
     addItem:  bindActionCreators(addItem, dispatch),
     resetProto: bindActionCreators(resetProto, dispatch),
-    addDevice: bindActionCreators(addDevice,dispatch)
+    addDevice: bindActionCreators(addDevice, dispatch)
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceForm);

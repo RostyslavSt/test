@@ -2,6 +2,7 @@
   "parser" : "babel-eslint",
   "env": {
     "node" : 1,
+    "es6": 1,
     "browser" : 1
   },
   "parserOptions": {

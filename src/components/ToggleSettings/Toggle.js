@@ -8,12 +8,10 @@ export default class ToggleSettings extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      value: props.checked,
-      isToggleOn: props.isToggleOn || true
+      value: props.checked
     };
 
     this.onChange = this.onChange.bind(this);
-    this.deleteToggle = this.deleteToggle.bind(this);
   }
 
   onChange () {
@@ -23,17 +21,11 @@ export default class ToggleSettings extends React.Component {
     this.props.sendToggleValue(!this.state.value);
   }
 
-  deleteToggle () {
-    this.setState({
-      isToggleOn: false
-    });
-  }
 
   render () {
     return (
       <div className='toggle_block'>
-      {this.state.isToggleOn ?
-        <div className='onoffswitch'>
+      <div className='onoffswitch'>
          <input
             type='checkbox'
             name='onoffswitch'
@@ -47,20 +39,8 @@ export default class ToggleSettings extends React.Component {
               <span className='onoffswitch-inner'></span>
               <span className='onoffswitch-switch'></span>
           </label>
-        </div>:
-        null
-      }
-        {this.state.isToggleOn ?
-        <p className='toggle_name'>
-        Toggle</p>:
-        null }
-        {this.state.isToggleOn ?
-        <button type='button'
-        onClick={this.deleteToggle}
-        className='delete_toggle'
-        />:
-        null }
-       </div>
+        </div>
+      </div>
     );
   }
 }

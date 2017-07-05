@@ -7,8 +7,7 @@ export default class TimerSettings extends React.Component {
     super(props);
 
     this.state = {
-      value: props.value || '00:00:00',
-      isTimerOn: props.isTimerOn || true
+      value: props.value || '00:00:00'
     };
 
     this.onChangeTime = this.onChangeTime.bind(this);
@@ -32,13 +31,8 @@ export default class TimerSettings extends React.Component {
   render () {
     return (
       <div className="timer_block">
-      {this.state.isTimerOn ?
-      <p className="device_name">
-      Timer</p>:
-      null }
       <div className="quantity">
-        {this.state.isTimerOn ?
-          <input
+         <input
             type="time"
             className="timer_set"
             min="1"
@@ -46,16 +40,8 @@ export default class TimerSettings extends React.Component {
             step="1"
             value={this.state.value}
             onChange={this.onChangeTime}
-          />:
-          null
-        }
-
-      </div>
-      {this.state.isTimerOn ?
-      <button className="delete_timer"
-      onClick={this.timerOff}
-      />:
-      null }
+          />
+        </div>
       </div>
     );
   }

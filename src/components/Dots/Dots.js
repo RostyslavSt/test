@@ -5,7 +5,7 @@ export default class Dots extends Component {
     return (
       <g>
         {this.props.data.map((d, i)=>(
-          <circle className="dot" r="7" cx={this.props.x(d.date)}
+          <circle className="dot" r="5" cx={this.props.x(d.date)}
                   cy= {this.props.y(d[this.props.yData])} key={i} />))}
       </g>
     );

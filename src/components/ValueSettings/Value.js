@@ -33,7 +33,6 @@ export default class ValueSettings extends React.Component {
   render () {
     return (
       <div className='value_block'>
-        <p className='device_name'>Value</p>
         <input
           type='text'
           className='value_input'

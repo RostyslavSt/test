@@ -4,6 +4,12 @@ export const addItem = (item) => {
     item
   };
 };
+export const deleteItem = (id) => {
+  return {
+    type: 'DELETE',
+    id
+  };
+};
 
 export const setValue = (name, value) => {
   return {
