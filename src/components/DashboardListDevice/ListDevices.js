@@ -7,7 +7,6 @@ export default class DashboardListDevice extends React.Component {
     super(props);
   }
   render () {
-    console.log(jsonData);
     return (
       <section className="list-device">
         list device
