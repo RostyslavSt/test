@@ -1,0 +1,13 @@
+.header-block {
+  border: 1px solid black;
+}
+
+.img-logo {
+  // margin: 0 auto;
+  background-image: url("../../img/logo_smart_home.jpg");
+  width: 100px;
+  height: 30px; // border-radius: 50%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

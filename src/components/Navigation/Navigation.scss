@@ -1,0 +1,15 @@
+.navigation {
+  // position: fixed;
+  height: 100%;
+  background-color: #364150;
+  width: 25%;
+
+  li {
+    padding: 10px 30px;
+    list-style-type: none;
+
+    a {
+      color: #fff;
+    }
+  }
+}
