@@ -1,0 +1,28 @@
+.device-form {
+  margin: 0 auto;
+  width: 200px;
+  padding: 10px;
+  background-color: #3a3d45;
+  border: 1px solid grey;
+  color: white;
+
+  div {
+    padding: 10px 0;
+  }
+  .main-button {
+    background-color: #f6a821;
+    border: none;
+    color: white;
+  }
+  .sub-button {
+    color: #8b9299;
+    border: 1px solid #8b9299;
+    background-color: #3a3d45;
+  }
+  .form-button {
+    padding: 4px;
+    border-radius: 3px;
+    width: 80%;
+  }
+}
+

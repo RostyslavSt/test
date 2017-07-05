@@ -1,0 +1,23 @@
+.timer_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+ }
+
+.timer_set {
+    display: flex;
+    margin: 0 auto;
+}
+
+input::-webkit-datetime-edit {
+  border: 2px solid #f6a821;
+  border-radius: 3px;
+}
+
+input::-webkit-datetime-edit-hour-field:focus,
+input::-webkit-datetime-edit-minute-field:focus,
+input::-webkit-datetime-edit-second-field:focus {
+  background-color: #848c94;
+  opacity: 0.6;
+}
