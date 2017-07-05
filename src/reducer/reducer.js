@@ -3,21 +3,22 @@ import searchReducer from './searchReducer';
 import filterReducer from './filterReducer';
 import { combineReducers } from 'redux';
 import jsonData from '../data/data.json';
-
+import deviceProto from './deviceProtoReducer';
+import devices from './devicesReducer';
 
 const itemReducer = (state = jsonData, action) => {
   switch (action.type) {
     case CHANGE_STATUS:
-      const devices = state.map((item) => (
+      const newState = state.map((item) => (
         Object.assign({}, item)
       ));
 
-      devices.map((item, i) => {
+      newState.map((item, i) => {
         if (item.id === action.id) {
-          devices[i].status = !devices[i].status;
+          newState[i].status = !newState[i].status;
         }
       });
-      return devices;
+      return newState;
     default:
       return state;
   }
@@ -26,7 +27,9 @@ const itemReducer = (state = jsonData, action) => {
 const rootReducer = combineReducers({
   filterReducer,
   itemReducer,
-  searchReducer
+  searchReducer,
+  deviceProto,
+  devices
 });
 
 export default rootReducer;

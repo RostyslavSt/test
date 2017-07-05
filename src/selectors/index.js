@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const getFilterOption = state => state.filterOption;
+const getFilterOption = state => state.filterReducer;
 const getDevices = state => state.itemReducer;
 
 export const filterItems = createSelector(

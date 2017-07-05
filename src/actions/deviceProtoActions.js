@@ -1,12 +1,12 @@
 export const addItem = (item) => {
   return {
-    type: 'ADD',
+    type: 'ADD_ITEM',
     item
   };
 };
 export const deleteItem = (id) => {
   return {
-    type: 'DELETE',
+    type: 'DELETE_ITEM',
     id
   };
 };
@@ -21,7 +21,7 @@ export const setValue = (name, value) => {
 
 export const resetProto = () => {
   return {
-    type: 'RESET'
+    type: 'RESET_DEVICE_BUILDER_FORM'
   };
 };
 

@@ -65,8 +65,7 @@ class DeviceForm extends React.Component {
     e.preventDefault();
     this.props.addDevice(this.props.deviceProto);
     this.props.resetProto();
-
-    // console.log(this.props.deviceProto);
+    this.props.router.push('/');
   };
 
 
@@ -96,7 +95,6 @@ class DeviceForm extends React.Component {
           { this.createButtons() }
         </div>
         <input className="main-button form-button" type="submit" value="Add" />
-        <div>{ this.props.deviceProto.name } </div>
       </form>
     );
   }

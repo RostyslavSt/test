@@ -31,7 +31,7 @@ class DeviceList extends React.Component {
     const searchValue = this.props.search;
     const filterOption = this.props.filterOption;
     const match = this.props.match;
-
+    console.log(this.props);
     return (
       <main className='device-list'>
         <header className='device-list__header'>
@@ -42,7 +42,7 @@ class DeviceList extends React.Component {
           <Search
             handleSearch={this.handleSearchResult}
           />
-          <Link to={'#'} className="btn add-item-button">+</Link>
+          <Link to={'/builder'} className="btn add-item-button">+</Link>
         </header>
         <section className='device-list__content'>
           { this.props.devices.length === 0 ? <p>Nothing here</p> :
@@ -62,7 +62,7 @@ class DeviceList extends React.Component {
 
 const mapStateToProps = state =>({
   devices: filterItems(state),
-  filter: state.filterOption,
+  filter: state.filterReducer,
   search: state.searchReducer
 });
 
