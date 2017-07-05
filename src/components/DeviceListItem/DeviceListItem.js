@@ -22,10 +22,9 @@ class DeviceListItem extends React.Component {
               <div className="slider round"></div>
             </label>
           </div>
-          <Link className='device-item__info-name' to={{
-            pathname: '/device',
-            search: '?id=' + this.props.data.id
-          }}>
+          <Link className='device-item__info-name' to={
+            `/device/${this.props.data.id}`
+          }>
             <p>{this.props.data.name}</p>
           </Link>
         </div>

@@ -50,7 +50,7 @@ class DeviceList extends React.Component {
             ).map((item, i) => {
               return (
                 <DeviceListItem data={item} key={i}
-                  match={match} changeStatus={this.props.changeStatus} />
+                  match={match} changeStatus={this.props.changeStatus}/>
               );
             })
             }
