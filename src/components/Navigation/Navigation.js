@@ -8,8 +8,8 @@ export default class Navigation extends Component {
     return (
       <ul className="navigation">
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/device-builder">Device Builder</Link></li>
-        <li><Link to="/device-list">Device List</Link></li>
+        <li><Link to="/builder">Device Builder</Link></li>
+        <li><Link to="/devices">Device List</Link></li>
       </ul>
     );
   }

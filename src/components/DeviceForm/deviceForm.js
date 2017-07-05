@@ -65,7 +65,7 @@ class DeviceForm extends React.Component {
     e.preventDefault();
     this.props.addDevice(this.props.deviceProto);
     this.props.resetProto();
-    this.props.router.push('/');
+    this.props.router.push('/devices');
   };
 
 

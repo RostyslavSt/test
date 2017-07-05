@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { DeviceItems } from '../DeviceItems/DeviceItems.js';
 
 const width = {
-  width:'50%'
+  width:'600px'
 };
 
 class DeviceProto extends Component {

@@ -23,7 +23,7 @@ class DeviceListItem extends React.Component {
             </label>
           </div>
           <Link className='device-item__info-name' to={{
-            pathname: this.props.match.url + 'device',
+            pathname: '/device',
             search: '?id=' + this.props.data.id
           }}>
             <p>{this.props.data.name}</p>
