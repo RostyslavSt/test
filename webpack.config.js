@@ -51,7 +51,18 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                use: ['babel-loader', 'eslint-loader']
+                use: [
+                  {
+                    loader: 'babel-loader',
+                    query: {
+                      plugins: [
+                        'babel-plugin-transform-class-properties',
+                        'babel-plugin-transform-object-rest-spread'
+                      ]
+                    }
+                  },
+                  'eslint-loader'
+                ]
             },
             {
                 test: /\.scss$/, 
@@ -86,9 +97,8 @@ module.exports = {
         compress: true,
         hot: true,
         stats: "errors-only",
-        open: true,
         historyApiFallback: true,
-
+        open: true
     },
     plugins: [
         new HtmlWebpackPlugin({
