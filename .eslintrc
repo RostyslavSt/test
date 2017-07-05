@@ -2,12 +2,18 @@
   "parser" : "babel-eslint",
   "env": {
     "node" : 1,
+    "es6": 1,
     "browser" : 1
   },
-  "ecmaFeatures": {
-    "jsx": 1,
-    "classes": 1,
-    "destructuring": 1
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": 1,
+      "experimentalObjectRestSpread": 1,
+      "classes": 1,
+      "destructuring": 1
+    }
   },
   "globals": {
     "__DEV__"    : false,
