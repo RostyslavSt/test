@@ -1,6 +1,6 @@
 import React from 'react';
 import './ListPersons.scss';
-import jsonPersons from '../../dataDash/person.json';
+import jsonPersons from '../../data/person.json';
 
 export default class DashboardListPersons extends React.Component {
   constructor (props) {

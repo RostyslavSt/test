@@ -1,6 +1,6 @@
 import React from 'react';
 import './ListDevices.scss';
-import jsonData from '../../dataDash/data.json';
+import jsonData from '../../data/data.json';
 
 export default class DashboardListDevice extends React.Component {
   constructor (props) {
