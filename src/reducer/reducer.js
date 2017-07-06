@@ -8,7 +8,7 @@ import devices from './devicesReducer';
 
 const itemReducer = (state = jsonData, action) => {
   switch (action.type) {
-    case CHANGE_STATUS:
+    case CHANGE_STATUS: {
       const newState = state.map((item) => (
         Object.assign({}, item)
       ));
@@ -19,6 +19,7 @@ const itemReducer = (state = jsonData, action) => {
         }
       });
       return newState;
+    }
     default:
       return state;
   }

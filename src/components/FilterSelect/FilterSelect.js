@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 require('./FilterSelect.scss');
 
 const FilterSelect = (props) => {
@@ -11,6 +12,11 @@ const FilterSelect = (props) => {
       </select>
     </div>
   );
+};
+
+FilterSelect.propTypes = {
+  handleSelect: PropTypes.func.isRequired,
+  options: PropTypes.array
 };
 
 export default FilterSelect;

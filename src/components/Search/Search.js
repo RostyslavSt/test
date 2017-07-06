@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 require('./search.scss');
 
 const Search = (props) => {
@@ -10,6 +11,10 @@ const Search = (props) => {
       }/>
     </div>
   );
+};
+
+Search.propTypes = {
+  handleSearch: PropTypes.func.isRequired
 };
 
 export default Search;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 import { bindActionCreators } from 'redux';
 import LineChart from '../LineChart/LineChart';
@@ -6,19 +7,14 @@ import { deleteItem } from '../../actions/deviceProtoActions';
 import { connect } from 'react-redux';
 import { DeviceItems } from '../DeviceItems/DeviceItems.js';
 
-const width = {
-  width:'600px'
-};
-
 class DeviceProto extends Component {
   render () {
-    // const {name, location, items} = this.props.deviceProto;
     return (
-        <div style={width} className='DeviceProto'>
+        <div className='DeviceProto'>
           <p>{this.props.deviceProto.name}</p>
-          <DeviceItems 
+          <DeviceItems
             deviceProto={this.props.deviceProto}
-            deleteItem={this.props.deleteItem}  
+            deleteItem={this.props.deleteItem}
           />
         </div>
     );
@@ -36,3 +32,8 @@ function mapDispatchToProps (dispatch) {
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceProto);
+
+DeviceProto.propTypes = {
+  deviceProto: PropTypes.object,
+  deleteItem: PropTypes.func
+};

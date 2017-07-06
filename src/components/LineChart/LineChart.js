@@ -1,7 +1,8 @@
 import './index.scss';
 import React, { Component } from 'react';
 import * as d3 from 'd3';
-import Dots from '../Dots/Dots';
+import PropTypes from 'prop-types';
+import { Dots } from '../Dots/Dots';
 import Grid from '../Grid/Grid';
 import Axis from '../Axis/Axis';
 
@@ -16,7 +17,6 @@ export default class LineChart extends Component {
       h = this.props.height - (margin.top + margin.bottom);
     const parseDate = d3.timeParse('%x');
 
-
     this.data = this.props.data.map((d) => {
       return Object.assign({}, d, { date: parseDate(d[this.props.xData]) });
     }).sort((a, b) => {
@@ -25,37 +25,50 @@ export default class LineChart extends Component {
     const x = d3.scaleTime()
       .domain(d3.extent(this.data, (d) => d.date))
       .rangeRound([0, w]);
-
     const y = d3.scaleLinear()
       .domain([0, d3.max(this.data, (d) => d[this.props.yData])])
       .range([h, 0]);
-
     const line = d3.line()
       .x((d)=> x(d.date))
       .y((d)=> y(d[this.props.yData]))
       .curve(d3.curveCardinal);
-
     const transform = `translate(${margin.left},${margin.top})`;
 
     return (
       <div>
-        <svg id={this.props.chartId}
-             width={this.props.width}
-             height={this.props.height}>
+        <svg
+          width={this.props.width}
+          height={this.props.height}>
           <g transform={transform}>
-            <Grid h={h} len={h} scale={x}
-                  gridType="x" orient={'Bottom'} ticks={this.data.length / 2}/>
-            <Grid h={h} len={w} scale={y}
-                  gridType="y" orient={'Left'} ticks={this.data.length / 2}/>
-
-            <Axis h={h} orient={'Left'} scale={y}
-                  axisType="y" ticks={this.data.length / 2} />
-            <Axis h={h} orient={'Bottom'} scale={x}
-                  axisType="x" ticks={this.data.length} format={'%d/%m'}/>
-
-            <path className="line shadow"
-                  d={line(this.data)}
-                  strokeLinecap="round"/>
+            <Grid
+              h={h}
+              len={h}
+              scale={x}
+              gridType="x"
+              orient={'Bottom'}
+              ticks={this.data.length / 2}/>
+            <Grid
+              h={h}
+              len={w}
+              scale={y}
+              gridType="y"
+              orient={'Left'}
+              ticks={this.data.length / 2}/>
+            <Axis h={h}
+              orient={'Left'}
+              scale={y}
+              axisType="y"
+              ticks={this.data.length / 2} />
+            <Axis h={h}
+              orient={'Bottom'}
+              scale={x}
+              axisType="x"
+              ticks={this.data.length}
+              format={'%d/%m'}/>
+            <path
+              className="line shadow"
+              d={line(this.data)}
+              strokeLinecap="round"/>
             <Dots data={this.data} yData={this.props.yData} x={x} y={y}/>
           </g>
         </svg>
@@ -64,12 +77,19 @@ export default class LineChart extends Component {
   }
 }
 
+LineChart.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  xData: PropTypes.string,
+  yData: PropTypes.string,
+  data: PropTypes.array
+};
+
 LineChart.defaultProps = {
   width:800,
   height:300,
   xData:'day',
   yData:'count',
-  chartId:'v1_chart',
   data:[
     { day:'02/11/2016', count:180 },
     { day:'02/1/2016', count:250 },

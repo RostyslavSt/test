@@ -33,7 +33,7 @@ export default class SettingsWrapper extends React.Component {
 SettingsWrapper.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
-  isSettingOn: PropTypes.bool.isRequired,
-  deleteItem: PropTypes.number.isRequired,
+  isSettingOn: PropTypes.bool,
+  deleteItem: PropTypes.func.isRequired,
   children: PropTypes.any
 };
