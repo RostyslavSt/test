@@ -40,9 +40,9 @@ class DevicePage extends React.Component {
           <h4>
             <i className="fa fa-map-marker"></i>{device.location}
           </h4>
-        </div> 
+        </div>
         <div className="device-view-2">
-          <LineChart/>
+          <LineChart height={200} />
           <div className="device-view-2__notice">
             <ul>
               <li>
@@ -56,13 +56,13 @@ class DevicePage extends React.Component {
               </li>
             </ul>
           </div>
-        </div>       
-        {/*<RangeSettings/>*/}
-        {/*{device.item.map((setting, i) => {
+        </div>
+        {/* <RangeSettings/> */}
+        {/* {device.item.map((setting, i) => {
           const SettingsComponent = components[setting.name];
 
           return <SettingsComponent key={'setting' + i} />;
-        })}*/}
+        })} */}
       </div>
     );
   }

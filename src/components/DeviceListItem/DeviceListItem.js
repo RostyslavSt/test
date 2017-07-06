@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 require('./DeviceListItem.scss');
 
 class DeviceListItem extends React.Component {
@@ -40,5 +41,15 @@ class DeviceListItem extends React.Component {
     );
   }
 }
+
+DeviceListItem.PropTypes = {
+  changeStatus: PropTypes.func,
+  data: PropTypes.shape({
+    status: PropTypes.boolean,
+    id: PropTypes.number,
+    name: PropTypes.string,
+    location: PropTypes.string
+  })
+};
 
 export default DeviceListItem;
