@@ -10,7 +10,7 @@ import DevicePage from './pages/DevicePage/DevicePage';
 import DeviceBuilder from './pages/Builder/Builder';
 import MainLayout from './layouts/MainLayout/MainLayout';
 import Dashboard from './pages/Dashboard/Dashboard';
-  
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers());
 

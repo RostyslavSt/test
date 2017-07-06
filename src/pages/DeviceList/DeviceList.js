@@ -31,7 +31,7 @@ class DeviceList extends React.Component {
     const searchValue = this.props.search;
     const filterOption = this.props.filterOption;
     const match = this.props.match;
-    console.log(this.props);
+
     return (
       <main className='device-list'>
         <header className='device-list__header'>
