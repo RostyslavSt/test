@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DeviceList from '../DeviceList/DeviceList';
 import { components } from '../../data/constants';
-require('./DevicePage.scss');
-
+import PropTypes from 'prop-types';
 
 class DevicePage extends React.Component {
   constructor (props) {
@@ -21,7 +20,7 @@ class DevicePage extends React.Component {
         <div className="device-view-name"><h5>{device.location}</h5> </div>
         <div className="device-item__info-status">
           <label className="switch">
-            <input type="checkbox" 
+            <input type="checkbox"
               onChange={this.onStatusChange}/>
             <div className="slider round"></div>
           </label>
@@ -39,5 +38,15 @@ class DevicePage extends React.Component {
 const mapStateToProps = state => ({
   devices: state.itemReducer
 });
+
+DevicePage.propTypes = {
+  match: PropTypes.object,
+  params: PropTypes.object,
+  id: PropTypes.string,
+  devices: PropTypes.array,
+  filter: PropTypes.array,
+  filterAction: PropTypes.func,
+  findItems: PropTypes.func
+};
 
 export default connect(mapStateToProps)(DevicePage);
