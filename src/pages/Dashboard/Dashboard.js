@@ -15,12 +15,12 @@ export default class Dashboard extends React.Component {
 
   render () {
     return (
-      <main className='dashboard-content'>
-        <div className='dashboard-content-row1'>
+      <main className='dashboard-block'>
+        <div className='devices-persons'>
           <DashboardListDevices />
           <DashboardListPersons />
         </div>
-        <Notification className='dashboard-content-row2'/>
+        <Notification className='dashboard-notification'/>
       </main>
     );
   }
