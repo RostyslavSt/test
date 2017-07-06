@@ -35,3 +35,8 @@ export const DeviceItems = (props) => (
     })}
   </div>
 );
+
+DeviceItems.propTypes = {
+  deviceProto: PropTypes.object,
+  deleteItem: PropTypes.func
+};

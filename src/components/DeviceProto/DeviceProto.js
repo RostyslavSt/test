@@ -7,18 +7,14 @@ import { deleteItem } from '../../actions/deviceProtoActions';
 import { connect } from 'react-redux';
 import { DeviceItems } from '../DeviceItems/DeviceItems.js';
 
-const width = {
-  width:'600px'
-};
-
 class DeviceProto extends Component {
   render () {
     return (
-        <div style={width} className='DeviceProto'>
+        <div className='DeviceProto'>
           <p>{this.props.deviceProto.name}</p>
-          <DeviceItems 
+          <DeviceItems
             deviceProto={this.props.deviceProto}
-            deleteItem={this.props.deleteItem}  
+            deleteItem={this.props.deleteItem}
           />
         </div>
     );

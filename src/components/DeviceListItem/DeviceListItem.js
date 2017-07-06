@@ -42,7 +42,7 @@ class DeviceListItem extends React.Component {
   }
 }
 
-DeviceListItem.PropTypes = {
+DeviceListItem.propTypes = {
   changeStatus: PropTypes.func,
   data: PropTypes.shape({
     status: PropTypes.boolean,

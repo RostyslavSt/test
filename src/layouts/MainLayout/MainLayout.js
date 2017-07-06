@@ -19,6 +19,6 @@ export default class MainLayout extends Component {
 }
 
 MainLayout.propTypes = {
-  children: PropTypes
+  children: PropTypes.object
 };
 

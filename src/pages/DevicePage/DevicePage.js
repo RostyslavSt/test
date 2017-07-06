@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DeviceList from '../DeviceList/DeviceList';
 import { components } from '../../data/constants';
-// require('./DevicePage.scss');
-
 import RangeSettings from '../../components/RangeSettings/Range';
 import LineChart from '../../components/LineChart/LineChart';
 import PropTypes from 'prop-types';
