@@ -6,7 +6,7 @@ import './Navigation.scss';
 export default class Navigation extends Component {
   render () {
     return (
-      <nav className="navigation_wrapper">
+      <nav>
         <ul className="navigation">
           <li className="navigation-item"><NavLink to="/" activeClassName="active">Home</NavLink></li>
           <li className="navigation-item"><NavLink to="/builder" activeClassName="active">Device Builder</NavLink></li>
