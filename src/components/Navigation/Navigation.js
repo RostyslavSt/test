@@ -11,7 +11,7 @@ export default class Navigation extends Component {
           <li className="navigation-item">
             <NavLink
               to="/"
-              activeClassName="active">
+              exact activeClassName="active">
               Home
             </NavLink>
           </li>
