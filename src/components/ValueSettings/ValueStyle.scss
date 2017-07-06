@@ -1,4 +1,4 @@
-.value_block {
+.settings_block {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -6,8 +6,10 @@
 }
 
 .value_input {
-    display: flex;
-    width: 100px;
+    position: absolute;
+    margin-top: 30px;
+    left: 18px;
+    width: 180px;
     padding: 3px;
     font-size: 17px;
     border-width: 1px;
@@ -25,16 +27,15 @@
 }
 
 .delete_value {
-    display: flex;
-    text-align: center;
-    vertical-align: middle;
+    position: absolute;
     padding: 10px 8px;
-    margin-left: 5px;
+    top: 27px;
+    left: 170px;
     border: 0px solid #b3b3b3;
     border-radius: 20px;
     font: normal normal bold 13px arial;
     color: #111111;
-    background-color: #f6a821;
+    background-color: transparent;
     opacity: 0.6;
     text-decoration: none;
 }

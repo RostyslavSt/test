@@ -17,13 +17,15 @@ export default class RangeSettings extends React.Component {
     this.setState({
       value: e.target.value
     });
+    this.props.setDevice('range', e.target.value);
   }
 
   render () {
     const { max, min } = this.props;
 
     return (
-      <div className='range_block'>
+      <div className='settings_block'>
+      <span className='top_border'>
       <p className='range_value'>
           {this.state.value}</p>
         <input
@@ -34,13 +36,15 @@ export default class RangeSettings extends React.Component {
           step={1}
           defaultValue={0}
         />
+        </span>
         </div>
     );
   }
 }
 
-// RangeSettings.propTypes = {
-//   max: PropTypes.string,
-//   min: PropTypes.string,
-//   sendRangeValue: PropTypes.func.isRequired
-// };
+RangeSettings.propTypes = {
+  max: PropTypes.string,
+  min: PropTypes.string,
+  setDevice: PropTypes.func.isRequired,
+  sendRangeValue: PropTypes.func.isRequired
+};

@@ -1,5 +1,25 @@
+.settings_grid {
+    position: relative;
+    width: 50%;
+    text-align: center;
+    .device_name {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        z-index: 2;
+        color: #2f323b;
+    }
+    .delete_device_settings {
+        position: absolute;
+        top: -6.5px;
+        right: 57px;
+        z-index: 2;
+        background-color: transparent;
+    }
+}
+
 .delete_device_settings {
-	display: flex;
+    display: flex;
     text-align: center;
     vertical-align: middle;
     padding: 10px 8px;

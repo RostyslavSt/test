@@ -10,6 +10,7 @@ import { ChangeStatus } from '../../actions/actionsCreator';
 import { searchAction } from '../../actions/searchAction';
 import { searchItem, fetchDevices } from '../../utils/utils';
 import { filterItems } from '../../selectors';
+import PropTypes from 'prop-types';
 require('./DeviceList.scss');
 
 class DeviceList extends React.Component {
@@ -30,7 +31,6 @@ class DeviceList extends React.Component {
   render () {
     const searchValue = this.props.search;
     const filterOption = this.props.filterOption;
-    const match = this.props.match;
 
     return (
       <main className='device-list'>
@@ -50,7 +50,7 @@ class DeviceList extends React.Component {
             ).map((item, i) => {
               return (
                 <DeviceListItem data={item} key={i}
-                  match={match} changeStatus={this.props.changeStatus}/>
+                  changeStatus={this.props.changeStatus}/>
               );
             })
             }
@@ -72,4 +72,13 @@ const mapDispatchToProps = (dispatch) => ({
   findItems: (searchValue) => dispatch(searchAction(searchValue))
 });
 
+DeviceList.propTypes = {
+  search: PropTypes.bool,
+  filterOption:  PropTypes.object,
+  match: PropTypes.object,
+  changeStatus: PropTypes.bool,
+  devices: PropTypes.array,
+  filterAction: PropTypes.func,
+  findItems: PropTypes.func
+};
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceList);
