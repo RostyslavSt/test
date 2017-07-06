@@ -1,4 +1,4 @@
-import { CHANGE_FILTER_OPTION } from '../data/constants';
+import { CHANGE_FILTER_OPTION } from '../constants/constants';
 
 export const filterAction = (filterOption) => {
   return {

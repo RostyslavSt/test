@@ -1,4 +1,4 @@
-import { SEARCH_ITEM } from '../data/constants';
+import { SEARCH_ITEM } from '../constants/constants';
 
 const searchReducer = (state = '', action) => {
   switch (action.type) {

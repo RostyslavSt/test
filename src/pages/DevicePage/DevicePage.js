@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import DeviceList from '../DeviceList/DeviceList';
-import { components } from '../../data/constants';
-import RangeSettings from '../../components/RangeSettings/Range';
+import { setingsComponents } from '../../data/componentsNames';
 import LineChart from '../../components/LineChart/LineChart';
 import PropTypes from 'prop-types';
 require('./DevicePage.scss');

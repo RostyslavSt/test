@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import DeviceListItem from '../../components/DeviceListItem/DeviceListItem';
 import FilterSelect from '../../components/FilterSelect/FilterSelect';
 import Search from '../../components/Search/Search';
-import { options } from '../../data/constants';
+import { options } from '../../data/componentsNames';
 import { filterAction } from '../../actions/filterAction';
 import { ChangeStatus } from '../../actions/actionsCreator';
 import { searchAction } from '../../actions/searchAction';

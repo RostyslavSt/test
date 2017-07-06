@@ -1,4 +1,4 @@
-import { SEARCH_ITEM } from '../data/constants';
+import { SEARCH_ITEM } from '../constants/constants';
 
 export const searchAction = (searchValue) => ({
   type: SEARCH_ITEM,
