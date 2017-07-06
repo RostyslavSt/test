@@ -1,7 +1,10 @@
 .navigation {
-  // position: fixed;
+  position: fixed;
   height: 100%;
   background-color: #364150;
+  top: 51px;
+  bottom: 0;
+  padding-top: 20px;
 
   li {
     padding: 10px 30px;
@@ -15,5 +18,13 @@
 
 .navigation_wrapper{
   width: 15%;
-  float: left;
+}
+
+.navigation-item {
+  margin-bottom: 20px;
+
+}
+
+.active {
+  color:red;
 }

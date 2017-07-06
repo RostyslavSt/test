@@ -5,7 +5,7 @@
   margin: 0 auto;
   width: 80%;
   padding: 10px 25px;
-  background-color: $color_grey;
+  background-color: $color_dark_grey;
   color: $text_color;
   label {
     display: inline-block;
@@ -19,7 +19,7 @@
     display: inline-block;
     width: 35%;
     input, select {
-      background-color: $color_dark_grey;
+      background-color: $color_grey;
       color: $text_color_input;
       padding: 5px;
       border-radius: 3px;
@@ -33,7 +33,7 @@
   .form-button {
     color: $text_color_input;
     border: 1px solid $color_orange;
-    background-color: $color_dark_grey;
+    background-color: $color_grey;
     padding: 5px;
     border-radius: 3px;
     width: 15%;
