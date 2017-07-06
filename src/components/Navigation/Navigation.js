@@ -9,7 +9,7 @@ const Navigation = () => (
       <li className="navigation-item">
         <NavLink
           to="/"
-          activeClassName="active">
+          exact activeClassName="active">
           Home
         </NavLink>
       </li>
