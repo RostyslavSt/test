@@ -31,7 +31,6 @@ class DeviceList extends React.Component {
   render () {
     const searchValue = this.props.search;
     const filterOption = this.props.filterOption;
-    const match = this.props.match;
 
     return (
       <main className='device-list'>
@@ -51,7 +50,7 @@ class DeviceList extends React.Component {
             ).map((item, i) => {
               return (
                 <DeviceListItem data={item} key={i}
-                  match={match} changeStatus={this.props.changeStatus}/>
+                  changeStatus={this.props.changeStatus}/>
               );
             })
             }
