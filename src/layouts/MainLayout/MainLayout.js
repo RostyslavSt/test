@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Navigation from '../../components/Navigation/Navigation';
 import Header from '../../components/Header/Header';
 import './MainLayout.scss';
-import Builder from '../../pages/Builder/Builder.js';
 
 export default class MainLayout extends Component {
   render () {
@@ -17,4 +17,8 @@ export default class MainLayout extends Component {
     );
   }
 }
+
+MainLayout.propTypes = {
+  children: PropTypes
+};
 
