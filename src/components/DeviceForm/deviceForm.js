@@ -1,5 +1,6 @@
 import './deviceForm.scss';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import {
   addItem,
@@ -113,3 +114,12 @@ function mapDispatchToProps (dispatch) {
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceForm);
+
+DeviceForm.propTypes = {
+  setValue: PropTypes.func,
+  addItem: PropTypes.func,
+  resetProto: PropTypes.func,
+  addDevice:  PropTypes.func,
+  deviceProto: PropTypes.object,
+  router: PropTypes.any
+};
