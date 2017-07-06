@@ -1,28 +1,48 @@
+@import "/../../scss/variables";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .device-form {
   margin: 0 auto;
-  width: 200px;
-  padding: 10px;
-  background-color: #3a3d45;
-  border: 1px solid grey;
-  color: white;
+  width: 80%;
+  padding: 10px 25px;
+  background-color: $color_grey;
+  color: $text_color;
+  label {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
 
   div {
     padding: 10px 0;
   }
-  .main-button {
-    background-color: #f6a821;
-    border: none;
-    color: white;
-  }
-  .sub-button {
-    color: #8b9299;
-    border: 1px solid #8b9299;
-    background-color: #3a3d45;
+  .input-container {
+    display: inline-block;
+    width: 35%;
+    input, select {
+      background-color: $color_dark_grey;
+      color: $text_color_input;
+      padding: 5px;
+      border-radius: 3px;
+      border: none;
+      height: 30px;
+      width: 80%;
+      option {
+      }
+    }
   }
   .form-button {
-    padding: 4px;
+    color: $text_color_input;
+    border: 1px solid $color_orange;
+    background-color: $color_dark_grey;
+    padding: 5px;
     border-radius: 3px;
-    width: 80%;
+    width: 15%;
+    margin-right: 15px;
+  }
+  .main-button {
+    background-color: $color_orange;
+    border: none;
+    color: $text_color;
   }
 }
 
