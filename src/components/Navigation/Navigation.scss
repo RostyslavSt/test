@@ -1,7 +1,9 @@
 .navigation {
-  // position: fixed;
+  position: fixed;
   height: 100%;
   background-color: #364150;
+  top: 8%;
+  bottom: 0;
 
   li {
     padding: 10px 30px;
@@ -15,5 +17,5 @@
 
 .navigation_wrapper{
   width: 15%;
-  float: left;
+  // float: left;
 }
