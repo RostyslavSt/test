@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import DeviceForm from '../../components/DeviceForm/deviceForm.js';
 import DeviceProto from '../../components/DeviceProto/DeviceProto.js';
+import PropTypes from 'prop-types';
 
-export default class Builder extends Component {
-  render () {
-    return (
+export const Builder = (props) => (
       <div className='flex'>
         <DeviceProto />
-        <DeviceForm router={this.props.history}/>
+        <DeviceForm router={props.history}/>
       </div>
-    );
-  }
-}
+);
+
+Builder.propTypes = {
+  history: PropTypes.object
+};

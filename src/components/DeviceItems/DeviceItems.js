@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LineChart from '../LineChart/LineChart';
 import SettingsWrapper from
 '../SettingsWrapper/SettingsWrapper';
@@ -10,10 +11,6 @@ import TimerSettings from
 '../TimerSettings/Timer';
 import ValueSettings from
 '../ValueSettings/Value';
-
-const parentWidth = () => (
-  document.querySelector('.DeviceProto').offsetWidth
-);
 
 const Components = {
   LineChart:LineChart,
@@ -32,7 +29,7 @@ export const DeviceItems = (props) => (
         <SettingsWrapper key={i}
                          name={d.name}
                          deleteItem={props.deleteItem} id={i}>
-          <Item width={parentWidth()}/>
+          <Item />
         </SettingsWrapper>
       );
     })}

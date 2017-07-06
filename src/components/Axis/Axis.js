@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 export default class Axis extends Component {
   componentDidUpdate () {
@@ -17,17 +18,28 @@ export default class Axis extends Component {
     if (this.props.format) {
       axis = axis.tickFormat(d3.timeFormat(this.props.format));
     }
-    const node = ReactDOM.findDOMNode(this);
 
-    d3.select(node).call(axis);
+    d3.select(this.axisElement).call(axis);
   }
   render () {
     const translate = `translate(0,${this.props.h})`;
 
     return (
       <g className = "axis"
-         transform = {this.props.axisType === 'x' ? translate : ''} >
+        ref={(el) => {
+          this.axisElement = el;
+        }}
+        transform = {this.props.axisType === 'x' ? translate : ''} >
       </g>
     );
   }
 }
+
+Axis.propTypes = {
+  h: PropTypes.number,
+  orient: PropTypes.oneOf(['Left', 'Bottom', 'Right', 'Top']),
+  scale: PropTypes.func,
+  axisType: PropTypes.oneOf(['x', 'y']),
+  ticks: PropTypes.number,
+  format: PropTypes.string
+};
