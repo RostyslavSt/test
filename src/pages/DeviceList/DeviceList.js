@@ -74,10 +74,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 DeviceList.propTypes = {
-  search: PropTypes.boolean,
+  search: PropTypes.bool,
   filterOption:  PropTypes.object,
   match: PropTypes.object,
-  changeStatus: PropTypes.boolean,
+  changeStatus: PropTypes.bool,
   devices: PropTypes.array,
   filterAction: PropTypes.func,
   findItems: PropTypes.func
