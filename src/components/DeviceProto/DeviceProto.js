@@ -12,12 +12,15 @@ const width = {
 
 class DeviceProto extends Component {
   render () {
+    // const {name, location, items} = this.props.deviceProto;
     return (
-      <div style={width} className='DeviceProto'>
-        <p>{this.props.deviceProto.name}</p>
-        <DeviceItems deviceProto={this.props.deviceProto}
-                     deleteItem={this.props.deleteItem}  />
-      </div>
+        <div style={width} className='DeviceProto'>
+          <p>{this.props.deviceProto.name}</p>
+          <DeviceItems 
+            deviceProto={this.props.deviceProto}
+            deleteItem={this.props.deleteItem}  
+          />
+        </div>
     );
   }
 }
