@@ -4,9 +4,9 @@ import DeviceProto from '../../components/DeviceProto/DeviceProto.js';
 import PropTypes from 'prop-types';
 
 export const Builder = (props) => (
-      <div className='flex'>
-        <DeviceProto />
+      <div className='builder'>
         <DeviceForm router={props.history}/>
+        <DeviceProto />
       </div>
 );
 

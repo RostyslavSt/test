@@ -11,8 +11,9 @@ class DeviceProto extends Component {
   render () {
     return (
         <div className='DeviceProto'>
-          <p>{this.props.deviceProto.name}</p>
+          <h3>{this.props.deviceProto.name}</h3>
           <DeviceItems
+            width={this.width}
             deviceProto={this.props.deviceProto}
             deleteItem={this.props.deleteItem}
           />

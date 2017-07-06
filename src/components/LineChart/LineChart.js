@@ -35,10 +35,8 @@ export default class LineChart extends Component {
     const transform = `translate(${margin.left},${margin.top})`;
 
     return (
-      <div>
-        <svg
-          width={this.props.width}
-          height={this.props.height}>
+      <div style={ { width:this.props.width, height:this.props.height } }>
+        <svg>
           <g transform={transform}>
             <Grid
               h={h}
@@ -63,7 +61,7 @@ export default class LineChart extends Component {
               orient={'Bottom'}
               scale={x}
               axisType="x"
-              ticks={this.data.length}
+              ticks={this.data.length / 2}
               format={'%d/%m'}/>
             <path
               className="line shadow"
@@ -96,9 +94,11 @@ LineChart.defaultProps = {
     { day:'02/10/2016', count:83 },
     { day:'02/24/2016', count:430 },
     { day:'02/15/2016', count:140 },
-    { day:'02/11/2016', count:310 },
+    { day:'02/27/2016', count:310 },
     { day:'02/17/2016', count:430 },
     { day:'02/8/2016', count:180 },
-    { day:'02/19/2016', count:150 }
+    { day:'02/19/2016', count:150 },
+    { day:'02/2/2016', count:180 },
+    { day:'02/3/2016', count:250 }
   ]
 };
