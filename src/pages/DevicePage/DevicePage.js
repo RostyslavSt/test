@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DeviceList from '../DeviceList/DeviceList';
 import { components } from '../../data/constants';
+import PropTypes from 'prop-types';
 import RangeSettings from '../../components/RangeSettings/Range';
 import LineChart from '../../components/LineChart/LineChart';
 require('./DevicePage.scss');
-
 
 class DevicePage extends React.Component {
   constructor (props) {
@@ -71,5 +71,15 @@ class DevicePage extends React.Component {
 const mapStateToProps = state => ({
   devices: state.itemReducer
 });
+
+DevicePage.propTypes = {
+  match: PropTypes.object,
+  params: PropTypes.object,
+  id: PropTypes.string,
+  devices: PropTypes.array,
+  filter: PropTypes.array,
+  filterAction: PropTypes.func,
+  findItems: PropTypes.func
+};
 
 export default connect(mapStateToProps)(DevicePage);
