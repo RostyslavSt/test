@@ -30,7 +30,8 @@ export default class TimerSettings extends React.Component {
 
   render () {
     return (
-      <div className="timer_block">
+      <div className='settings_block'>
+      <span className='top_border'>
       <div className="quantity">
          <input
             type="time"
@@ -42,12 +43,13 @@ export default class TimerSettings extends React.Component {
             onChange={this.onChangeTime}
           />
         </div>
+        </span>
       </div>
     );
   }
 }
 
-// TimerSettings.propTypes = {
-//   value: PropTypes.string,
-//   sendTimerValue: PropTypes.func.isRequired
-// };
+TimerSettings.propTypes = {
+  value: PropTypes.string,
+  sendTimerValue: PropTypes.func.isRequired
+};

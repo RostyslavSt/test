@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DeviceList from '../DeviceList/DeviceList';
 import { components } from '../../data/constants';
-require('./DevicePage.scss');
-
+// require('./DevicePage.scss');
 
 class DevicePage extends React.Component {
   constructor (props) {
