@@ -30,7 +30,7 @@ export default class TimerSettings extends React.Component {
 
   render () {
     return (
-      <div className="quantity">
+      <div className="item-body quantity">
          <input
             type="time"
             className="timer_set"

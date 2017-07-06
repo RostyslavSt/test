@@ -32,7 +32,7 @@ export default class ValueSettings extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='item-body'>
         <input
           type='text'
           className='value_input'

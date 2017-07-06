@@ -24,7 +24,7 @@ export default class ToggleSettings extends React.Component {
 
   render () {
     return (
-          <div className="info-status">
+          <div className="item-body">
             <label className="switch">
               <input type="checkbox" checked={this.state.value}
                     onClick={this.onChange}/>

@@ -9,6 +9,12 @@
 .settings{
   width:35%;
 
+  .item-body{
+    background: $color_grey;
+    padding: 20px;
+    height: 70px;
+  }
+
   .item-header{
     display:flex;
     justify-content:space-between;
