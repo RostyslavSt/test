@@ -13,7 +13,7 @@ const Search = (props) => {
   );
 };
 
-Search.PropTypes = {
+Search.propTypes = {
   handleSearch: PropTypes.func.isRequired
 };
 

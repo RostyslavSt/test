@@ -2,7 +2,7 @@ import './index.scss';
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import PropTypes from 'prop-types';
-import Dots from '../Dots/Dots';
+import { Dots } from '../Dots/Dots';
 import Grid from '../Grid/Grid';
 import Axis from '../Axis/Axis';
 
@@ -82,7 +82,7 @@ LineChart.propTypes = {
   height: PropTypes.number,
   xData: PropTypes.string,
   yData: PropTypes.string,
-  data: PropTypes.object
+  data: PropTypes.array
 };
 
 LineChart.defaultProps = {

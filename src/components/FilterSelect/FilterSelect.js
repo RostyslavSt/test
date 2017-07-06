@@ -14,12 +14,9 @@ const FilterSelect = (props) => {
   );
 };
 
-FilterSelect.PropTypes = {
+FilterSelect.propTypes = {
   handleSelect: PropTypes.func.isRequired,
-  options: PropTypes.shape({
-    value: PropTypes.string,
-    innerText: PropTypes.string
-  })
+  options: PropTypes.array
 };
 
 export default FilterSelect;
