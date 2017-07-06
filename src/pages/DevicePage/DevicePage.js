@@ -36,7 +36,6 @@ class DevicePage extends React.Component {
           <small>User</small>
         </div>
         </div>
-<<<<<<< HEAD
         <div className="device-view__location">
           <h4>
             <i className="fa fa-map-marker"></i>{device.location}
@@ -64,30 +63,6 @@ class DevicePage extends React.Component {
 
           return <SettingsComponent key={'setting' + i} />;
         })} */}
-=======
-        <div className="device-view-2">
-        <LineChart/>
-        <div className="device-view-2__notice">
-          <ul>
-            <li>
-              <label>This is an example task that i need to finish</label>
-            </li>
-            <li>
-              <label>Update server to a newer version</label>
-            </li>
-            <li>
-              <label>Add more awesome template features</label>
-            </li>
-            </ul>
-        </div>
->>>>>>> dc06a804501760ceb0e8033dd32fff89631a6590
-      </div>
-	{/* <RangeSettings/> */}
-	{/* {device.item.map((setting, i) => {
-	  const SettingsComponent = components[setting.name];
-
-	  return <SettingsComponent key={'setting' + i} />;
-	})}*/}
 </div>
     );
   }
