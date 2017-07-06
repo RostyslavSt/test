@@ -9,10 +9,10 @@ export default class MainLayout extends Component {
     return (
       <div>
         <Header />
-        <div className="dashboard-main">
-          <Navigation />
-          {this.props.children}
-        </div>
+        <Navigation />
+        <main className="content">
+         {this.props.children}
+        </main>
       </div>
     );
   }
@@ -21,4 +21,3 @@ export default class MainLayout extends Component {
 MainLayout.propTypes = {
   children: PropTypes.object
 };
-

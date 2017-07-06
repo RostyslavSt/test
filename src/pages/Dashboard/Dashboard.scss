@@ -1,14 +1,8 @@
-.dashboard-content {
-  width: 70%;
-  height: 500px;
+.dashboard-block {
   border: 1px solid blue;
-  background-image: url('../../img/dash_content.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
-.dashboard-content-row1 {
+.dashboard-devices-persons {
   display: flex;
   justify-content: space-around;
   border: 1px solid red;
@@ -16,7 +10,7 @@
   height: 45%;
 }
 
-.dashboard-content-row2 {
+.dashboard-notification {
   display: flex;
   border: 1px solid green;
   width: 100%;

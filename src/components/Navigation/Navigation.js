@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './Navigation.scss';
 
 export default class Navigation extends Component {
   render () {
     return (
-      <div className="navigation_wrapper">
+      <nav>
         <ul className="navigation">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/builder">Device Builder</Link></li>
-          <li><Link to="/devices">Device List</Link></li>
+          <li className="navigation-item">
+            <NavLink
+              to="/"
+              activeClassName="active">
+              Home
+            </NavLink>
+          </li>
+          <li className="navigation-item">
+            <NavLink
+             to="/builder"
+             activeClassName="active">
+             Device Builder
+            </NavLink>
+          </li>
+          <li className="navigation-item">
+            <NavLink
+             to="/devices"
+             activeClassName="active">
+             Device List
+            </NavLink>
+          </li>
         </ul>
-      </div>
+      </nav>
     );
   }
 }
