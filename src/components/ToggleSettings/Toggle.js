@@ -24,18 +24,12 @@ export default class ToggleSettings extends React.Component {
 
   render () {
     return (
-      <div className='settings_block'>
-      <span className='top_border'>
-      <div className='device-item__info'>
-          <div className="device-item__info-status">
+          <div className="info-status">
             <label className="switch">
               <input type="checkbox" checked={this.state.value}
                     onClick={this.onChange}/>
               <div className="slider round"></div>
             </label>
-          </div>
-        </div>
-      </span>
       </div>
     );
   }
@@ -43,5 +37,5 @@ export default class ToggleSettings extends React.Component {
 
 ToggleSettings.propTypes = {
   checked: PropTypes.bool,
-  sendToggleValue: PropTypes.func.isRequired
+  sendToggleValue: PropTypes.func
 };
