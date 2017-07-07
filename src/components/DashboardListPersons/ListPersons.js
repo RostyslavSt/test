@@ -23,7 +23,10 @@ export default class DashboardListPersons extends React.Component {
             <li key = {key} style={{ color: 'lightgreen',
               listStyleType: 'none',
               padding: '5px' }}>
-              {item.name}
+              <figure className="person-view">
+                <div className="avatar-image"></div>
+                <figurecaption>{item.name}</figurecaption>
+              </figure>
             </li>
           );
         })}
@@ -32,8 +35,11 @@ export default class DashboardListPersons extends React.Component {
             <li key = {key} style={{ color: 'red',
               listStyleType: 'none',
               padding: '5px' }}>
-              {item.name}
-            </li>
+              <figure className="person-view">
+                <div className="avatar-image"></div>
+                <figurecaption>{item.name}</figurecaption>
+              </figure>
+             </li>
           );
         })}
       </section>
