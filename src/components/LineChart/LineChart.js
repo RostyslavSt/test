@@ -36,7 +36,9 @@ export default class LineChart extends Component {
 
     return (
       <div style={ { width:this.props.width, height:this.props.height } }>
-        <svg>
+        <svg
+          width={ this.props.width }
+          height={ this.props.height }>
           <g transform={transform}>
             <Grid
               h={h}

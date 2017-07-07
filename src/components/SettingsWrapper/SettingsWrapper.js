@@ -11,23 +11,22 @@ export default class SettingsWrapper extends React.Component {
     };
   }
   componentWillMount () {
-    this.setState = {
+    this.setState({
       childWidth: this.getElementWidth()
-    };
+    });
   }
   componentDidMount () {
     window.addEventListener('resize', ()=>{
-      console.log(this.getElementWidth());
-      this.setState = {
+      this.setState({
         childWidth: this.getElementWidth()
-      };
+      });
     });
   }
   componentWillUnmount () {
     window.removeEventListener('resize', ()=>{
-      this.setState = {
+      this.setState({
         childWidth: this.getElementWidth()
-      };
+      });
     });
   }
   getElementWidth () {
