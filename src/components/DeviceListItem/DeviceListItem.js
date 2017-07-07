@@ -16,6 +16,11 @@ class DeviceListItem extends React.Component {
     return (
       <div className='device-item'>
         <div className='device-item__info'>
+          <Link className='device-item__info-name' to={
+            `/devices/device/${this.props.data.id}`
+          }>
+            {this.props.data.name}
+          </Link>
           <div className="device-item__info-status">
             <label className="switch">
               <input type="checkbox" checked={this.props.data.status}
@@ -23,11 +28,6 @@ class DeviceListItem extends React.Component {
               <div className="slider round"></div>
             </label>
           </div>
-          <Link className='device-item__info-name' to={
-            `/devices/device/${this.props.data.id}`
-          }>
-            <p>{this.props.data.name}</p>
-          </Link>
         </div>
         <div className="device-item__description">
             <div className="device-item__description-location">

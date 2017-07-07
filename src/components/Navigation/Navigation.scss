@@ -1,6 +1,14 @@
 @import "../../scss/_variables.scss";
 @import "../../scss/index.scss";
 
+.mob-hide {
+  display: none;
+
+  @media (min-width: $tablet-min) {
+    display: block;
+  }
+}
+
 .navigation {
   position: fixed;
   background-color: $color-bg-grey;
@@ -12,8 +20,8 @@
     padding: 10px 30px;
     list-style-type: none;
 
-  a {
-    color: $text-color-active;
+    a {
+      color: $text-color-active;
     }
   }
 }
