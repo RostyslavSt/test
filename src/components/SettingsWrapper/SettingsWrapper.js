@@ -6,11 +6,39 @@ import ReactDOM from 'react-dom';
 export default class SettingsWrapper extends React.Component {
   constructor (props) {
     super(props);
+    this.state = {
+      childWidth: this.getElementWidth()
+    };
   }
+  componentWillMount () {
+    this.setState = {
+      childWidth: this.getElementWidth()
+    };
+  }
+  componentDidMount () {
+    window.addEventListener('resize', ()=>{
+      console.log(this.getElementWidth());
+      this.setState = {
+        childWidth: this.getElementWidth()
+      };
+    });
+  }
+  componentWillUnmount () {
+    window.removeEventListener('resize', ()=>{
+      this.setState = {
+        childWidth: this.getElementWidth()
+      };
+    });
+  }
+  getElementWidth () {
+    const ELEMENT_WIDTH = 0.85;
 
+    return document.querySelector('.DeviceProto')
+      .offsetWidth * ELEMENT_WIDTH;
+  }
   render () {
     return (
-      <div className='settings'>
+      <div className={ `settings ${ this.props.styleName }` }>
         <div className='item-header'>
           <p className='item-header__name'>{this.props.name}</p>
           <button
@@ -18,13 +46,17 @@ export default class SettingsWrapper extends React.Component {
             onClick={()=>this.props.deleteItem(this.props.id)}
           />
         </div>
-        { this.props.children }
+        { React.cloneElement(this.props.children, {
+          styleName: 'item-body',
+          width: this.state.childWidth
+        })}
       </div>
     );
   }
 }
 
 SettingsWrapper.propTypes = {
+  styleName: PropTypes.string,
   id: PropTypes.number,
   name: PropTypes.string,
   isSettingOn: PropTypes.bool,

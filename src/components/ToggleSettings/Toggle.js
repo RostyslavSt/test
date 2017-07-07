@@ -24,7 +24,7 @@ export default class ToggleSettings extends React.Component {
 
   render () {
     return (
-          <div className="item-body">
+          <div className={ `${ this.props.styleName }` }>
             <label className="switch">
               <input type="checkbox" checked={this.state.value}
                     onClick={this.onChange}/>
@@ -36,6 +36,7 @@ export default class ToggleSettings extends React.Component {
 }
 
 ToggleSettings.propTypes = {
+  styleName: PropTypes.string,
   checked: PropTypes.bool,
   sendToggleValue: PropTypes.func
 };

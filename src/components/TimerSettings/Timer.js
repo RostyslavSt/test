@@ -30,7 +30,7 @@ export default class TimerSettings extends React.Component {
 
   render () {
     return (
-      <div className="item-body quantity">
+      <div className={ `quantity ${ this.props.styleName }` }>
          <input
             type="time"
             className="timer_set"
@@ -46,6 +46,7 @@ export default class TimerSettings extends React.Component {
 }
 
 TimerSettings.propTypes = {
+  styleName: PropTypes.string,
   value: PropTypes.string,
   sendTimerValue: PropTypes.func
 };

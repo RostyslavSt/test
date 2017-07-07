@@ -32,7 +32,7 @@ export default class ValueSettings extends React.Component {
 
   render () {
     return (
-      <div className='item-body'>
+      <div className={ `${ this.props.styleName }` }>
         <input
           type='text'
           className='value_input'
@@ -49,6 +49,7 @@ export default class ValueSettings extends React.Component {
 }
 
 ValueSettings.propTypes = {
+  styleName: PropTypes.string,
   value: PropTypes.string,
   sendSearchValue: PropTypes.string
 };

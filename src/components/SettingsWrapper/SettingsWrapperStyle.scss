@@ -4,13 +4,16 @@
   display: flex;
   justify-content:space-around;
   flex-wrap:wrap;
+  padding: 15px 0;
 }
 
 .settings{
   width:35%;
+  border-radius: 10px;
+  background: $color_grey;
+  margin: 10px;
 
   .item-body{
-    background: $color_grey;
     padding: 20px;
     height: 70px;
   }
@@ -50,4 +53,7 @@
     }
 
   }
+}
+.settings-chart{
+  width: 85%;
 }

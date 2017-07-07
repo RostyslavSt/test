@@ -28,6 +28,7 @@ export const DeviceItems = (props) => (
       return (
         <SettingsWrapper
           key={i}
+          styleName={d.name === 'LineChart' ? 'settings-chart' : ''}
           name={d.name}
           deleteItem={props.deleteItem}
           id={i}>

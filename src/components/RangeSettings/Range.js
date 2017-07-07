@@ -25,7 +25,7 @@ export default class RangeSettings extends React.Component {
     const { max, min } = this.props;
 
     return (
-      <div className='item-body'>
+      <div className={ `${ this.props.styleName }` }>
         <p className='range_value'>
           {this.state.value}</p>
         <input
@@ -42,6 +42,7 @@ export default class RangeSettings extends React.Component {
 }
 
 RangeSettings.propTypes = {
+  styleName: PropTypes.string,
   max: PropTypes.string,
   min: PropTypes.string,
   setDevice: PropTypes.func,
