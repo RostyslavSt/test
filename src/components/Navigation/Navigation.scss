@@ -1,9 +1,17 @@
 @import "../../scss/_variables.scss";
 @import "../../scss/index.scss";
 
+.mob-hide {
+  display: none;
+
+  @media (min-width: $tablet-min) {
+    display: block;
+  }
+}
+
 .navigation {
   position: fixed;
-  background-color: $color_grey;
+  background-color: $color-bg-grey;
   top: 51px;
   bottom: 0;
   padding-top: 20px;
@@ -13,18 +21,13 @@
     list-style-type: none;
 
     a {
-      color: $text_color_active;
+      color: $text-color-active;
     }
   }
 }
 
-.navigation-block {
-  
-}
-
 .navigation-item {
   margin-bottom: 20px;
-
 }
 
 .navigation .active {
