@@ -1,15 +1,7 @@
-.settings_block {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
-}
-
 .value_input {
-    position: absolute;
-    margin-top: 30px;
+    position: relative;
     left: 18px;
-    width: 180px;
+    width: 55%;
     padding: 3px;
     font-size: 17px;
     border-width: 1px;
@@ -27,16 +19,16 @@
 }
 
 .delete_value {
-    position: absolute;
+    position: relative;
     padding: 10px 8px;
-    top: 27px;
-    left: 170px;
+    top: 3px;
+    left: -10px;
     border: 0px solid #b3b3b3;
     border-radius: 20px;
     font: normal normal bold 13px arial;
-    color: #111111;
     background-color: transparent;
-    opacity: 0.6;
+    color: #111111;
+    z-index: 2;
     text-decoration: none;
 }
 .delete_value:hover,

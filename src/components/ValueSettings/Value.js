@@ -32,8 +32,7 @@ export default class ValueSettings extends React.Component {
 
   render () {
     return (
-      <div className='settings_block'>
-        <span className='top_border'>
+      <div className={ `${ this.props.styleName }` }>
         <input
           type='text'
           className='value_input'
@@ -44,13 +43,13 @@ export default class ValueSettings extends React.Component {
         <button type='button'
         onClick={this.clearInputValue}
         className='delete_value'/>
-        </span>
       </div>
     );
   }
 }
 
 ValueSettings.propTypes = {
+  styleName: PropTypes.string,
   value: PropTypes.string,
-  sendSearchValue: PropTypes.string.isRequired
+  sendSearchValue: PropTypes.string
 };
