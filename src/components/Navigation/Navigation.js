@@ -7,6 +7,7 @@ const Navigation = () => (
       <li className="navigation-item">
         <NavLink
           to="/"
+          exact
           activeClassName="active">
           Home
         </NavLink>
