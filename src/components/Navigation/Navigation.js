@@ -4,8 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './Navigation.scss';
 
 const Navigation = () => (
-  <nav className='mob-hide'>
-    <ul className="navigation">
+    <ul className="navigation mob-hide">
       <li className="navigation-item">
         <NavLink
           to="/"
@@ -28,7 +27,6 @@ const Navigation = () => (
         </NavLink>
       </li>
     </ul>
-  </nav>
 );
 
 export default Navigation;
