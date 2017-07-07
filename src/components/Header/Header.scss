@@ -1,13 +1,29 @@
+@import "../../scss/_variables.scss";
+
 .header-block {
-  border: 1px solid black;
   position: fixed;
+  background-color: $text_color_active;
   top: 0;
   left: 0;
   right: 0;
   height: 49;
   
 }
+
 .header-block-text {
+  text-align: center;
+  width: 161px;
   line-height: 51px;
+  background-color: $color_orange;
+}
+
+.img-logo {
+  // margin: 0 auto;
+  background-image: url("../../img/logo_smart_home.jpg");
+  width: 100px;
+  height: 30px; // border-radius: 50%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
