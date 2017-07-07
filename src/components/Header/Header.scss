@@ -1,6 +1,8 @@
+@import "../../scss/_variables.scss";
+
 .header-block {
   position: fixed;
-  background-color: #f5f5f5;
+  background-color: $text_color_active;
   top: 0;
   left: 0;
   right: 0;
@@ -12,7 +14,7 @@
   text-align: center;
   width: 161px;
   line-height: 51px;
-  background-color: #f6a821;
+  background-color: $color_orange;
 }
 
 .img-logo {
