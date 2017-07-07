@@ -1,8 +1,10 @@
+@import '../../scss/_variables.scss';
+
 .dashboard-content-row2 {
   margin: 10px;
 	height: 300px;
 	overflow: scroll;
-	background-color: #44464f;
+	background-color: $color_grey;
 		
 
     &__notice {

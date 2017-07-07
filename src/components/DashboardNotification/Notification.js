@@ -2,7 +2,6 @@ import React from 'react';
 import jsonNotifications from '../../data/notifications.json';
 import './Notification.scss';
 
-
 export default class Notifications extends React.Component {
   constructor (props) {
     super(props);

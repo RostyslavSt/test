@@ -1,11 +1,18 @@
 .header-block {
-  border: 1px solid black;
   position: fixed;
+  background-color: #f5f5f5;
   top: 0;
   left: 0;
   right: 0;
   height: 49;
   
+}
+
+.header-block-text {
+  text-align: center;
+  width: 15%;
+
+  background-color: #f6a821;
 }
 
 .img-logo {
