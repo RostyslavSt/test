@@ -12,19 +12,14 @@
     padding: 10px 30px;
     list-style-type: none;
 
-    a {
-      color: $text_color_active;
+  a {
+    color: $text_color_active;
     }
   }
 }
 
-.navigation-block {
-  
-}
-
 .navigation-item {
   margin-bottom: 20px;
-
 }
 
 .navigation .active {
