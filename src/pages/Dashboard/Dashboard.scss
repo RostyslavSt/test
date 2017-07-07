@@ -1,18 +1,12 @@
-.dashboard-block {
-  border: 1px solid blue;
-}
-
-.dashboard-devices-persons {
+.dashboard-devices-and-persons {
   display: flex;
   justify-content: space-around;
-  border: 1px solid red;
   width: 100%;
   height: 45%;
 }
 
 .dashboard-notification {
   display: flex;
-  border: 1px solid green;
   width: 100%;
   justify-content: center;
   height: 45%;

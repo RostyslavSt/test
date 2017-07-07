@@ -1,4 +1,5 @@
 @import "../../scss/_variables.scss";
+@import "../../scss/index.scss";
 
 .mob-hide {
   display: none;
@@ -10,31 +11,25 @@
 
 .navigation {
   position: fixed;
-  height: 100%;
-  background-color: #364150;
+  background-color: $color_grey;
   top: 51px;
   bottom: 0;
   padding-top: 20px;
-
+  
   li {
     padding: 10px 30px;
     list-style-type: none;
 
     a {
-      color: #fff;
+      color: $text_color_active;
     }
   }
 }
 
-.navigation_wrapper{
-  width: 15%;
-}
-
 .navigation-item {
   margin-bottom: 20px;
-
 }
 
-.active {
-  color:red;
+.navigation .active {
+  color: $color_orange;
 }

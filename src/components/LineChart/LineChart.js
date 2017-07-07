@@ -37,8 +37,8 @@ export default class LineChart extends Component {
     return (
       <div style={ { width:this.props.width, height:this.props.height } }>
         <svg
-          width={ this.props.width }
-          height={ this.props.height }>
+          width={ '100%' }
+          height={ '100%' }>
           <g transform={transform}>
             <Grid
               h={h}
@@ -69,7 +69,6 @@ export default class LineChart extends Component {
               className="line shadow"
               d={line(this.data)}
               strokeLinecap="round"/>
-            <Dots data={this.data} yData={this.props.yData} x={x} y={y}/>
           </g>
         </svg>
       </div>

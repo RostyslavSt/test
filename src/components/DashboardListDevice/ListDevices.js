@@ -2,12 +2,8 @@ import React from 'react';
 import './ListDevices.scss';
 import jsonData from '../../data/data.json';
 
-export default class DashboardListDevice extends React.Component {
-  constructor (props) {
-    super(props);
-  }
-  render () {
-    return (
+export default function DashboardListDevice (props) {
+  return (
       <section className="list-device">
         list device
         {jsonData.map((item, key) => {
@@ -17,6 +13,5 @@ export default class DashboardListDevice extends React.Component {
         })
           }
       </section>
-    );
-  }
+  );
 }
