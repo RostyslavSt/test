@@ -1,5 +1,5 @@
-import { SEARCH_ITEM } from '../../constants/constants';
-import { CHANGE_FILTER_OPTION } from '../../constants/constants';
+import { SEARCH_ITEM } from '../constants/constants';
+import { CHANGE_FILTER_OPTION } from '../constants/constants';
 
 const initialState = {
   filterOption: 'all',

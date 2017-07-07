@@ -6,8 +6,8 @@ import FilterSelect from '../../components/FilterSelect/FilterSelect';
 import Search from '../../components/Search/Search';
 import { options } from '../../data/filterOptions';
 import { filterAction,
-  searchAction } from '../../actions/searchAndFilter/searchAndFilter.action';
-import { changeStatus } from '../../actions/changeStatus/changeStatus.action';
+  searchAction } from '../../actions/searchAndFilter.action';
+import { changeStatus } from '../../actions/changeStatus.action';
 import { searchItem, fetchDevices } from '../../utils/utils';
 import { filterItems } from '../../selectors';
 import PropTypes from 'prop-types';

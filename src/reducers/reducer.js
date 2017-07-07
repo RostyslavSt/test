@@ -1,5 +1,5 @@
-import changeStatus from './changeStatus/changeStatus.reducer';
-import searchAndFilter from './searchAndFilter/searchAndFilter.reducer';
+import changeStatus from './changeStatus.reducer';
+import searchAndFilter from './searchAndFilter.reducer';
 import { combineReducers } from 'redux';
 import deviceProto from './deviceProtoReducer';
 import devices from './devicesReducer';
