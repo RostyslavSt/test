@@ -1,3 +1,5 @@
+@import "../../scss/_variables.scss";
+
 .navigation {
   position: fixed;
   height: 100%;
@@ -27,5 +29,5 @@
 }
 
 .navigation .active {
-  color:red;
+  color: $color_orange;
 }
