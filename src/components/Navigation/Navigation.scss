@@ -3,7 +3,7 @@
 
 .navigation {
   position: fixed;
-  background-color: $color_grey;
+  background-color: $color-bg-grey;
   top: 51px;
   bottom: 0;
   padding-top: 20px;
@@ -13,7 +13,7 @@
     list-style-type: none;
 
   a {
-    color: $text_color_active;
+    color: $text-color-active;
     }
   }
 }
@@ -23,5 +23,5 @@
 }
 
 .navigation .active {
-  color: $color_orange;
+  color: $color-orange;
 }

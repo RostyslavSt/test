@@ -4,7 +4,7 @@
   margin: 10px;
 	height: 300px;
 	overflow: scroll;
-	background-color: $color_grey;
+	background-color: $color-bg-grey;
 		
 
     &__notice {
@@ -15,12 +15,12 @@
 			padding: 10px;
 
       span {
-          color: $text_color_active;
+          color: $text-color-active;
           font-size: 24px;
       }
 
 		  ul{
-        color: $text_color_active;
+        color: $text-color-active;
 				margin: 0;
     		padding: 0;
     		list-style: none;
@@ -30,8 +30,8 @@
     			padding: 10px;
     			border-left-width: 3px;
     			border-left-style: solid;
-					color: $text_color_active;
-					border-color: $color_orange;
+					color: $text-color-active;
+					border-color: $color-orange;
 					border-radius: 3px;
 					font-size: 14px;
 				}
