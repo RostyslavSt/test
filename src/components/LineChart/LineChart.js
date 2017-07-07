@@ -69,7 +69,6 @@ export default class LineChart extends Component {
               className="line shadow"
               d={line(this.data)}
               strokeLinecap="round"/>
-            <Dots data={this.data} yData={this.props.yData} x={x} y={y}/>
           </g>
         </svg>
       </div>

@@ -10,11 +10,7 @@ export default class SettingsWrapper extends React.Component {
       childWidth: this.getElementWidth()
     };
   }
-  componentWillMount () {
-    this.setState({
-      childWidth: this.getElementWidth()
-    });
-  }
+
   componentDidMount () {
     window.addEventListener('resize', ()=>{
       this.setState({
