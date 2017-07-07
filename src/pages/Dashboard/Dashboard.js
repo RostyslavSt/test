@@ -15,7 +15,7 @@ export default class Dashboard extends React.Component {
   render () {
     return (
      <div className='dashboard-block'>
-        <div className='dashboard-devices-persons'>
+        <div className='dashboard-devices-and-persons'>
           <DashboardListDevices />
           <DashboardListPersons />
         </div>

@@ -24,7 +24,7 @@ class DeviceListItem extends React.Component {
             </label>
           </div>
           <Link className='device-item__info-name' to={
-            `/device/${this.props.data.id}`
+            `/devices/device/${this.props.data.id}`
           }>
             <p>{this.props.data.name}</p>
           </Link>

@@ -1,6 +1,10 @@
+@import '../../scss/_variables.scss';
+
 .list-persons {
-  border: 1px solid grey;
-  background-color: #fff;
-  width: 45%;
-  height: 90%;
+  border: 1px solid $border-color;
+  background-color: $text-color-active;
+  width: 20%;
+  height: 185px;
+  margin: 10px;
+  margin-left: 5px;
 }

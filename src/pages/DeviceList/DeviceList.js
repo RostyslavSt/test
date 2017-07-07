@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import DeviceListItem from '../../components/DeviceListItem/DeviceListItem';
 import FilterSelect from '../../components/FilterSelect/FilterSelect';
 import Search from '../../components/Search/Search';
-import { options } from '../../data/constants';
-import { filterAction } from '../../actions/filterAction';
-import { ChangeStatus } from '../../actions/actionsCreator';
-import { searchAction } from '../../actions/searchAction';
+import { options } from '../../data/filterOptions';
+import { filterAction,
+  searchAction } from '../../actions/searchAndFilter.action';
+import { changeStatus } from '../../actions/changeStatus.action';
 import { searchItem, fetchDevices } from '../../utils/utils';
 import { filterItems } from '../../selectors';
 import PropTypes from 'prop-types';
@@ -62,13 +62,13 @@ class DeviceList extends React.Component {
 
 const mapStateToProps = state =>({
   devices: filterItems(state),
-  filter: state.filterReducer,
-  search: state.searchReducer
+  filter: state.searchAndFilter,
+  search: state.searchAndFilter.searchValue
 });
 
 const mapDispatchToProps = (dispatch) => ({
   filterAction: (filterOption) => dispatch(filterAction(filterOption)),
-  changeStatus: (index) => dispatch(ChangeStatus(index)),
+  changeStatus: (index) => dispatch(changeStatus(index)),
   findItems: (searchValue) => dispatch(searchAction(searchValue))
 });
 
