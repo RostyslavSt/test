@@ -8,8 +8,8 @@ export default class Notifications extends React.Component {
   }
   render () {
     return (
-      <div className="dashboard-content-row2">
-        <div className="dashboard-content-row2__notice">
+      <div className="dashboard-notification">
+        <div className="dashboard-notification__notice">
           <span><i className="fa fa-bell-o"></i></span>
           <ul>
             {jsonNotifications.map((item, key) => {

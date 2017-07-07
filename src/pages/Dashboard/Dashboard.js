@@ -19,7 +19,7 @@ export default class Dashboard extends React.Component {
           <DashboardListDevices />
           <DashboardListPersons />
         </div>
-        <Notification className='dashboard-notification'/>
+        <Notification/>
       </div>
     );
   }
