@@ -1,19 +1,8 @@
-body {
-    font-family: 'Roboto', sans-serif !important;
-  padding-top:10px;
-}
-
-svg{
-  height:100%;
-  width:100%;  
-}
-.bottom-right-svg{
-    text-align: center;
-}
+@import "/../../scss/variables";
 
 .line {
     fill: none;
-    stroke: red;
+    stroke: #42ff42;
     stroke-width: 2px;
 }
 .dot{
@@ -34,11 +23,12 @@ svg{
     shape-rendering: crispEdges;
 }
 
-.axis text {
-    font-size: 10px;
-}
-
-.grid .tick{
-    stroke: #4b5f82;
-    opacity: 0.1;
+.tick{
+  line{
+    stroke:$border_color_active;
+    opacity: 1;
+  }
+  text{
+    fill:#fff;
+  }
 }
