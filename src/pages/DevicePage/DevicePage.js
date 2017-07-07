@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import DeviceList from '../DeviceList/DeviceList';
-import { components } from '../../data/constants';
-import RangeSettings from '../../components/RangeSettings/Range';
+import { setingsComponents } from '../../data/componentsNames';
 import LineChart from '../../components/LineChart/LineChart';
 import PropTypes from 'prop-types';
 require('./DevicePage.scss');
@@ -26,7 +25,7 @@ class DevicePage extends React.Component {
         <div className="device-item__info-status">
           <label className="switch">
           <input type="checkbox"
-                onChange={this.onStatusChange}/>
+                onChange={this.onStatusChange} checked={device.status}/>
           <div className="slider round"></div>
           </label>
         </div>
@@ -69,7 +68,7 @@ class DevicePage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  devices: state.itemReducer
+  devices: state.changeStatus
 });
 
 DevicePage.propTypes = {

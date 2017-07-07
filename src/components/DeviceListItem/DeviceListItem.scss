@@ -1,39 +1,41 @@
+@import "../../scss/_variables";
 
 .device-item {
-    margin: 10px;
-    width: 500px;
-    height: 100px;
+    margin: 10px 0;
+    width: 100%;
+    height: 80px;
     background-color:rgba(68, 70, 79, 1);
     color: whitesmoke;
     clear: both;
-    
-    &__info-name {      
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 20px;
-    width: 100%;
-    height: 60px;
-    display:block; 
-    color:whitesmoke;
-            
-    }
+    border-radius: 5px;
   
+      &__info-name {  
+      font-size: 16px;
+      line-height: 16px;
+      padding: 15px;  
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 100%;
+      height: 50px;
+      display:block; 
+      color:#f5f5f5;
+    }
     &__info-status {
-    float: right;
-    margin:20px;
+      float: right;
+      margin:15px;
     }
   
     &__description{
-    padding: 10px;
     background-color: #2f323b;
-    height: 40px;
+    padding: 5px 15px;
+    height: 30px;
     width: 100%;
     color: snow;
   }
   
   &__description-location{
     float: left;
-    margin-left: 10px;
+    font-size:14px;
   }
   
   &__description-icon{
@@ -49,12 +51,13 @@
     float: left;
   }
   
-}
 .switch {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 25px;
+  width: 42px;
+  height: 20px;
+  top:0;
+  right:0;
 }
 
 .switch input {display:none;}
@@ -74,9 +77,9 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 18px;
-  width: 18px;
-  left: 4px;
+  height: 12px;
+  width: 12px;
+  left: 2px;
   bottom: 4px;
   background-color: white;
   -webkit-transition: .4s;
@@ -103,4 +106,5 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
 }

@@ -6,7 +6,7 @@
   width: 80%;
   padding: 10px 25px;
   background-color: $color_dark_grey;
-  color: $text_color;
+  color:$text_color_active;
   label {
     display: inline-block;
     margin-bottom: 15px;
@@ -42,7 +42,7 @@
   .main-button {
     background-color: $color_orange;
     border: none;
-    color: $text_color;
+    color: $text_color_active;
   }
 }
 
