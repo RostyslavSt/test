@@ -29,8 +29,6 @@ class DeviceList extends React.Component {
   }
 
   render () {
-    console.log('deviceList', this.props.devices);
-    console.log('searchValue', this.props.search);
     const searchValue = this.props.search;
     const filterOption = this.props.filterOption;
 
