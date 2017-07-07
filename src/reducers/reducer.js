@@ -1,14 +1,12 @@
 import changeStatus from './changeStatus/changeStatus.reducer';
-import searchReducer from './searchReducer';
-import filterReducer from './filterReducer';
+import searchAndFilter from './searchAndFilter/searchAndFilter.reducer';
 import { combineReducers } from 'redux';
 import deviceProto from './deviceProtoReducer';
 import devices from './devicesReducer';
 
 const rootReducer = combineReducers({
-  filterReducer,
+  searchAndFilter,
   changeStatus,
-  searchReducer,
   deviceProto,
   devices
 });

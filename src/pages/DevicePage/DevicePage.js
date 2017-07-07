@@ -68,7 +68,7 @@ class DevicePage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  devices: state.itemReducer
+  devices: state.changeStatus
 });
 
 DevicePage.propTypes = {
