@@ -26,10 +26,12 @@ export const DeviceItems = (props) => (
       const Item = Components[d.name];
 
       return (
-        <SettingsWrapper key={i}
-                         name={d.name}
-                         deleteItem={props.deleteItem} id={i}>
-          <Item />
+        <SettingsWrapper
+          key={i}
+          name={d.name}
+          deleteItem={props.deleteItem}
+          id={i}>
+          <Item width={800} height={200} />
         </SettingsWrapper>
       );
     })}
@@ -38,5 +40,6 @@ export const DeviceItems = (props) => (
 
 DeviceItems.propTypes = {
   deviceProto: PropTypes.object,
+  width: PropTypes.number,
   deleteItem: PropTypes.func
 };

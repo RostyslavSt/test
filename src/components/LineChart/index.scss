@@ -1,11 +1,12 @@
 body {
-    
-
     font-family: 'Roboto', sans-serif !important;
   padding-top:10px;
 }
 
-
+svg{
+  height:100%;
+  width:100%;  
+}
 .bottom-right-svg{
     text-align: center;
 }
@@ -34,7 +35,7 @@ body {
 }
 
 .axis text {
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .grid .tick{
