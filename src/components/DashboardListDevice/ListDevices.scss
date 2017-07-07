@@ -1,6 +1,8 @@
+@import '../../scss/_variables.scss';
+
 .list-device {
-  border: 1px solid grey;
-  background-color: #fff;
+  border: 1px solid $border-color;
+  background-color: $text-color-active;
   width: 75%;
   height: 185px;
   margin: 10px;
