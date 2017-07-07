@@ -25,7 +25,7 @@ class DevicePage extends React.Component {
         <div className="device-item__info-status">
           <label className="switch">
           <input type="checkbox"
-                onChange={this.onStatusChange}/>
+                onChange={this.onStatusChange} checked={device.status}/>
           <div className="slider round"></div>
           </label>
         </div>
@@ -68,7 +68,7 @@ class DevicePage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  devices: state.itemReducer
+  devices: state.changeStatus
 });
 
 DevicePage.propTypes = {

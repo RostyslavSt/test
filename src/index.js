@@ -20,8 +20,8 @@ ReactDOM.render(
       <MainLayout>
       <Switch>
         <Route exact path='/' component = { Dashboard } />
+        <Route path='/devices/device/:id' component={DevicePage}></Route>
         <Route path='/devices' component={DeviceList}></Route>
-        <Route path='/device/:id' component={DevicePage}></Route>
         <Route path='/builder' component={Builder}></Route>
       </Switch>
       </MainLayout>
