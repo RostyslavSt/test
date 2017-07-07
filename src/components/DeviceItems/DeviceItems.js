@@ -21,13 +21,14 @@ const Components = {
 };
 
 export const DeviceItems = (props) => (
-  <div>
+  <div className="settings-block">
     {props.deviceProto.items.map((d, i)=>{
       const Item = Components[d.name];
 
       return (
         <SettingsWrapper
           key={i}
+          styleName={d.name === 'LineChart' ? 'settings-chart' : ''}
           name={d.name}
           deleteItem={props.deleteItem}
           id={i}>
