@@ -1,0 +1,51 @@
+[{
+    "id": 0,
+    "time": "11:15",
+    "notification": "Vasya switched off the washing machine"
+  },
+  {
+    "id": 1,
+    "time": "12:10",
+    "notification": "Petya left the house"
+  },
+  {
+    "id": 2,
+    "time": "15:00",
+    "notification": "Borya used a coffee machine"
+  },
+  {
+    "id": 3,
+    "time": "17:10",
+    "notification": "Anya switched on the microwave oven"
+  },
+  {
+    "id": 4,
+    "time": "18:30",
+    "notification": "Olya parked the car"
+  },
+  {
+    "id": 0,
+    "time": "11:15",
+    "notification": "Vasya switched off the washing machine"
+  },
+  {
+    "id": 1,
+    "time": "12:10",
+    "notification": "Petya left the house"
+  },
+  {
+    "id": 2,
+    "time": "15:00",
+    "notification": "Borya used a coffee machine"
+  },
+  {
+    "id": 3,
+    "time": "17:10",
+    "notification": "Anya switched on the microwave oven"
+  },
+  {
+    "id": 4,
+    "time": "18:30",
+    "notification": "Olya parked the car"
+  }
+]

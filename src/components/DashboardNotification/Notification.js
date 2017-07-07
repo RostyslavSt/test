@@ -1,5 +1,7 @@
 import React from 'react';
+import jsonNotifications from '../../data/notifications.json';
 import './Notification.scss';
+
 
 export default class Notifications extends React.Component {
   constructor (props) {
@@ -10,19 +12,16 @@ export default class Notifications extends React.Component {
       <div className="dashboard-content-row2">
         <div className="dashboard-content-row2__notice">
           <span><i className="fa fa-bell-o"></i></span>
-            <ul>
-              <li>
-                <label>This is an example task that i need to finish</label>
-              </li>
-              <li>
-                <label>Update server to a newer version</label>
-              </li>
-              <li>
-                <label>Add more awesome template features</label>
-              </li>
-            </ul>
-          </div>
+          <ul>
+            {jsonNotifications.map((item, key) => {
+              return (<li key={key}>
+              {item.time} {item.notification}
+            </li>);
+            })
+          }
+          </ul>
         </div>
+      </div>
     );
   }
 }
