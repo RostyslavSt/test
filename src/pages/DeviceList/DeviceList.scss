@@ -1,37 +1,37 @@
 @import "../../scss/_variables";
-.device-list{
-  width: 90%;
-  margin: 10px 50px;
 
-    &__header{
-        background-color:#2f323b;
+.device-list {
+
+  @media (min-width: $tablet-min) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+    &__header {
+        background-color: $color-bg-dark-grey;
         border-radius: 5px;
+  }
 }
-}
+
 .add-item-button {
     margin: 15px;
     display: inline-block;
-    color:$text_color_input;
-    background-color: rgba(97, 103, 121, 0.1);
+    color: $text-color-input;
+    background-color: $input-bg;
     border-radius: 50%;
-    border:1px #616779 solid;
+    border: 1px $border-color solid;
     font-size: 40px;
-    line-height:50px;
-    height:50px;
+    line-height: 50px;
+    height: 50px;
     width: 50px;
     text-align:center;
     cursor: pointer;
     transition: background-color 0.5s ease;
     vertical-align: middle;
 
-      &:hover{
-    color: #ffffff;
-    background-color: rgb(73, 75, 84);
-    border-color: $border_color_active;
-  }
-}
-
-.add-item-button:hover{
-    background-color: rgba(68, 70, 79, 1);
-    color: #f6a821;
+    &:hover {
+      color: #ffffff;
+      background-color: $input-bg-active;
+      border-color: $border-color-hover;
+    }
 }

@@ -2,15 +2,15 @@
 
 .settings-block{
   display: flex;
-  justify-content:space-around;
-  flex-wrap:wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 15px 0;
 }
 
 .settings{
-  width:35%;
+  width: 35%;
   border-radius: 10px;
-  background: $color_grey;
+  background: $color-bg-grey;
   margin: 10px;
 
   .item-body{
@@ -19,41 +19,45 @@
   }
 
   .item-header{
-    display:flex;
-    justify-content:space-between;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background: $color_orange;
+    background: $color-orange;
 
     .item-header__delete-btn{
-      position:relative;
-      width:15px;
+      position: relative;
+      width: 15px;
       height:15px;
       border: 0px;
       background: transparent;
-      cursor:pointer;
+      cursor: pointer;
+
       &::before,&::after{
-        position:absolute;
+        position: absolute;
         content: ' ';
         height: 15px;
-        left:6px;
-        top:0;
+        left: 6px;
+        top: 0;
         width: 2px;
         background-color: #fff;
       }
+
       &:hover::before,&:hover::after{
           background-color: #000;
-          cursor:pointer;
+          cursor: pointer;
       }
+
       &::before{
         transform: rotate(45deg);
       }
+
       &::after{
         transform: rotate(-45deg);
       }
     }
-
   }
 }
+
 .settings-chart{
   width: 85%;
 }

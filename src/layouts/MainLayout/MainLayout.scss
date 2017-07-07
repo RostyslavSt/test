@@ -1,5 +1,11 @@
+@import "../../scss/_variables.scss";
+
 .content {
-  margin: 41px 0 0 161px;
-  border: 1px solid grey;
-  overflow-y: scroll;
+    margin: 60px auto;
+    padding: 0 15px;
+
+  @media(min-width: $tablet-min) {
+    margin: 70px 0 0 160px;
+    overflow-y: scroll;
+  }
  }

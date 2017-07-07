@@ -1,3 +1,13 @@
+@import "../../scss/_variables.scss";
+
+.mob-hide {
+  display: none;
+
+  @media (min-width: $tablet-min) {
+    display: block;
+  }
+}
+
 .navigation {
   position: fixed;
   height: 100%;
