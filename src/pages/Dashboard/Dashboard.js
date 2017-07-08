@@ -1,11 +1,11 @@
 import React from 'react';
 import DashboardListDevices from
-'../../components/DashboardListDevice/ListDevices';
+'../../components/DashboardContent/ListDevices';
 import DashboardListPersons from
-'../../components/DashboardListPersons/ListPersons';
+'../../components/DashboardContent/ListPersons';
 import Notification from
-'../../components/DashboardNotification/Notification';
-
+'../../components/DashboardContent/Notification';
+import jsonData from '../../data/data';
 import './Dashboard.scss';
 
 export default class Dashboard extends React.Component {
@@ -16,10 +16,10 @@ export default class Dashboard extends React.Component {
     return (
      <div className='dashboard-block'>
         <div className='dashboard-devices-and-persons'>
-          <DashboardListDevices />
+          <DashboardListDevices data={jsonData} />
           <DashboardListPersons />
         </div>
-        <Notification className='dashboard-notification'/>
+        <Notification/>
       </div>
     );
   }
