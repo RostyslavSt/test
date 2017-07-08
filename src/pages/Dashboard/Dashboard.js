@@ -16,7 +16,7 @@ export default class Dashboard extends React.Component {
     return (
      <div className='dashboard-block'>
         <div className='dashboard-devices-and-persons'>
-          <DashboardListDevices data={jsonData}/>
+          <DashboardListDevices data={jsonData} />
           <DashboardListPersons />
         </div>
         <Notification/>
