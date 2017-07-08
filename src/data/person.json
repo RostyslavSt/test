@@ -1,26 +1,26 @@
 [{
     "id": 0,
-    "name": "Vasya",
+    "name": "George",
     "home": true
   },
   {
     "id": 1,
-    "name": "Petya",
-    "home": false
+    "name": "Boris",
+    "home": true
   },
   {
     "id": 2,
-    "name": "Borya",
+    "name": "Linda",
     "home": true
   },
   {
     "id": 3,
-    "name": "Anya",
+    "name": "Micky",
     "home": false
   },
   {
     "id": 4,
-    "name": "Olya",
+    "name": "Tom",
     "home": true
   }
 ]
