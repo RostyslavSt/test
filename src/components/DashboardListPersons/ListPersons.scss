@@ -4,7 +4,11 @@
   border: 1px solid $border-color;
   background-color: $text-color-active;
   width: 20%;
-  // height: 185px;
   margin: 10px;
   margin-left: 5px;
+
+  li {
+    padding: 5px;
+    margin-left: 10px;
+  }
 }

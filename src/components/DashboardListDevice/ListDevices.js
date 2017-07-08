@@ -8,7 +8,7 @@ const DashboardListDevice = (props) => {
       <section className="list-device">
         list device
         {props.data.map((item, key) => {
-          return (<li key={key}>
+          return (<li key={item.id}>
             {item.name} power: {item.location}
             {/* <DeviceListItem />*/}
             </li>);
