@@ -1,6 +1,7 @@
 import React from 'react';
 import './ListPersons.scss';
 import jsonPersons from '../../data/person.json';
+import Avatar from '../Avatar/Avatar';
 
 export default class DashboardListPersons extends React.Component {
   constructor (props) {
@@ -23,10 +24,7 @@ export default class DashboardListPersons extends React.Component {
             <li key = {key} style={{ color: 'lightgreen',
               listStyleType: 'none',
               padding: '5px' }}>
-              <figure className="person-view">
-                <div className="avatar-image"></div>
-                <figurecaption>{item.name}</figurecaption>
-              </figure>
+              <Avatar name={item.name}/>
             </li>
           );
         })}
@@ -35,10 +33,7 @@ export default class DashboardListPersons extends React.Component {
             <li key = {key} style={{ color: 'red',
               listStyleType: 'none',
               padding: '5px' }}>
-              <figure className="person-view">
-                <div className="avatar-image"></div>
-                <figurecaption>{item.name}</figurecaption>
-              </figure>
+              <Avatar name={item.name}/>
              </li>
           );
         })}
