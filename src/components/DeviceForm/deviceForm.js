@@ -83,7 +83,7 @@ class DeviceForm extends React.Component {
           <select name="location"
                   value={ this.props.deviceProto.location }
                   onChange={ this.handleUserInput }>
-            <option value=""><div></div></option>
+            <option value=""></option>
             <option value="living room"><div>Living room</div></option>
             <option value="bedroom"><div>Bedroom</div></option>
             <option value="kitchen">Kitchen</option>
