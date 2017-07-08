@@ -49,8 +49,7 @@ class DeviceList extends React.Component {
         </header>
         <section className='device-list__content'>
           { this.props.devices.length === 0 ? <p>Nothing here</p> :
-            this.props.devices.filter(item => searchItem(item, searchValue)
-            ).map((item, i) => {
+            this.props.devices.map((item, i) => {
               return (
                 <DeviceListItem data={item} key={i}
                   changeStatus={this.changeStatus}/>
@@ -64,9 +63,7 @@ class DeviceList extends React.Component {
 }
 
 const mapStateToProps = state =>({
-  devices: filterItems(state),
-  filter: state.searchAndFilter,
-  search: state.searchAndFilter.searchValue
+  devices: filterItems(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

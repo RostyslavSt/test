@@ -2,17 +2,29 @@ import { createSelector } from 'reselect';
 
 const getFilterOption = state => state.searchAndFilter.filterOption;
 const getDevices = state => state.devicesList;
+const getSearchValue = state => state.searchAndFilter.searchValue;
+
+
+function searchItem (item, searchValue) {
+  const result = item.name.toLowerCase().includes(searchValue);
+
+  return result;
+}
 
 export const filterItems = createSelector(
-  [getFilterOption, getDevices],
-  (filterOption, items) => {
+  [getFilterOption, getSearchValue, getDevices],
+  (filterOption, searchValue, items) => {
+    let newArr = [];
+
     if (filterOption === 'all') {
-      return items;
+      newArr = items;
     } else if (filterOption === 'on') {
-      return items.filter(item => item.status === true);
+      newArr = items.filter(item => item.status === true);
     } else if (filterOption === 'off') {
-      return items.filter(item => item.status === false);
+      newArr = items.filter(item => item.status === false);
     }
-    return items;
+    return newArr.filter(item => searchItem(item, searchValue));
   }
 );
+
+
