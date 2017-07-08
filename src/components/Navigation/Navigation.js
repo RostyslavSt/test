@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-
 import './Navigation.scss';
 
 const Navigation = () => (
-  <nav>
-    <ul className="navigation">
+    <ul className="navigation mob-hide">
       <li className="navigation-item">
         <NavLink
           to="/"
+          exact
           activeClassName="active">
           Home
         </NavLink>
@@ -28,7 +27,6 @@ const Navigation = () => (
         </NavLink>
       </li>
     </ul>
-  </nav>
 );
 
 export default Navigation;

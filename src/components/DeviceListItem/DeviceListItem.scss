@@ -1,110 +1,59 @@
 @import "../../scss/_variables";
 
 .device-item {
-    margin: 10px 0;
-    width: 100%;
-    height: 80px;
-    background-color:rgba(68, 70, 79, 1);
-    color: whitesmoke;
-    clear: both;
-    border-radius: 5px;
-  
-      &__info-name {  
+  margin-bottom: 15px;
+  width: 100%;
+  height: 80px;
+  background-color:rgba(68, 70, 79, 1);
+  color: whitesmoke;
+  clear: both;
+  border-radius: 5px;
+
+  &__info {
+
+    &-name {
       font-size: 16px;
       line-height: 16px;
       padding: 15px;  
       text-decoration: none;
       text-transform: uppercase;
-      width: 100%;
+      width: 80%;
       height: 50px;
-      display:block; 
+      display: inline-block; 
       color:#f5f5f5;
+      cursor: pointer;
     }
-    &__info-status {
+
+    &-status {
       float: right;
       margin:15px;
     }
-  
-    &__description{
+  }
+
+
+  &__description{
     background-color: #2f323b;
     padding: 5px 15px;
     height: 30px;
     width: 100%;
     color: snow;
   }
-  
+
   &__description-location{
     float: left;
     font-size:14px;
   }
-  
+
   &__description-icon{
     cursor: pointer;
     float: right;
-    color: #f6a821;    
+    color: $color-orange;
   }
-  
+
   &__description-icon-delete{
     padding: 0 10px;
-    font-size: 15px;    
+    font-size: 15px;
     display: block;
     float: left;
   }
-  
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 42px;
-  height: 20px;
-  top:0;
-  right:0;
-}
-
-.switch input {display:none;}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 12px;
-  width: 12px;
-  left: 2px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color:#f6a821;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #f6a821;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
 }

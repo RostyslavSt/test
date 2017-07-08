@@ -1,4 +1,5 @@
 import React from 'react';
+import jsonNotifications from '../../data/notifications.json';
 import './Notification.scss';
 
 export default class Notifications extends React.Component {
@@ -8,7 +9,17 @@ export default class Notifications extends React.Component {
   render () {
     return (
       <div className="dashboard-content-row2">
-        Notifications
+        <div className="dashboard-content-row2__notice">
+          <span><i className="fa fa-bell-o"></i></span>
+          <ul>
+            {jsonNotifications.map((item, key) => {
+              return (<li key={key}>
+              {item.time} {item.notification}
+            </li>);
+            })
+          }
+          </ul>
+        </div>
       </div>
     );
   }
