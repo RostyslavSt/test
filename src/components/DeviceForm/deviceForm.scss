@@ -3,21 +3,21 @@
 
 .device-form {
   margin: 0 auto;
-  width: 80%;
+  width: 92%;
   padding: 10px 25px;
   background-color: $color_dark_grey;
   color:$text_color_active;
+  border-radius: 10px;
+
   label {
     display: inline-block;
     margin-bottom: 15px;
   }
 
-  div {
-    padding: 10px 0;
-  }
   .input-container {
     display: inline-block;
     width: 35%;
+    margin-bottom: 10px;
     input, select {
       background-color: $color_grey;
       color: $text_color_input;
@@ -26,8 +26,6 @@
       border: none;
       height: 30px;
       width: 80%;
-      option {
-      }
     }
   }
   .form-button {
@@ -43,6 +41,7 @@
     background-color: $color_orange;
     border: none;
     color: $text_color_active;
+    margin-top: 15px;
   }
 }
 
