@@ -7,8 +7,9 @@ import DeviceSingle from './DeviceSingle.js';
 const DashboardListDevice = (props) => {
   const arrDevices = [];
   let power = '';
+  const quantityDevices = 3;
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < quantityDevices; i++) {
     if (props.data[i].status) {
       power = 'power-on';
     } else {
