@@ -3,7 +3,7 @@ import './ListPersons.scss';
 import jsonPersons from '../../data/person.json';
 import Avatar from '../Avatar/Avatar';
 
-export default class DashboardListPersons extends React.Component {
+export default class ListPersons extends React.Component {
   constructor (props) {
     super(props);
   }

@@ -1,10 +1,9 @@
 import React from 'react';
 import './ListDevices.scss';
-import DeviceListItem from '../DeviceListItem/DeviceListItem';
 import PropTypes from 'prop-types';
-import DeviceSingle from './DeviceSingle.js';
+import DeviceContent from './DeviceContent.js';
 
-const DashboardListDevice = (props) => {
+const ListDevice = (props) => {
   const arrDevices = [];
   let power = '';
   const quantityDevices = 3;
@@ -17,7 +16,7 @@ const DashboardListDevice = (props) => {
     }
     arrDevices.push(
       <li className="device-single" key={i}>
-        <DeviceSingle device={props.data[i]} power={power}/>
+        <DeviceContent device={props.data[i]} power={power}/>
       </li>
     );
   }
@@ -28,11 +27,11 @@ const DashboardListDevice = (props) => {
   );
 };
 
-DashboardListDevice.propTypes = {
+ListDevice.propTypes = {
   data: PropTypes.array
 };
 
-export default DashboardListDevice;
+export default ListDevice;
 
 
 //  return (
