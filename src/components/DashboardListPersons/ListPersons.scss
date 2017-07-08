@@ -2,10 +2,11 @@
 
 .list-persons {
   border: 1px solid $border-color;
-  background-color: $text-color-active;
   width: 20%;
   margin: 10px;
   margin-left: 5px;
+  height: 185px;
+  overflow: scroll;
 
   li {
     padding: 5px;
