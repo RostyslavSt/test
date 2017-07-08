@@ -1,8 +1,11 @@
+@import '../../scss/_variables';
+
 .avatar-image {
-  background-image: url("../../img/avatar1.png");
+  background-image: url("../../img/avatar2.png");
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  background-color: $color-orange;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

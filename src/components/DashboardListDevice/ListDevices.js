@@ -1,17 +1,25 @@
 import React from 'react';
 import './ListDevices.scss';
-import jsonData from '../../data/data.json';
+import DeviceListItem from '../DeviceListItem/DeviceListItem';
+import PropTypes from 'prop-types';
 
-export default function DashboardListDevice (props) {
+const DashboardListDevice = (props) => {
   return (
       <section className="list-device">
         list device
-        {jsonData.map((item, key) => {
+        {props.data.map((item, key) => {
           return (<li key={key}>
             {item.name} power: {item.location}
+            {/* <DeviceListItem />*/}
             </li>);
         })
           }
       </section>
   );
-}
+};
+
+DashboardListDevice.propTypes = {
+  data: PropTypes.array
+};
+
+export default DashboardListDevice;
