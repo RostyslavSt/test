@@ -2,7 +2,7 @@
 
 .header-block {
   position: fixed;
-  border: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
   background-color: $text_color_active;
   top: 0;
   left: 0;
@@ -16,7 +16,6 @@
   width: 161px;
   line-height: 51px;
   background-color: $color_orange;
-  border: 1px solid $border-color;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
