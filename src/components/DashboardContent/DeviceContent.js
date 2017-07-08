@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './DeviceSingle.scss';
+import './DeviceContent.scss';
 
 const DeviceContent = (props) => {
   const classForOnOff = 'device-on_off ' + props.power;

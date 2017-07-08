@@ -33,16 +33,3 @@ ListDevice.propTypes = {
 
 export default ListDevice;
 
-
-//  return (
-//       <section className="list-device">
-//         {props.data.map((item, key) => {
-//           return (
-//             <li key={item.id}>
-//               <DeviceSingle device={item} />
-//             </li>
-//           );
-//         })
-//           }
-//       </section>
-//   );
