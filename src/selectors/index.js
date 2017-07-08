@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
 const getFilterOption = state => state.searchAndFilter.filterOption;
-const getDevices = state => state.changeStatus;
+const getDevices = state => state.devicesList;
 
 export const filterItems = createSelector(
   [getFilterOption, getDevices],

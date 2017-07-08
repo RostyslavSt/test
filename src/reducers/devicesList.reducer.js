@@ -1,7 +1,12 @@
+import { LOAD_DEVICES } from '../constants/constants';
 import { CHANGE_STATUS } from '../constants/constants';
 
-const changeStatus = (state = [], action) => {
+const devicesList = (state = [], action) => {
   switch (action.type) {
+    case LOAD_DEVICES:
+      return action.devices.map((item) => (
+        Object.assign({}, item)
+      ));
     case CHANGE_STATUS: {
       const newState = state.map((item) => (
         Object.assign({}, item)
@@ -19,4 +24,4 @@ const changeStatus = (state = [], action) => {
   }
 };
 
-export default changeStatus;
+export default devicesList;
