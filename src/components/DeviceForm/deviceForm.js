@@ -1,6 +1,7 @@
 import './deviceForm.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
+import Select from 'react-select';
 import { bindActionCreators } from 'redux';
 import {
   addItem,
@@ -16,6 +17,13 @@ const itemsToChoose = [
   'LineChart',
   'Value',
   'Range'
+];
+
+const locationOptions = [
+  { value: 'living room', label: 'Living Room' },
+  { value: 'bedroom', label: 'Bedroom' },
+  { value: 'kitchen', label: 'Kitchen' },
+  { value: 'hallway', label: 'Hallway' }
 ];
 
 class DeviceForm extends React.Component {
@@ -62,6 +70,10 @@ class DeviceForm extends React.Component {
     this.props.setValue(name, value);
   };
 
+  handleSelectLocation = (val) => {
+    this.props.setValue('location', val);
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addDevice(this.props.deviceProto);
@@ -75,20 +87,21 @@ class DeviceForm extends React.Component {
       <form className="device-form" onSubmit={ this.handleSubmit }>
         <div className="input-container">
         <label>Name:</label> <br />
-        <input name="name" type="text" value={ this.props.deviceProto.name }
-               onChange={ this.handleUserInput } />
+        <input
+          className="name-input"
+          name="name" type="text"
+          value={ this.props.deviceProto.name }
+          onChange={ this.handleUserInput } />
         </div>
         <div className="input-container">
          <label>Location:</label> <br />
-          <select name="location"
-                  value={ this.props.deviceProto.location }
-                  onChange={ this.handleUserInput }>
-            <option value=""></option>
-            <option value="living room"><div>Living room</div></option>
-            <option value="bedroom"><div>Bedroom</div></option>
-            <option value="kitchen">Kitchen</option>
-            <option value="bathroom">Bathroom</option>
-          </select>
+          <Select
+            name="location"
+            placeholder="select location"
+            options={ locationOptions }
+            onChange={ this.handleSelectLocation }
+            value={ this.props.deviceProto.location }
+          />
         </div>
         <div>
           <label> Device config:</label> <br />
