@@ -89,6 +89,7 @@ class DeviceForm extends React.Component {
         <label>Name:</label> <br />
         <input
           className="name-input"
+          required
           name="name" type="text"
           value={ this.props.deviceProto.name }
           onChange={ this.handleUserInput } />
@@ -97,6 +98,7 @@ class DeviceForm extends React.Component {
          <label>Location:</label> <br />
           <Select
             name="location"
+            required
             placeholder="select location"
             options={ locationOptions }
             onChange={ this.handleSelectLocation }
