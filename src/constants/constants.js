@@ -6,3 +6,4 @@ export const DELETE_ITEM = 'DELETE_ITEM';
 export const SET = 'SET';
 export const RESET_DEVICE_BUILDER_FORM = 'RESET_DEVICE_BUILDER_FORM';
 export const ADD_DEVICE = 'ADD_DEVICE';
+export const LOAD_DEVICES = 'LOAD_DEVICES';

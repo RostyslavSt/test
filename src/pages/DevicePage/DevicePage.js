@@ -4,11 +4,13 @@ import DeviceList from '../DeviceList/DeviceList';
 import { setingsComponents } from '../../data/componentsNames';
 import LineChart from '../../components/LineChart/LineChart';
 import PropTypes from 'prop-types';
+import { loadDevice } from '../../actions/loadDevices.action';
 require('./DevicePage.scss');
 
 class DevicePage extends React.Component {
   constructor (props) {
     super(props);
+    this.props.loadDevice(parseInt(this.props.match.params.id));
   }
 
   render () {
@@ -16,6 +18,10 @@ class DevicePage extends React.Component {
     const device = this.props.devices.filter(item => item.id === id)[0];
 
     return (
+      <div>
+      {typeof device === 'undefined' ?
+        <p><i className="fa fa-3x fa-spinner fa-spin "></i></p> :
+      <div>
       <div className="device-view">
         <div className="device-view__header">
           <div className="device-view__name">
@@ -41,7 +47,7 @@ class DevicePage extends React.Component {
           </h4>
         </div>
         <div className="device-view-2">
-          <LineChart height={200} />
+          <LineChart height={200} width={700} />
           <div className="device-view-2__notice">
             <ul>
               <li>
@@ -63,12 +69,18 @@ class DevicePage extends React.Component {
           return <SettingsComponent key={'setting' + i} />;
         })} */}
 </div>
+</div>}
+</div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  devices: state.changeStatus
+  devices: state.devicesList
+});
+
+const mapDispatchToProps = dispatch => ({
+  loadDevice: (id) => dispatch(loadDevice(id))
 });
 
 DevicePage.propTypes = {
@@ -78,7 +90,8 @@ DevicePage.propTypes = {
   devices: PropTypes.array,
   filter: PropTypes.array,
   filterAction: PropTypes.func,
-  findItems: PropTypes.func
+  findItems: PropTypes.func,
+  loadDevice: PropTypes.func
 };
 
-export default connect(mapStateToProps)(DevicePage);
+export default connect(mapStateToProps, mapDispatchToProps)(DevicePage);
