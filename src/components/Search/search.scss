@@ -1,13 +1,43 @@
-*:focus{
-    outline: none;
+@import "../../scss/_variables";
+
+.searchBox {
+    display: inline-block;
+
+    @media (min-width: $tablet-min) {
+        float: left;
+    }
+
+    &__results {
+        color: $text-color-active;
+        display: inline-block;
+        margin-right: 15px;
+        font-weight: 100;
+
+        span {
+            font-size: 16px;
+            font-weight: 900;
+        }
+    }
+
+    &__field {
+        width: 150px;
+        line-height: 35px;
+
+        &:focus {
+            border-color: $border-color-focus;
+        }
+    }
 }
 
-.searchBox{
-    display:inline-block;
-    margin: 15px;
-    width: 150px;
-    height: 50px;
-}
-.searchBox input:focus{
-  border: 1px #f6a821 solid;
+.device-list{
+    .searchBox__btn {
+        min-width: 50px;
+        border-radius: 0 $border-radius $border-radius 0;
+        vertical-align: middle;
+    }
+
+    .searchBox__field {
+        border-radius: $border-radius 0 0 $border-radius;
+        border-right: 0;
+    }
 }

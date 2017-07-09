@@ -1,9 +1,35 @@
+// colors
+
+$orange: #f6a821;
+$blue: #0f83c9;
+$green: #1bbf89;
+$red: #db524b;
+
+
 $color-orange: #f6a821;
 $color-bg-grey: #44464f;
 $color-bg-dark-grey:#2f323b;
 
-$text-color-input:#848c94;
-$text-color-active:#f5f5f5;
+// buttons
+
+$btn-border-success: $green;
+$btn-border-primary: $orange;
+$btn-border-warning: $red;
+$btn-border-info: $blue;
+
+// bg hover
+$btn-bg-hover: rgba(246, 168, 33, 0.1);
+$success-bg-hover: rgba(27, 191, 137, 0.1);
+$warning-bg-hover: rgba(219, 82, 75, 0.1);
+$info-bg-hover: rgba(15, 131, 201, 0.1);
+
+
+// font-color
+$text-color-title: #555;
+$text-color-input: #848c94;
+$text-color-active: #f5f5f5;
+
+// font size
 
 $border-color:#616779;
 $border-color-hover: #798094;
@@ -11,6 +37,8 @@ $border-color-focus: #f6a821;
 
 $input-bg: rgba(97, 103, 121, 0.1);
 $input-bg-active: rgb(73, 75, 84);
+
+$border-radius: 4px;
 
 $main-font: 'Roboto Regular';
 

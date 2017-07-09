@@ -5,16 +5,25 @@ require('./search.scss');
 const Search = (props) => {
   return (
     <div className='searchBox'>
-      <input type="text" name="search" placeholder="Search" onChange={e => {
-        props.handleSearch(e.target.value);
-      }
-      }/>
+      <div className='searchBox__results'>
+        <span>{props.quantity}</span> devices
+      </div>
+      <input
+        type="text"
+        name="search"
+        placeholder="Find a device"
+        className='searchBox__field'
+        onChange={e => {
+          props.handleSearch(e.target.value);
+        }}/>
+      <button className='btn btn--sucsess searchBox__btn'>Search</button>
     </div>
   );
 };
 
 Search.propTypes = {
-  handleSearch: PropTypes.func.isRequired
+  handleSearch: PropTypes.func.isRequired,
+  quantity: PropTypes.number
 };
 
 export default Search;
