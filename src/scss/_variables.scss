@@ -4,11 +4,13 @@ $orange: #f6a821;
 $blue: #0f83c9;
 $green: #1bbf89;
 $red: #db524b;
+$gray: #44464f;
+$dark-gray: #2f323b;
 
 
-$color-orange: #f6a821;
-$color-bg-grey: #44464f;
-$color-bg-dark-grey:#2f323b;
+$color-orange: $orange;
+$color-bg-grey: $gray;
+$color-bg-dark-grey: $dark-gray;
 
 // buttons
 

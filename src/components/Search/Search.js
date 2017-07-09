@@ -8,15 +8,17 @@ const Search = (props) => {
       <div className='searchBox__results'>
         <span>{props.quantity}</span> devices
       </div>
-      <input
-        type="text"
-        name="search"
-        placeholder="Find a device"
-        className='searchBox__field'
-        onChange={e => {
-          props.handleSearch(e.target.value);
-        }}/>
-      <button className='btn btn--sucsess searchBox__btn'>Search</button>
+      <div className='searchBox-wrap'>
+        <input
+          type="text"
+          name="search"
+          placeholder="Find a device"
+          className='searchBox__field'
+          onChange={e => {
+            props.handleSearch(e.target.value);
+          }}/>
+        <button className='btn btn--sucsess searchBox__btn'>Search</button>
+      </div>
     </div>
   );
 };

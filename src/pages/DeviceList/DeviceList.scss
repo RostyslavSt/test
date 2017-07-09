@@ -18,8 +18,15 @@
     padding: 15px 20px;
 
     &--right {
-      display: inline-block;
-      float: right;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      @media (min-width: $tablet-min) {
+        display: inline-block;
+        float: right;
+        width: inherit;
+      }
     }
   }
 

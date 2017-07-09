@@ -1,15 +1,9 @@
 import { createSelector } from 'reselect';
+import { searchItem } from '../utils/utils';
 
 const getFilterOption = state => state.searchAndFilter.filterOption;
 const getDevices = state => state.devicesList;
 const getSearchValue = state => state.searchAndFilter.searchValue;
-
-
-function searchItem (item, searchValue) {
-  const result = item.name.toLowerCase().includes(searchValue);
-
-  return result;
-}
 
 export const filterItems = createSelector(
   [getFilterOption, getSearchValue, getDevices],
