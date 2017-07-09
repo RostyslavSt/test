@@ -3,46 +3,87 @@
 
 .device-form {
   margin: 0 auto;
-  width: 80%;
+  width: 92%;
   padding: 10px 25px;
   background-color: $color-bg-dark-grey;
   color:$text_color_active;
+  border-radius: 10px;
+
   label {
     display: inline-block;
     margin-bottom: 15px;
   }
 
-  div {
-    padding: 10px 0;
-  }
   .input-container {
     display: inline-block;
     width: 35%;
-    input, select {
+    margin-bottom: 10px;
+    vertical-align: top;
+    .name-input {
+      box-sizing: border-box;
       background-color: $color-bg-grey;
       color: $text_color_input;
-      padding: 5px;
-      border-radius: 3px;
+      border-radius: 5px;
+      border: none;
+      height: 34px;
+      width: 90%;
+      margin: 0;
+    }
+
+    //select styles
+
+    .Select-control, .Select-option {
+      background-color: $color-bg-grey;
+      color: $text_color_input;
       border: none;
       height: 30px;
-      width: 80%;
-      option {
+      font-size: 14px;
+      input {
+        color: $text_color_input;
       }
     }
+    .has-value.Select--single > .Select-control .Select-value .Select-value-label, .Select-input {
+      color: $text_color_input;
+    }
+    .Select-menu {
+      background-color: $color-bg-grey;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .Select-menu-outer {
+      border: none;
+      border-radius: 5px;
+    }
+    .is-focused:not(.is-open) > .Select-control {
+      box-shadow: none;
+    }
+    .Select-option.is-focused {
+      background-color: rgba(246,168,33,0.8);
+      color: $text_color_active;
+    }
   }
+
+  //buttons styles
+  
   .form-button {
     color: $text_color_input;
-    border: 1px solid $color-orange;
+    border: 1px solid $border_color;
     background-color: $color-bg-grey;
     padding: 5px;
     border-radius: 3px;
     width: 15%;
     margin-right: 15px;
   }
+  .form-button:hover {
+    background-color: rgba(132,140,148,0.3);
+    color: $text_color_active;
+  }
   .main-button {
-    background-color: $color-orange;
-    border: none;
-    color: $text-color-active;
+    border: 1px solid $color_orange;
+    margin-top: 15px;
+  }
+  .main-button:hover {
+    background-color: rgba(246,168,33,0.3);
   }
 }
 

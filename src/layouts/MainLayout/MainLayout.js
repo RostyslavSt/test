@@ -19,5 +19,5 @@ export default class MainLayout extends Component {
 }
 
 MainLayout.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object.isRequired
 };

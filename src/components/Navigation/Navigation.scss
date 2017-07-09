@@ -1,5 +1,4 @@
 @import "../../scss/_variables.scss";
-@import "../../scss/index.scss";
 
 .mob-hide {
   display: none;
@@ -36,5 +35,5 @@
 }
 
 .navigation .active {
-  color: $color_orange;
+  color: $color-orange;
 }
