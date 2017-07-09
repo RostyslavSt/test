@@ -36,16 +36,22 @@ class DeviceList extends React.Component {
     const filterOption = this.props.filterOption;
 
     return (
-      <main className='device-list'>
-        <header className='device-list__header'>
-          <FilterSelect
-            handleSelect={this.handleFilterSelect}
-            options={options}
-          />
+      <section className='device-list'>
+        <h1 className='device-list__title'>Your devices</h1>
+        <header className='device-list__header clearfix'>
           <Search
             handleSearch={this.handleSearchResult}
+            quantity={this.props.devices.length}
           />
-          <Link to={'/builder'} className="btn add-item-button">+</Link>
+          <div className='device-list__header--right'>
+            <FilterSelect
+              handleSelect={this.handleFilterSelect}
+              options={options}
+            />
+            <Link to={'/builder'} className="btn btn--primary add-item-button">
+              New
+            </Link>
+          </div>
         </header>
         <section className='device-list__content'>
           { this.props.devices.length === 0 ? <p>Nothing here</p> :
@@ -57,7 +63,7 @@ class DeviceList extends React.Component {
             })
             }
         </section>
-      </main>
+      </section>
     );
   }
 }
