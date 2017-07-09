@@ -41,3 +41,31 @@
     font-weight: bold;
     text-align: center;
 }
+
+.hide-enter {
+    opacity: 0;
+    transform:   translate(-1000px,0);
+    transform: translate3d(-1000px,0,0);
+}
+.hide-enter.hide-enter-active {
+	opacity: 1;
+	transition: opacity 1s ease;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: transform, opacity;
+	transition-duration: 200ms;
+	
+}
+.hide-leave {
+	opacity: 1;
+	transform:   translate(0,0,0);
+	transform: translate3d(0,0,0);
+  transition-property: transform, opacity;
+	transition-duration: 200ms;
+
+}
+.hide-leave.hide-leave-active {
+	opacity: 0;
+	transform:   translate(1000px,0);
+	transform: translate3d(1000px,0,0);
+}

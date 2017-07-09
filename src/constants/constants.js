@@ -7,3 +7,4 @@ export const SET = 'SET';
 export const RESET_DEVICE_BUILDER_FORM = 'RESET_DEVICE_BUILDER_FORM';
 export const ADD_DEVICE = 'ADD_DEVICE';
 export const LOAD_DEVICES = 'LOAD_DEVICES';
+export const DELETE_DEVICE = 'DELETE_DEVICE';
