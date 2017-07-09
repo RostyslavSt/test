@@ -4,12 +4,16 @@ import './TimerStyle.scss';
 import RangeSettings from '../RangeSettings/Range';
 
 export default class TimerSettings extends React.Component {
+  addLeadingZero (number) {
+    return (number < 10) ? ('0' + number) : number;
+  }
+
   constructor (props) {
     super(props);
 
     this.state = {
-      hours: 0,
-      minutes: 0
+      hours: this.addLeadingZero(0),
+      minutes: this.addLeadingZero(0)
     };
 
     this.changeHours = this.changeHours.bind(this);
@@ -18,13 +22,13 @@ export default class TimerSettings extends React.Component {
 
   changeHours (event) {
     this.setState({
-      hours: event.target.value
+      hours: this.addLeadingZero(event.target.value)
     });
   }
 
   changeMinutes (event) {
     this.setState({
-      minutes: event.target.value
+      minutes: this.addLeadingZero(event.target.value)
     });
   }
 
@@ -44,7 +48,7 @@ export default class TimerSettings extends React.Component {
             min={0}
             max={23}
             useInitialValue={true}
-            initialValue={this.state.hours}
+            initialValue={this.addLeadingZero(this.state.hours)}
             onChange={this.changeHours}
             hideLabel={true}
           />
@@ -54,7 +58,7 @@ export default class TimerSettings extends React.Component {
             min={0}
             max={59}
             useInitialValue={true}
-            initialValue={this.state.minutes}
+            initialValue={this.addLeadingZero(this.state.minutes)}
             onChange={this.changeMinutes}
             hideLabel={true}
           />
