@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TimerStyle.scss';
 import RangeSettings from '../RangeSettings/Range';
-import moment from 'moment';
 
 export default class TimerSettings extends React.Component {
   constructor (props) {
     super(props);
 
     this.state = {
-      m: moment()
+      hours: 0,
+      minutes: 0
     };
 
     this.changeHours = this.changeHours.bind(this);
@@ -17,24 +17,24 @@ export default class TimerSettings extends React.Component {
   }
 
   changeHours (event) {
-    const newMoment = this.state.m.hours(parseInt(event.target.value, 10));
-
-    this.setState({ m: newMoment });
+    this.setState({
+      hours: event.target.value
+    });
   }
 
   changeMinutes (event) {
-    const newMoment = this.state.m.minutes(parseInt(event.target.value, 10));
-
-    this.setState({ m: newMoment });
+    this.setState({
+      minutes: event.target.value
+    });
   }
 
   render () {
     return (
       <div className="m-time">
         <div className="showtime">
-          <span className="time">{this.state.m.format('HH')}</span>
+          <span className="time">{this.state.hours}</span>
           <span className="separater">:</span>
-          <span className="time">{this.state.m.format('mm')}</span>
+          <span className="time">{this.state.minutes}</span>
         </div>
 
         <div className="sliders">
@@ -44,7 +44,7 @@ export default class TimerSettings extends React.Component {
             min={0}
             max={23}
             useInitialValue={true}
-            initialValue={this.state.m.hour()}
+            initialValue={this.state.hours}
             onChange={this.changeHours}
             hideLabel={true}
           />
@@ -54,7 +54,7 @@ export default class TimerSettings extends React.Component {
             min={0}
             max={59}
             useInitialValue={true}
-            initialValue={this.state.m.minute()}
+            initialValue={this.state.minutes}
             onChange={this.changeMinutes}
             hideLabel={true}
           />
