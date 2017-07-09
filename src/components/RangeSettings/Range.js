@@ -25,16 +25,7 @@ export default class RangeSettings extends React.Component {
   }
 
   render () {
-    const { max, min, initialValue = 0 } = this.props;
-
-    const rangeInputAttributes = { };
-
-    if (this.props.useInitialValue) {
-      rangeInputAttributes.value = initialValue;
-    }
-    else {
-      rangeInputAttributes.defaultValue = 0;
-    }
+    const { max, min } = this.props;
 
     return (
       <div className={ `${ this.props.styleName }` }>
@@ -46,7 +37,7 @@ export default class RangeSettings extends React.Component {
           min={min || 0}
           max={max || 100}
           step={1}
-          {...rangeInputAttributes}
+          defaultValue={0}
         />
       </div>
     );
@@ -60,7 +51,5 @@ RangeSettings.propTypes = {
   setDevice: PropTypes.func,
   sendRangeValue: PropTypes.func,
   hideLabel: PropTypes.bool,
-  onChange: PropTypes.func,
-  initialValue: PropTypes.number,
-  useInitialValue: PropTypes.bool
+  onChange: PropTypes.func
 };
