@@ -7,10 +7,10 @@ export default class RangeSettings extends React.Component {
 
   constructor (props) {
     super(props);
+
     this.state = {
       value: 0
     };
-
     this.onChange = this.onChange.bind(this);
   }
 
@@ -18,23 +18,35 @@ export default class RangeSettings extends React.Component {
     this.setState({
       value: e.target.value
     });
-    this.props.setDevice('range', e.target.value);
+
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
   }
 
   render () {
-    const { max, min } = this.props;
+    const { max, min, initialValue = 0 } = this.props;
+
+    const rangeInputAttributes = { };
+
+    if (this.props.useInitialValue) {
+      rangeInputAttributes.value = initialValue;
+    }
+    else {
+      rangeInputAttributes.defaultValue = 0;
+    }
 
     return (
       <div className={ `${ this.props.styleName }` }>
-        <p className='range_value'>
-          {this.state.value}</p>
+        {this.props.hideLabel ? null : <p className='range_value'>
+          {this.state.value}</p>}
         <input
           type='range'
           onChange={ this.onChange }
           min={min || 0}
           max={max || 100}
           step={1}
-          defaultValue={0}
+          {...rangeInputAttributes}
         />
       </div>
     );
@@ -43,8 +55,12 @@ export default class RangeSettings extends React.Component {
 
 RangeSettings.propTypes = {
   styleName: PropTypes.string,
-  max: PropTypes.string,
-  min: PropTypes.string,
+  max: PropTypes.number,
+  min: PropTypes.number,
   setDevice: PropTypes.func,
-  sendRangeValue: PropTypes.func
+  sendRangeValue: PropTypes.func,
+  hideLabel: PropTypes.bool,
+  onChange: PropTypes.func,
+  initialValue: PropTypes.number,
+  useInitialValue: PropTypes.bool
 };
