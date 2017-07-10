@@ -1,13 +1,12 @@
 import React from 'react';
-import './SettingsWrapperStyle.scss';
+import './index.scss';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 
-export default class SettingsWrapper extends React.Component {
+export default class SettingsListItem extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      childWidth: 200
+      calcWidth: 200
     };
   }
 
@@ -26,7 +25,7 @@ export default class SettingsWrapper extends React.Component {
   getElementWidth () {
     const ELEMENT_WIDTH = 0.85;
 
-    return document.querySelector('.DeviceProto')
+    return document.querySelector('.Prototype')
       .offsetWidth * ELEMENT_WIDTH;
   }
   render () {
@@ -48,11 +47,10 @@ export default class SettingsWrapper extends React.Component {
   }
 }
 
-SettingsWrapper.propTypes = {
+SettingsListItem.propTypes = {
   styleName: PropTypes.string,
   id: PropTypes.number,
   name: PropTypes.string,
-  isSettingOn: PropTypes.bool,
   deleteItem: PropTypes.func.isRequired,
   children: PropTypes.any
 };
