@@ -1,15 +1,15 @@
 const deviceProto = (state = {
   name: '',
   location: '',
-  items: []
+  item: []
 }, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
-      return Object.assign({}, state, { items:[...state.items, action.item] });
+      return Object.assign({}, state, { item:[...state.item, action.item] });
     case 'SET':
       return Object.assign({}, state, { [action.name]: action.value });
     case 'RESET_DEVICE_BUILDER_FORM':
-      return { name: '', location: '', items: [] };
+      return { name: '', location: '', item: [] };
     case 'DELETE_ITEM':
       return ({
         ...state,
