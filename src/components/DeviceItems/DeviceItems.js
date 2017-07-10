@@ -22,7 +22,7 @@ const Components = {
 
 export const DeviceItems = (props) => (
   <div className="settings-block">
-    {props.deviceProto.items.map((d, i) => {
+    {props.deviceProto.item.map((d, i) => {
       const Item = Components[d.name];
 
       return (

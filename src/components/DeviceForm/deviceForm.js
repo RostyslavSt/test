@@ -7,8 +7,8 @@ import {
   addItem,
   setValue,
   resetProto
-} from '../../actions/deviceProtoActions';
-import { addDevice } from '../../actions/devicesActions';
+} from '../../actions/builder.actions';
+import { addDevice } from '../../actions/addDevice.action';
 import { connect } from 'react-redux';
 
 const itemsToChoose = [
@@ -71,7 +71,7 @@ class DeviceForm extends React.Component {
   };
 
   handleSelectLocation = (val) => {
-    this.props.setValue('location', val);
+    this.props.setValue('location', 'kitchen');
   };
 
   handleSubmit = (e) => {
