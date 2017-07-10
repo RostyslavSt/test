@@ -47,8 +47,6 @@ export default class TimerSettings extends React.Component {
             className="u-slider-time"
             min={0}
             max={23}
-            useInitialValue={true}
-            initialValue={this.addLeadingZero(this.state.hours)}
             onChange={this.changeHours}
             hideLabel={true}
           />
@@ -57,8 +55,6 @@ export default class TimerSettings extends React.Component {
             className="u-slider-time"
             min={0}
             max={59}
-            useInitialValue={true}
-            initialValue={this.addLeadingZero(this.state.minutes)}
             onChange={this.changeMinutes}
             hideLabel={true}
           />
