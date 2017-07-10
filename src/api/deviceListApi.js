@@ -4,7 +4,7 @@ export default class DeviceListApi {
   static getDevices () {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(Object.assign([], devices));
+        resolve([...devices]);
       }, 2000);
     });
   }
