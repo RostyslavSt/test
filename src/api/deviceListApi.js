@@ -22,4 +22,11 @@ export default class DeviceListApi {
       }, 2000);
     });
   }
+  static deleteDevice (id) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(id);
+      }, 500);
+    });
+  }
 }

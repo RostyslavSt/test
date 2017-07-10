@@ -1,5 +1,6 @@
 import { LOAD_DEVICES } from '../constants/constants';
 import { CHANGE_STATUS } from '../constants/constants';
+import { DELETE_DEVICE } from '../constants/constants';
 
 const devicesList = (state = [], action) => {
   switch (action.type) {
@@ -19,6 +20,14 @@ const devicesList = (state = [], action) => {
       });
       return newState;
     }
+    case DELETE_DEVICE: {
+      const newDevices = state.filter((item) =>{
+        return item.id !== action.id;
+      });
+
+      return newDevices;
+    }
+
     default:
       return state;
   }
