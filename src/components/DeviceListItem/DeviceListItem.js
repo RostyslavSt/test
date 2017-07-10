@@ -10,6 +10,9 @@ class DeviceListItem extends React.Component {
     this.onStatusChange = (e) => {
       this.props.changeStatus(this.props.data.id);
     };
+    this.deleteDevice = (e) =>{
+      this.props.deleteDevice(this.props.data.id);
+    };
   }
 
   render () {
@@ -34,7 +37,8 @@ class DeviceListItem extends React.Component {
               {this.props.data.location}</div>
             <div className="device-item__description-icon">
               <div className="device-item__description-icon-delete">
-                <i className="fa fa-trash"></i></div>
+                <a className="fa fa-trash"
+                    onClick={this.deleteDevice}></a></div>
             </div>
         </div>
       </div>
@@ -44,6 +48,7 @@ class DeviceListItem extends React.Component {
 
 DeviceListItem.propTypes = {
   changeStatus: PropTypes.func,
+  deleteDevice: PropTypes.func,
   data: PropTypes.shape({
     status: PropTypes.boolean,
     id: PropTypes.number,
