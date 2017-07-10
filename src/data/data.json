@@ -3,7 +3,27 @@
     "name":"fridge",
 	"item":[
 		{
-			"id": 52,
+			"id": 1,
+			"name": "Toggle",
+			"type": "togle"
+		},
+		{
+			"id": 2,
+			"name": "Timer",
+			"type": "timer"
+		},
+		{
+			"id": 3,
+			"name": "LineChart",
+			"type": "linechart"
+		},
+		{
+			"id": 4,
+			"name": "Value",
+			"type": "value"
+		},
+		{
+			"id": 5,
 			"name": "Range",
 			"type": "range"
 		}
@@ -26,7 +46,7 @@
 },
 {
 	"id":3,
-    "name":"alarm",
+	"name":"alarm",
 	"item":[
 		{
 			"id": 54,

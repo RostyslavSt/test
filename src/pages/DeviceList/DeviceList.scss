@@ -17,16 +17,14 @@
     margin-bottom: 30px;
     padding: 15px 20px;
 
+    @media (min-width: $tablet-min) {
+      display: flex;
+      justify-content: space-between;
+    }
+
     &--right {
       display: flex;
       justify-content: space-between;
-      width: 100%;
-
-      @media (min-width: $tablet-min) {
-        display: inline-block;
-        float: right;
-        width: inherit;
-      }
     }
   }
 
@@ -36,8 +34,12 @@
   }
 }
 
-.add-item-button {
+.device-list {
+  .add-item-button {
     display: inline-block;
-    font-weight: bold;
+    font-weight: 900;
+    text-transform: uppercase;
     text-align: center;
+    vertical-align: middle;
+  }
 }

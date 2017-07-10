@@ -4,18 +4,18 @@ export default class DeviceListApi {
   static getDevices () {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(Object.assign([], devices));
+        resolve([...devices]);
       }, 2000);
     });
   }
   static getDevice (id) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        let device = {};
+        let device;
 
         devices.map((item) => {
           if (item.id === id) {
-            device = item;
+            device = Object.assign({}, item);
           }
         });
         resolve(device);

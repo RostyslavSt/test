@@ -8,7 +8,7 @@ const Search = (props) => {
       <div className='searchBox__results'>
         <span>{props.quantity}</span> devices
       </div>
-      <div className='searchBox-wrap'>
+      <div>
         <input
           type="text"
           name="search"

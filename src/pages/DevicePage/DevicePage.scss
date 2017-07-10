@@ -1,36 +1,37 @@
-body{
+body {
 	background-image: -webkit-radial-gradient(top, circle cover, #f1f1f1 0%, #f9f9f9 70%)
 }
-.device-view{
+.device-view {
 	float: left;
 	width: 100%;
 	padding: 45px;
-	&__header{
+
+	&__header {
 		height: 70px;
 		border-bottom: 1px solid lightgray;
 		margin-bottom: 10px;
 	}
-	&__location{
+	&__location {
 		margin-bottom: 10px;
 		i{
 			margin-right: 5px;
 			color: #f6a821;
 		}
 	}
-	&__name{
+	&__name {
 		color:#555;
 		font-size: 24px;
 		text-transform: capitalize;
 		float: left;
 	}
-	&__creation-info{
+	&__creation-info {
 		float: right;
 	}
-	.device-item__info-status{
+	.device-item__info-status {
 		float: left;
 		margin: 0;
 		padding: 5px;
-		.switch{
+		.switch {
 			top:auto;
 			right:auto;
 		}

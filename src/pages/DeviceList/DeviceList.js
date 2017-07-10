@@ -8,7 +8,6 @@ import { options } from '../../data/filterOptions';
 import { filterAction,
   searchAction } from '../../actions/searchAndFilter.action';
 import { changeStatus } from '../../actions/changeStatus.action';
-import { searchItem, fetchDevices } from '../../utils/utils';
 import { filterItems } from '../../selectors';
 import { loadDevices } from '../../actions/loadDevices.action';
 import PropTypes from 'prop-types';
@@ -38,7 +37,7 @@ class DeviceList extends React.Component {
     return (
       <section className='device-list'>
         <h1 className='device-list__title'>Your devices</h1>
-        <header className='device-list__header clearfix'>
+        <header className='device-list__header'>
           <Search
             handleSearch={this.handleSearchResult}
             quantity={this.props.devices.length}
@@ -54,7 +53,8 @@ class DeviceList extends React.Component {
           </div>
         </header>
         <section className='device-list__content'>
-          { this.props.devices.length === 0 ? <p>Nothing here</p> :
+          { this.props.devices.length === 0 ? <p>
+            <i className="fa fa-3x fa-spinner fa-spin"></i></p> :
             this.props.devices.map((item, i) => {
               return (
                 <DeviceListItem data={item} key={i}
@@ -89,4 +89,5 @@ DeviceList.propTypes = {
   findItems: PropTypes.func,
   loadDevices: PropTypes.func
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceList);

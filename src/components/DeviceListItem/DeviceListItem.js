@@ -23,8 +23,11 @@ class DeviceListItem extends React.Component {
           </Link>
           <div className="device-item__info-status">
             <label className="switch">
-              <input type="checkbox" checked={this.props.data.status}
-                    onChange={this.onStatusChange}/>
+              <input
+                type="checkbox"
+                checked={this.props.data.status}
+                onChange={this.onStatusChange}
+              />
               <div className="slider round"></div>
             </label>
           </div>

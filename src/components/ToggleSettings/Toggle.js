@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ToggleStyle.scss';
 
-
 export default class ToggleSettings extends React.Component {
 
   constructor (props) {
@@ -21,15 +20,17 @@ export default class ToggleSettings extends React.Component {
     this.props.sendToggleValue(!this.state.value);
   }
 
-
   render () {
     return (
-          <div className={ `${ this.props.styleName }` }>
-            <label className="switch">
-              <input type="checkbox" checked={this.state.value}
-                    onClick={this.onChange}/>
-              <div className="slider round"></div>
-            </label>
+      <div className={ `${ this.props.styleName }` }>
+        <label className="switch">
+          <input
+            type="checkbox"
+            checked={this.state.value}
+            onClick={this.onChange}
+          />
+          <div className="slider round"></div>
+        </label>
       </div>
     );
   }
