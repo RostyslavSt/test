@@ -26,22 +26,18 @@ const locationOptions = [
   { value: 'hallway', label: 'Hallway' }
 ];
 
+// const locationOptions = ['Living Room', 'Bedroom', 'Kitchen', 'Hallway'];
+
 class DeviceForm extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       items: []
     };
-    this.id = 0;
-  }
-
-  setId () {
-    return this.id++;
   }
 
   addItem = (e) => {
     const newItem = {
-      id: this.setId(),
       name: e.target.value
     };
 
@@ -71,7 +67,9 @@ class DeviceForm extends React.Component {
   };
 
   handleSelectLocation = (val) => {
-    this.props.setValue('location', 'kitchen');
+    const selectedValue = val.value;
+
+    this.props.setValue('location', selectedValue);
   };
 
   handleSubmit = (e) => {
