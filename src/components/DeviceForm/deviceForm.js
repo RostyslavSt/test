@@ -26,8 +26,6 @@ const locationOptions = [
   { value: 'hallway', label: 'Hallway' }
 ];
 
-// const locationOptions = ['Living Room', 'Bedroom', 'Kitchen', 'Hallway'];
-
 class DeviceForm extends React.Component {
   constructor (props) {
     super(props);
