@@ -9,8 +9,8 @@ import { filterAction,
   searchAction } from '../../actions/searchAndFilter.action';
 import { changeStatus } from '../../actions/changeStatus.action';
 import { filterItems } from '../../selectors';
-import { loadDevices } from '../../actions/loadDevices.action';
-import { deleteDevice } from '../../actions/deleteDevice.action';
+import { loadDevicesAsync } from '../../actions/loadDevices.action';
+import { deleteDeviceAsync } from '../../actions/deleteDevice.action';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import PropTypes from 'prop-types';
@@ -92,8 +92,8 @@ const mapDispatchToProps = (dispatch) => ({
   filterAction: (filterOption) => dispatch(filterAction(filterOption)),
   changeStatus: (index) => dispatch(changeStatus(index)),
   findItems: (searchValue) => dispatch(searchAction(searchValue)),
-  loadDevices: () => dispatch(loadDevices()),
-  deleteDevice: (id) => dispatch(deleteDevice(id))
+  loadDevices: () => dispatch(loadDevicesAsync()),
+  deleteDevice: (id) => dispatch(deleteDeviceAsync(id))
 });
 
 DeviceList.propTypes = {

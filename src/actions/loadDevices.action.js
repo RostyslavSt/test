@@ -1,5 +1,7 @@
-import { LOAD_DEVICES } from '../constants/constants';
+import { LOAD_DEVICES, LOAD_DEVICES_ASYNC,
+        LOAD_DEVICE_ASYNC } from '../constants/constants';
 import DeviceListApi from '../api/deviceListApi';
+import { put, call } from 'redux-saga/effects';
 
 export const loadDevicesSuccess = (devices) => {
   return {
@@ -8,24 +10,28 @@ export const loadDevicesSuccess = (devices) => {
   };
 };
 
-export function loadDevices () {
-  return function (dispatch) {
-    return DeviceListApi.getDevices().then(devices => {
-      dispatch(loadDevicesSuccess(devices));
-    })
-    .catch(error => {
-      throw (error);
-    });
+export const loadDevicesAsync = () => {
+  return {
+    type: LOAD_DEVICES_ASYNC
   };
+};
+
+export const loadDeviceAsync = (id) => {
+  return {
+    type: LOAD_DEVICE_ASYNC,
+    id
+  };
+};
+
+export function *loadDevices () {
+  const devices = yield call(DeviceListApi.getDevices);
+
+  yield put(loadDevicesSuccess(devices));
 }
 
-export function loadDevice (id) {
-  return function (dispatch) {
-    return DeviceListApi.getDevice(id).then(device => {
-      dispatch(loadDevicesSuccess([device]));
-    })
-    .catch(error => {
-      throw (error);
-    });
-  };
+export function *loadDevice (action) {
+  const device = yield call(DeviceListApi.getDevice, action.id);
+
+  yield put(loadDevicesSuccess([device]));
 }
+

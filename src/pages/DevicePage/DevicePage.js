@@ -4,7 +4,7 @@ import DeviceList from '../DeviceList/DeviceList';
 import { setingsComponents } from '../../data/componentsNames';
 import LineChart from '../../components/LineChart/LineChart';
 import PropTypes from 'prop-types';
-import { loadDevice } from '../../actions/loadDevices.action';
+import { loadDeviceAsync } from '../../actions/loadDevices.action';
 require('./DevicePage.scss');
 
 const Device = (props) => {
@@ -85,7 +85,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  loadDevice: (id) => dispatch(loadDevice(id))
+  loadDevice: (id) => dispatch(loadDeviceAsync(id))
 });
 
 DevicePage.propTypes = {
@@ -100,4 +100,4 @@ DevicePage.propTypes = {
 };
 
 
-export default connect(mapStateToProps)(DevicePage);
+export default connect(mapStateToProps, mapDispatchToProps)(DevicePage);
