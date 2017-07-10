@@ -20,8 +20,6 @@ class DeviceList extends React.Component {
   constructor (props) {
     super(props);
 
-    this.props.loadDevices();
-
     this.handleFilterSelect = (filterOption) => {
       this.props.filterAction(filterOption);
     };
@@ -34,6 +32,9 @@ class DeviceList extends React.Component {
     this.deleteDevice = (id) => {
       this.props.deleteDevice(id);
     };
+  }
+  componentDidMount () {
+    this.props.loadDevices();
   }
 
   renderDevices () {

@@ -100,4 +100,4 @@ DevicePage.propTypes = {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(DevicePage);
+export default connect(mapStateToProps)(DevicePage);
