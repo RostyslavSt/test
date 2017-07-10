@@ -22,7 +22,7 @@ const Components = {
 
 export const DeviceItems = (props) => (
   <div className="settings-block">
-    {props.deviceProto.items.map((d, i)=>{
+    {props.deviceProto.items.map((d, i) => {
       const Item = Components[d.name];
 
       return (
@@ -32,7 +32,7 @@ export const DeviceItems = (props) => (
           name={d.name}
           deleteItem={props.deleteItem}
           id={i}>
-          <Item width={800} height={200} />
+          <Item width={800} height={200}/>
         </SettingsWrapper>
       );
     })}

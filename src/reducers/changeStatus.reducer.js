@@ -1,7 +1,6 @@
 import { CHANGE_STATUS } from '../constants/constants';
-import jsonData from '../data/data.json';
 
-const changeStatus = (state = jsonData, action) => {
+const changeStatus = (state = [], action) => {
   switch (action.type) {
     case CHANGE_STATUS: {
       const newState = state.map((item) => (

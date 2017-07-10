@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open",
-    "prod": "npm run clean && NODE_ENV=production webpack -p",
+    "prod": "npm run clean && set NODE_ENV=production&& webpack -p",
     "clean": "rimraf ./dist/*"
   },
   "babel": {
@@ -22,6 +22,7 @@
     "prop-types": "^15.5.10",
     "query-string": "^4.3.4",
     "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.6.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",

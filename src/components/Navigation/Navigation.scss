@@ -16,8 +16,13 @@
   padding-top: 20px;
   
   li {
-    padding: 10px 30px;
-    list-style-type: none;
+    padding: 10px 15px;
+    max-width: 75px;
+
+    @media (min-width: $desktop-min) {
+      padding: 10px 30px;
+      max-width: 161px;
+    }
 
     a {
       color: $text-color-active;

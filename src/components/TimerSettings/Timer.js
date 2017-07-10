@@ -1,52 +1,76 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './TimerStyle.scss';
+import RangeSettings from '../RangeSettings/Range';
 
 export default class TimerSettings extends React.Component {
+  addLeadingZero (number) {
+    return (number < 10) ? ('0' + number) : number;
+  }
+
   constructor (props) {
     super(props);
 
     this.state = {
-      value: props.value || '00:00:00'
+      hours: this.addLeadingZero(0),
+      minutes: this.addLeadingZero(0)
     };
 
-    this.onChangeTime = this.onChangeTime.bind(this);
-    this.timerOff = this.timerOff.bind(this);
+    this.changeHours = this.changeHours.bind(this);
+    this.changeMinutes = this.changeMinutes.bind(this);
   }
 
-  onChangeTime (e) {
+  changeHours (event) {
     this.setState({
-      value: e.target.value
+      hours: this.addLeadingZero(event.target.value)
     });
-
-    this.props.sendTimerValue(e.target.value);
   }
 
-  timerOff (e) {
+  changeMinutes (event) {
     this.setState({
-      isTimerOn: false
+      minutes: this.addLeadingZero(event.target.value)
     });
   }
 
   render () {
     return (
-      <div className={ `quantity ${ this.props.styleName }` }>
-         <input
-            type="time"
-            className="timer_set"
-            min="1"
-            max="24"
-            step="1"
-            value={this.state.value}
-            onChange={this.onChangeTime}
+      <div className="m-time">
+        <div className="showtime">
+          <span className="time">{this.state.hours}</span>
+          <span className="separater">:</span>
+          <span className="time">{this.state.minutes}</span>
+        </div>
+
+        <div className="sliders">
+          <div className="time-text">Hours</div>
+          <RangeSettings
+            className="u-slider-time"
+            min={0}
+            max={23}
+            useInitialValue={true}
+            initialValue={this.addLeadingZero(this.state.hours)}
+            onChange={this.changeHours}
+            hideLabel={true}
           />
+          <div className="time-text">Minutes</div>
+          <RangeSettings
+            className="u-slider-time"
+            min={0}
+            max={59}
+            useInitialValue={true}
+            initialValue={this.addLeadingZero(this.state.minutes)}
+            onChange={this.changeMinutes}
+            hideLabel={true}
+          />
+        </div>
       </div>
     );
   }
 }
-
 TimerSettings.propTypes = {
   styleName: PropTypes.string,
   value: PropTypes.string,
-  sendTimerValue: PropTypes.func
+  onChange: PropTypes.any,
+  moment: PropTypes.any,
+  InputSlider: PropTypes.any
 };
