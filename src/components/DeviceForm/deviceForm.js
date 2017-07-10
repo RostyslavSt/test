@@ -32,16 +32,10 @@ class DeviceForm extends React.Component {
     this.state = {
       items: []
     };
-    this.id = 0;
-  }
-
-  setId () {
-    return this.id++;
   }
 
   addItem = (e) => {
     const newItem = {
-      id: this.setId(),
       name: e.target.value
     };
 
@@ -71,7 +65,9 @@ class DeviceForm extends React.Component {
   };
 
   handleSelectLocation = (val) => {
-    this.props.setValue('location', 'kitchen');
+    const selectedValue = val.value;
+
+    this.props.setValue('location', selectedValue);
   };
 
   handleSubmit = (e) => {
