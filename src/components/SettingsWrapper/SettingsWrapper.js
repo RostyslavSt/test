@@ -7,22 +7,20 @@ export default class SettingsWrapper extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      childWidth: this.getElementWidth()
+      childWidth: 200
     };
   }
 
   componentDidMount () {
-    window.addEventListener('resize', ()=>{
-      this.setState({
-        childWidth: this.getElementWidth()
-      });
-    });
+    window.addEventListener('resize', this.setChildWidth);
+    this.setChildWidth();
   }
   componentWillUnmount () {
-    window.removeEventListener('resize', ()=>{
-      this.setState({
-        childWidth: this.getElementWidth()
-      });
+    window.removeEventListener('resize', this.setChildWidth);
+  }
+  setChildWidth = () => {
+    this.setState({
+      childWidth: this.getElementWidth()
     });
   }
   getElementWidth () {

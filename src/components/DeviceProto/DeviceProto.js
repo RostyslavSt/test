@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './index.scss';
 import { bindActionCreators } from 'redux';
 import LineChart from '../LineChart/LineChart';
-import { deleteItem } from '../../actions/deviceProtoActions';
+import { deleteItem } from '../../actions/builder.actions';
 import { connect } from 'react-redux';
 import { DeviceItems } from '../DeviceItems/DeviceItems.js';
 
