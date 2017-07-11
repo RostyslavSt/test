@@ -34,11 +34,11 @@ export default class TimerSettings extends React.Component {
 
   render () {
     return (
-      <div className='m-time'>
-        <div className='showtime'>
-          <span className='showtime__time'>{this.state.hours}</span>
-          <span className='showtime__separater'>:</span>
-          <span className='showtime__time'>{this.state.minutes}</span>
+<div className={`m-time ${this.props.styleName}`}>
+        <div className="showtime">
+          <span className="time">{this.state.hours}</span>
+          <span className="separater">:</span>
+          <span className="time">{this.state.minutes}</span>
         </div>
 
         <div className='sliders'>

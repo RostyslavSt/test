@@ -1,19 +1,21 @@
 import devices from '../data/data.json';
 
+let listDevices = [...devices];
+
 export default class DeviceListApi {
-  static devices = devices;
   static getDevices () {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve([...this.devices]);
+        resolve([...listDevices]);
       }, 2000);
     });
   }
   static addDevice (device) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        device.id = this.devices.length + 1;
-        this.devices = [...this.devices, device];
+        device.id = listDevices.length + 1;
+        device.status = true;
+        listDevices = [...listDevices, device];
         resolve(device);
       }, 2000);
     });
@@ -21,11 +23,11 @@ export default class DeviceListApi {
   static getDevice (id) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        let device = {};
+        let device;
 
-        this.devices.map((item) => {
+        devices.map((item) => {
           if (item.id === id) {
-            device = item;
+            device = Object.assign({}, item);
           }
         });
         resolve(device);
@@ -36,7 +38,7 @@ export default class DeviceListApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(id);
-      }, 500);
+      }, 300);
     });
   }
 }

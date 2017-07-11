@@ -8,10 +8,9 @@ import { options } from '../../data/filterOptions';
 import { filterAction,
   searchAction } from '../../actions/searchAndFilter.action';
 import { changeStatus } from '../../actions/changeStatus.action';
-import { searchItem, fetchDevices } from '../../utils/utils';
 import { filterItems } from '../../selectors';
-import { loadDevices } from '../../actions/loadDevices.action';
-import { deleteDevice } from '../../actions/deleteDevice.action';
+import { loadDevicesAsync } from '../../actions/loadDevices.action';
+import { deleteDeviceAsync } from '../../actions/deleteDevice.action';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import PropTypes from 'prop-types';
@@ -20,8 +19,6 @@ require('./DeviceList.scss');
 class DeviceList extends React.Component {
   constructor (props) {
     super(props);
-
-    this.props.loadDevices();
 
     this.handleFilterSelect = (filterOption) => {
       this.props.filterAction(filterOption);
@@ -36,13 +33,16 @@ class DeviceList extends React.Component {
       this.props.deleteDevice(id);
     };
   }
+  componentDidMount () {
+    this.props.loadDevices();
+  }
 
   renderDevices () {
     return this.props.devices.map((item, i) => {
       return (
         <DeviceListItem data={item} key={item.id}
-        changeStatus={this.changeStatus}
-        deleteDevice={this.deleteDevice}/>
+          changeStatus={this.changeStatus}
+          deleteDevice={this.deleteDevice}/>
       );
     });
   }
@@ -54,7 +54,7 @@ class DeviceList extends React.Component {
     return (
       <section className='device-list'>
         <h1 className='device-list__title'>Your devices</h1>
-        <header className='device-list__header clearfix'>
+        <header className='device-list__header'>
           <Search
             handleSearch={this.handleSearchResult}
             quantity={this.props.devices.length}
@@ -92,8 +92,8 @@ const mapDispatchToProps = (dispatch) => ({
   filterAction: (filterOption) => dispatch(filterAction(filterOption)),
   changeStatus: (index) => dispatch(changeStatus(index)),
   findItems: (searchValue) => dispatch(searchAction(searchValue)),
-  loadDevices: () => dispatch(loadDevices()),
-  deleteDevice: (id) => dispatch(deleteDevice(id))
+  loadDevices: () => dispatch(loadDevicesAsync()),
+  deleteDevice: (id) => dispatch(deleteDeviceAsync(id))
 });
 
 DeviceList.propTypes = {
@@ -107,4 +107,5 @@ DeviceList.propTypes = {
   loadDevices: PropTypes.func,
   deleteDevice: PropTypes.func
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceList);
