@@ -41,8 +41,8 @@ class DeviceList extends React.Component {
     return this.props.devices.map((item, i) => {
       return (
         <DeviceListItem data={item} key={item.id}
-        changeStatus={this.changeStatus}
-        deleteDevice={this.deleteDevice}/>
+          changeStatus={this.changeStatus}
+          deleteDevice={this.deleteDevice}/>
       );
     });
   }
@@ -54,7 +54,7 @@ class DeviceList extends React.Component {
     return (
       <section className='device-list'>
         <h1 className='device-list__title'>Your devices</h1>
-        <header className='device-list__header'>
+        <header className='device-lchangeStatusist__header'>
           <Search
             handleSearch={this.handleSearchResult}
             quantity={this.props.devices.length}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { setingsComponents } from '../../data/componentsNames';
+import ToggleSettings from '../ToggleSettings/ToggleSettings';
 import PropTypes from 'prop-types';
 require('./Device.scss');
 
@@ -15,14 +16,9 @@ export const Device = (props) => {
           <small>Last updated 7 days ago</small>
         </div>
         <div className="device-item__info-status">
-          <label className="switch">
-            <input
-              type="checkbox"
-              onChange={onStatusChange}
-              checked={device.status}
-            />
-            <div className="slider round"></div>
-          </label>
+          <ToggleSettings
+            id={props.device.id}
+            onStatusChange={props.onStatusChange}/>
         </div>
         <div className="device-view__info">
           <small>07.06.2017</small><br/>
