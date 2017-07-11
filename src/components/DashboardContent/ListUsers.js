@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { loadUsersRequest } from '../../actions/loadUsers.action';
+
 // import users from '../../data/users.json';
 import Avatar from '../Avatar/Avatar';
 
