@@ -1,6 +1,7 @@
 import React from 'react';
 import { setingsComponents } from '../../data/componentsNames';
 import PropTypes from 'prop-types';
+require('./Device.scss');
 
 export const Device = (props) => {
   const device = props.device;
@@ -41,7 +42,8 @@ export const Device = (props) => {
             <SettingsComponent
             key={'setting' + i}
             styleName={
-              'device-view__settings-' + setting.name.toLowerCase()
+              'device-view__settings-item device-view__settings-'
+                + setting.name.toLowerCase()
             }/>);
         })}
       </section>

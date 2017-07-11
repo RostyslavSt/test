@@ -1,0 +1,9 @@
+@import "../../scss/_variables";
+
+.device-view {
+
+  &__settings{
+    background: $main-bg;
+    padding: 30px;
+  }
+}
