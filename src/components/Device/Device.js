@@ -1,5 +1,5 @@
 import React from 'react';
-import { setingsComponents } from '../../data/componentsNames';
+import { settingsComponents } from '../../data/componentsNames';
 import ToggleSettings from '../ToggleSettings/ToggleSettings';
 import PropTypes from 'prop-types';
 require('./Device.scss');
@@ -32,11 +32,12 @@ export const Device = (props) => {
       </div>
       <section className="device-view__settings">
         {device.item.map((setting, i) => {
-          const SettingsComponent = setingsComponents[setting.name];
+          const SettingsComponent = settingsComponents[setting.name];
 
           return (
             <SettingsComponent
               key={'setting' + i}
+              parent={'device-view__settings'}
               styleName={
                 'device-view__settings-item device-view__settings-item--'
                 + setting.name.toLowerCase()
