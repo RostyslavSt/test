@@ -1,15 +1,15 @@
 import { UPDATE_CURRENT_USERS } from '../actions/loadPersons.action.js';
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import Api from '../api/personsApi.js';
-require('babel-polyfill');
+import Api from '../api/usersApi.js';
 import 'regenerator-runtime/runtime';
+require('babel-polyfill');
 
-function *getPersonsStatus () {
-  const currentPersons = yield call(Api.personsList);
+function *getUsersList () {
+  const currentUsers = yield call(Api.usersList);
 
-  yield put({ type: 'UPDATE_STATUS_PERSONS', currentPersons });
+  yield put({ type: 'UPDATE_STATUS_PERSONS', currentUsers });
 }
-export default function *currentPersonStatusSaga () {
-  yield takeEvery('UPDATE_STATUS_PERSONS', getPersonsStatus);
+export default function *currentUsersSaga () {
+  yield takeEvery('UPDATE_STATUS_PERSONS', getUsersList);
 }
 

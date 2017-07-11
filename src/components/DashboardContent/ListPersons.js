@@ -11,9 +11,9 @@ class ListPersons extends React.Component {
     super(props);
   }
 
-  /* componentDidMount () {
+  componentDidMount () {
     this.props.dispatch({ type: 'UPDATE_STATUS_PERSONS' });
-  }*/
+  }
 
   render () {
     const listAtHome = users.filter((item) => (item.home));
