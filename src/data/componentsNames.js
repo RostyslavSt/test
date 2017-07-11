@@ -3,7 +3,7 @@ import SettingsWrapper from
 import RangeSettings from
 '../components/RangeSettings/Range';
 import ToggleSettings from
-'../components/ToggleSettings/Toggle';
+'../components/ToggleSettings/ToggleSettings';
 import TimerSettings from
 '../components/TimerSettings/Timer';
 import ValueSettings from

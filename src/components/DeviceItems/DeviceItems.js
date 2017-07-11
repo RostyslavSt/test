@@ -6,7 +6,7 @@ import SettingsWrapper from
 import RangeSettings from
 '../RangeSettings/Range';
 import ToggleSettings from
-'../ToggleSettings/Toggle';
+'../ToggleSettings/ToggleSettings';
 import TimerSettings from
 '../TimerSettings/Timer';
 import ValueSettings from
