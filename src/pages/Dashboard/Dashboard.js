@@ -7,10 +7,14 @@ import Notification from
 '../../components/DashboardContent/Notification';
 import jsonData from '../../data/data';
 import './Dashboard.scss';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-export default class Dashboard extends React.Component {
+class Dashboard extends React.Component {
   constructor (props) {
     super(props);
+  }
+  componentDidMount () {
   }
   render () {
     return (
@@ -24,4 +28,14 @@ export default class Dashboard extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state =>({
+  data: state
+});
+
+Dashboard.propTypes = {
+  data: PropTypes.object
+};
+
+export default connect(mapStateToProps, {})(Dashboard);
 
