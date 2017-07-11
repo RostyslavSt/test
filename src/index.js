@@ -1,4 +1,5 @@
 require('./scss/index.scss');
+import createSagaMiddleware from 'redux-saga';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -11,10 +12,14 @@ import { Builder } from './pages/Builder/Builder';
 import MainLayout from './layouts/MainLayout/MainLayout';
 import Dashboard from './pages/Dashboard/Dashboard';
 import thunk from 'redux-thunk';
+import currentUsersSaga from './sagas/currentUsersSaga';
 
+const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(),
-                          applyMiddleware(thunk));
+                          applyMiddleware(sagaMiddleware, thunk));
+
+sagaMiddleware.run(currentUsersSaga);
 
 ReactDOM.render(
   <Provider store={store}>

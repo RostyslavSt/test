@@ -28,6 +28,7 @@
     "react-router-dom": "^4.1.1",
     "react-select": "^1.0.0-rc.5",
     "redux": "^3.7.1",
+    "redux-saga": "^0.15.4",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "whatwg-fetch": "^2.0.3"
@@ -39,6 +40,8 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
