@@ -1,9 +1,7 @@
 import { UPDATE_CURRENT_USERS } from '../actions/loadUsers.action.js';
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import Api from '../api/usersApi';
 import { loadUsersSuccess } from '../actions/loadUsers.action';
-import 'regenerator-runtime/runtime';
-require('babel-polyfill');
 
 function *getUsersList () {
   const currentUsers = yield call(Api);

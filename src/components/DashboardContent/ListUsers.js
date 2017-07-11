@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { loadUsersRequest } from '../../actions/loadUsers.action';
-
-// import users from '../../data/users.json';
 import Avatar from '../Avatar/Avatar';
 
 class ListUsers extends React.Component {
@@ -14,7 +12,7 @@ class ListUsers extends React.Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(loadUsersRequest());
+    this.props.loadUsersRequest();
   }
 
   render () {
@@ -24,7 +22,7 @@ class ListUsers extends React.Component {
       currentUsers: {
         users
       }
-    } = this.props.currentUsers; */
+    } */
     const listAtHome = list.filter((item) => (item.home));
 
     return (
@@ -43,7 +41,7 @@ class ListUsers extends React.Component {
 
 ListUsers.propTypes = {
   currentUsers: PropTypes.object,
-  dispatch: PropTypes.func.isRequired
+  loadUsersRequest: PropTypes.func.isRequired
 };
 
 function mapStateToProps (store) {
@@ -51,5 +49,10 @@ function mapStateToProps (store) {
     currentUsers: store.loadUsersReducer
   };
 }
+function mapDispatchToProps (dispatch) {
+  return {
+    loadUsersRequest: bindActionCreators(loadUsersRequest, dispatch)
+  };
+}
 
-export default connect(mapStateToProps)(ListUsers);
+export default connect(mapStateToProps, mapDispatchToProps)(ListUsers);
