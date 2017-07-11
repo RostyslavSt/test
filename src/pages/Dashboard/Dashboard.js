@@ -9,12 +9,11 @@ import jsonData from '../../data/data';
 import './Dashboard.scss';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import deviceList from '../../api/dashListDeviceApi.js';
 
 class Dashboard extends React.Component {
   constructor (props) {
     super(props);
-  }
-  componentDidMount () {
   }
   render () {
     return (
@@ -30,12 +29,15 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state =>({
-  data: state
+  devices: state.devicesList
+});
+
+const mapDispatchToProps = dispatch => ({
 });
 
 Dashboard.propTypes = {
-  data: PropTypes.object
+  devices: PropTypes.array
 };
 
-export default connect(mapStateToProps, {})(Dashboard);
+export default Dashboard;
 
