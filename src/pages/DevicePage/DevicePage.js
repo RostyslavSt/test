@@ -16,7 +16,7 @@ class DevicePage extends React.Component {
     const device = this.props.devices[0];
 
     return (
-      <div>
+      <div className="device-view">
         {this.props.devices.length === 0 ? <p>
             <i className="fa fa-3x fa-spinner fa-spin"></i>
           </p> : <Device device={device} onStatusChange={this.onStatusChange}/>

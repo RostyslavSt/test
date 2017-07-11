@@ -34,7 +34,7 @@ export default class TimerSettings extends React.Component {
 
   render () {
     return (
-      <div className="m-time">
+      <div className={`m-time ${this.props.styleName}`}>
         <div className="showtime">
           <span className="time">{this.state.hours}</span>
           <span className="separater">:</span>

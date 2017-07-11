@@ -35,7 +35,9 @@ export default class LineChart extends Component {
     const transform = `translate(${margin.left},${margin.top})`;
 
     return (
-      <div style={ { width:this.props.width, height:this.props.height } }>
+      <div
+        className={this.props.styleName}
+        style={ { width:this.props.width, height:this.props.height } }>
         <svg
           width={ '100%' }
           height={ '100%' }>
@@ -81,7 +83,8 @@ LineChart.propTypes = {
   height: PropTypes.number,
   xData: PropTypes.string,
   yData: PropTypes.string,
-  data: PropTypes.array
+  data: PropTypes.array,
+  styleName: PropTypes.string
 };
 
 LineChart.defaultProps = {

@@ -8,7 +8,7 @@ export const Device = (props) => {
   const onStatusChange = props.onStatusChange;
 
   return (
-    <seciton className="device-view">
+    <seciton>
       <div className="device-view__header">
         <div className="device-view__name">
           <h3>{device.name}</h3>
@@ -24,7 +24,7 @@ export const Device = (props) => {
             <div className="slider round"></div>
           </label>
         </div>
-        <div className="device-view__creation-info">
+        <div className="device-view__info">
           <small>07.06.2017</small><br/>
           <small>User</small>
         </div>
@@ -40,9 +40,9 @@ export const Device = (props) => {
 
           return (
             <SettingsComponent
-            key={'setting' + i}
-            styleName={
-              'device-view__settings-item device-view__settings-'
+              key={'setting' + i}
+              styleName={
+                'device-view__settings-item device-view__settings-item--'
                 + setting.name.toLowerCase()
             }/>);
         })}
