@@ -26,7 +26,7 @@ export default class DeviceListApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(id);
-      }, 500);
+      }, 300);
     });
   }
 }
