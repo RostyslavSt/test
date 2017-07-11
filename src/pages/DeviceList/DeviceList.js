@@ -54,7 +54,7 @@ class DeviceList extends React.Component {
     return (
       <section className='device-list'>
         <h1 className='device-list__title'>Your devices</h1>
-        <header className='device-list__header'>
+        <header className='device-lchangeStatusist__header'>
           <Search
             handleSearch={this.handleSearchResult}
             quantity={this.props.devices.length}
