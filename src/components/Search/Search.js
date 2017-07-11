@@ -8,7 +8,7 @@ const Search = (props) => {
       <div className='searchBox__results'>
         <span>{props.quantity}</span> devices
       </div>
-      <div className='searchBox-wrap'>
+      <div>
         <input
           type="text"
           name="search"
@@ -17,7 +17,7 @@ const Search = (props) => {
           onChange={e => {
             props.handleSearch(e.target.value);
           }}/>
-        <button className='btn btn--success searchBox__btn'>Search</button>
+        <button className='btn searchBox__btn'>Search</button>
       </div>
     </div>
   );

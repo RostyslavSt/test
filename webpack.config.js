@@ -40,7 +40,7 @@ const cssProd = ExtractTextPlugin.extract({
 
 let cssConfig = isProd ? cssProd : cssDev;
 module.exports = {
-    entry: './src/index.js',
+    entry: ['babel-polyfill', './src/index.js'],
     // devtool: 'inline-source-map',
     output: {
         filename: 'index_bundle.js',

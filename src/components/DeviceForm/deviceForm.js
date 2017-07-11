@@ -72,7 +72,7 @@ class DeviceForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addDevice(this.props.deviceProto);
+    this.props.addDevice(this.props.settings);
     this.props.resetProto();
     this.props.router.push('/devices');
   };
@@ -87,7 +87,7 @@ class DeviceForm extends React.Component {
           className="name-input"
           required
           name="name" type="text"
-          value={ this.props.deviceProto.name }
+          value={ this.props.settings.name }
           onChange={ this.handleUserInput } />
         </div>
         <div className="input-container">
@@ -98,7 +98,7 @@ class DeviceForm extends React.Component {
             placeholder="select location"
             options={ locationOptions }
             onChange={ this.handleSelectLocation }
-            value={ this.props.deviceProto.location }
+            value={ this.props.settings.location }
           />
         </div>
         <div>
@@ -112,7 +112,7 @@ class DeviceForm extends React.Component {
 }
 function mapStateToProps (store) {
   return {
-    deviceProto: store.deviceProto
+    settings: store.settings
   };
 }
 function mapDispatchToProps (dispatch) {
@@ -130,6 +130,6 @@ DeviceForm.propTypes = {
   addItem: PropTypes.func,
   resetProto: PropTypes.func,
   addDevice:  PropTypes.func,
-  deviceProto: PropTypes.object,
+  settings: PropTypes.object,
   router: PropTypes.any
 };

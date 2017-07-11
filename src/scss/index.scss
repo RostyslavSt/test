@@ -46,7 +46,7 @@ input[type="text"],input[type="select"],input[type="number"], select{
   outline: 0;
   transition: background-color 0.5s ease;
 
-    &:hover{
+  &:hover{
     color: #ffffff;
     background-color: rgb(73, 75, 84);
     border-color: #798094;

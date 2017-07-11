@@ -6,7 +6,7 @@ import SettingsWrapper from
 import RangeSettings from
 '../RangeSettings/Range';
 import ToggleSettings from
-'../ToggleSettings/Toggle';
+'../ToggleSettings/ToggleSettings';
 import TimerSettings from
 '../TimerSettings/Timer';
 import ValueSettings from
@@ -22,13 +22,13 @@ const Components = {
 
 export const DeviceItems = (props) => (
   <div className="settings-block">
-    {props.deviceProto.item.map((d, i) => {
+    {props.deviceProto.items.map((d, i) => {
       const Item = Components[d.name];
 
       return (
         <SettingsWrapper
           key={i}
-          styleName={`settings-${d.name.toLowerCase()}`}
+          styleName={d.name === 'LineChart' ? 'settings-chart' : ''}
           name={d.name}
           deleteItem={props.deleteItem}
           id={i}>
