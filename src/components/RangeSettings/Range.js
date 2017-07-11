@@ -49,7 +49,6 @@ RangeSettings.propTypes = {
   max: PropTypes.number,
   min: PropTypes.number,
   setDevice: PropTypes.func,
-  sendRangeValue: PropTypes.func,
   hideLabel: PropTypes.bool,
   onChange: PropTypes.func
 };
