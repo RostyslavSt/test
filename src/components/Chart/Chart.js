@@ -30,7 +30,7 @@ export default class Chart extends React.Component {
   }
   render () {
     return (
-      <div >
+      <div className={ this.props.styleName }>
          <LineChart width={this.state.calcWidth}/>
       </div>
     );
@@ -38,5 +38,6 @@ export default class Chart extends React.Component {
 }
 
 Chart.propTypes = {
-  parent: PropTypes.string
+  parent: PropTypes.string,
+  styleName: PropTypes.string
 };

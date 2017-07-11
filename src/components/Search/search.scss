@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 
     @media (min-width: $tablet-min) {
         float: left;
@@ -17,6 +18,11 @@
         font-weight: 100;
         line-height: 35px;
         vertical-align: middle;
+        order: 2;
+
+        @media (min-width: $tablet-min) {
+            order: initial;
+        }
 
         span {
             font-size: 16px;
@@ -27,6 +33,7 @@
     &__field {
         width: 150px;
         line-height: 35px;
+        vertical-align: middle;
 
         &:focus {
             border-color: $border-color-focus;
@@ -34,7 +41,8 @@
     }
 }
 
-.device-list{
+.device-list {
+
     .searchBox__btn {
         min-width: 50px;
         max-width: 60px;
