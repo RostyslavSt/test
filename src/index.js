@@ -10,9 +10,11 @@ import DevicePage from './pages/DevicePage/DevicePage';
 import { Builder } from './pages/Builder/Builder';
 import MainLayout from './layouts/MainLayout/MainLayout';
 import Dashboard from './pages/Dashboard/Dashboard';
+import thunk from 'redux-thunk';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancers());
+const store = createStore(rootReducer, composeEnhancers(),
+                          applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

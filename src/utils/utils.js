@@ -1,14 +1,5 @@
-import data from '../data/data.json';
+export function searchItem (item, searchValue) {
+  const result = item.name.toLowerCase().includes(searchValue);
 
-export const searchItem = (item, searchValue) => {
-  if (item.name.toLowerCase().includes(searchValue) || searchValue === '') {
-    return true;
-  }
-  return false;
-};
-
-// export const fetchDevices = (url) => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => resolve(data), 1000);
-//   });
-// };
+  return result;
+}

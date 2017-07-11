@@ -1,18 +1,24 @@
 import { createSelector } from 'reselect';
+import { searchItem } from '../utils/utils';
 
 const getFilterOption = state => state.searchAndFilter.filterOption;
-const getDevices = state => state.changeStatus;
+const getDevices = state => state.devicesList;
+const getSearchValue = state => state.searchAndFilter.searchValue;
 
 export const filterItems = createSelector(
-  [getFilterOption, getDevices],
-  (filterOption, items) => {
+  [getFilterOption, getSearchValue, getDevices],
+  (filterOption, searchValue, items) => {
+    let newArr = [];
+
     if (filterOption === 'all') {
-      return items;
+      newArr = items;
     } else if (filterOption === 'on') {
-      return items.filter(item => item.status === true);
+      newArr = items.filter(item => item.status === true);
     } else if (filterOption === 'off') {
-      return items.filter(item => item.status === false);
+      newArr = items.filter(item => item.status === false);
     }
-    return items;
+    return newArr.filter(item => searchItem(item, searchValue));
   }
 );
+
+

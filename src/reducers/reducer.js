@@ -1,14 +1,14 @@
-import changeStatus from './changeStatus.reducer';
 import searchAndFilter from './searchAndFilter.reducer';
 import { combineReducers } from 'redux';
-import deviceProto from './deviceProtoReducer';
-import devices from './devicesReducer';
+import settings from './builder.reducer';
+import devices from './addDevice.reducer';
+import devicesList from './devicesList.reducer';
 
 const rootReducer = combineReducers({
   searchAndFilter,
-  changeStatus,
-  deviceProto,
-  devices
+  settings,
+  devices,
+  devicesList
 });
 
 export default rootReducer;

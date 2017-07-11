@@ -1,8 +1,9 @@
 .filterBox{
     display: inline-block;
-    width: 150px;
-    height: 50px;
-    margin: 15px;
+
+    &__filter {
+        margin-right: 15px;
+    }
 }
 
 .filterBox select > option:hover{

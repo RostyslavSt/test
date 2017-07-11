@@ -10,12 +10,18 @@ import { filterAction,
 import { changeStatus } from '../../actions/changeStatus.action';
 import { searchItem, fetchDevices } from '../../utils/utils';
 import { filterItems } from '../../selectors';
+import { loadDevices } from '../../actions/loadDevices.action';
+import { deleteDevice } from '../../actions/deleteDevice.action';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import PropTypes from 'prop-types';
 require('./DeviceList.scss');
 
 class DeviceList extends React.Component {
   constructor (props) {
     super(props);
+
+    this.props.loadDevices();
 
     this.handleFilterSelect = (filterOption) => {
       this.props.filterAction(filterOption);
@@ -26,6 +32,19 @@ class DeviceList extends React.Component {
     this.changeStatus = (index) => {
       this.props.changeStatus(index);
     };
+    this.deleteDevice = (id) => {
+      this.props.deleteDevice(id);
+    };
+  }
+
+  renderDevices () {
+    return this.props.devices.map((item, i) => {
+      return (
+        <DeviceListItem data={item} key={item.id}
+        changeStatus={this.changeStatus}
+        deleteDevice={this.deleteDevice}/>
+      );
+    });
   }
 
   render () {
@@ -33,43 +52,48 @@ class DeviceList extends React.Component {
     const filterOption = this.props.filterOption;
 
     return (
-      <main className='device-list'>
-        <header className='device-list__header'>
-          <FilterSelect
-            handleSelect={this.handleFilterSelect}
-            options={options}
-          />
+      <section className='device-list'>
+        <h1 className='device-list__title'>Your devices</h1>
+        <header className='device-list__header clearfix'>
           <Search
             handleSearch={this.handleSearchResult}
+            quantity={this.props.devices.length}
           />
-          <Link to={'/builder'} className="btn add-item-button">+</Link>
+          <div className='device-list__header--right'>
+            <FilterSelect
+              handleSelect={this.handleFilterSelect}
+              options={options}
+            />
+            <Link to={'/builder'} className="btn btn--primary add-item-button">
+              New
+            </Link>
+          </div>
         </header>
         <section className='device-list__content'>
-          { this.props.devices.length === 0 ? <p>Nothing here</p> :
-            this.props.devices.filter(item => searchItem(item, searchValue)
-            ).map((item, i) => {
-              return (
-                <DeviceListItem data={item} key={i}
-                  changeStatus={this.props.changeStatus}/>
-              );
-            })
+          { this.props.devices.length === 0 ?
+            <p><i className="fa fa-3x fa-spinner fa-spin"></i></p> :
+            <ReactCSSTransitionGroup transitionName="hide"
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={300}>
+              {this.renderDevices()}
+            </ReactCSSTransitionGroup>
             }
         </section>
-      </main>
+      </section>
     );
   }
 }
 
 const mapStateToProps = state =>({
-  devices: filterItems(state),
-  filter: state.searchAndFilter,
-  search: state.searchAndFilter.searchValue
+  devices: filterItems(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({
   filterAction: (filterOption) => dispatch(filterAction(filterOption)),
   changeStatus: (index) => dispatch(changeStatus(index)),
-  findItems: (searchValue) => dispatch(searchAction(searchValue))
+  findItems: (searchValue) => dispatch(searchAction(searchValue)),
+  loadDevices: () => dispatch(loadDevices()),
+  deleteDevice: (id) => dispatch(deleteDevice(id))
 });
 
 DeviceList.propTypes = {
@@ -79,6 +103,8 @@ DeviceList.propTypes = {
   changeStatus: PropTypes.func,
   devices: PropTypes.array,
   filterAction: PropTypes.func,
-  findItems: PropTypes.func
+  findItems: PropTypes.func,
+  loadDevices: PropTypes.func,
+  deleteDevice: PropTypes.func
 };
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceList);
