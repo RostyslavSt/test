@@ -12,7 +12,7 @@ export default class DeviceListApi {
   static addDevice (device) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        device.id = 55;
+        device.id = this.devices.length + 1;
         this.devices = [...this.devices, device];
         resolve(device);
       }, 2000);
