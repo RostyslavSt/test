@@ -6,11 +6,11 @@ import TimerSettings from
 '../components/TimerSettings/Timer';
 import ValueSettings from
 '../components/ValueSettings/Value';
-import LineChart from
-'../components/LineChart/LineChart';
+import Chart from
+'../components/Chart/Chart';
 
 export const settingsComponents = {
-  LineChart:LineChart,
+  LineChart:Chart,
   Range:RangeSettings,
   Timer:TimerSettings,
   Value:ValueSettings,

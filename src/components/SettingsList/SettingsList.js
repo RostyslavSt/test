@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { settingsComponents } from '../../data/componentsNames';
-import SettingsListItem from
+import { SettingsListItem } from
 '../SettingsListItem/SettingsListItem';
 
 
