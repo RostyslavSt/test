@@ -4,12 +4,14 @@ import settings from './builder.reducer';
 import devices from './addDevice.reducer';
 import devicesList from './devicesList.reducer';
 import loadUsersReducer from './loadUsersReducer';
+import loadDevicesReducer from './devicesDashList.js';
 const rootReducer = combineReducers({
   searchAndFilter,
   settings,
   devices,
   devicesList,
-  loadUsersReducer
+  loadUsersReducer,
+  loadDevicesReducer
 });
 
 export default rootReducer;
