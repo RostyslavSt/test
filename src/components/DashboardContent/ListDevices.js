@@ -14,7 +14,7 @@ class ListDevice extends React.Component {
     this.power = '';
     const quantityDevices = 3;
   }
-  componentDicMount () {
+  componentDidMount () {
     this.props.loadDevicesRequest();
   }
   render () {
