@@ -1,6 +1,6 @@
-const loadDevicesReducer = (state = { devices: [] }, action) => {
+const loadDevicesReducer = (state = [], action) => {
   switch (action.type) {
-    case 'LOAD_DEVICES_ASYNC': {
+    case 'LOAD_DASH_DEVICE': {
       return Object.assign({}, state, action.payload);
     }
     default:

@@ -5,39 +5,41 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { loadDevicesRequest } from '../../actions/loadDashDevices.js';
 import DeviceContent from './DeviceContent.js';
-
+import { filterItems } from '../../selectors';
+import { loadDevicesAsync } from '../../actions/loadDevices.action';
 
 class ListDevice extends React.Component {
   constructor (props) {
     super(props);
-    this.arrDevices = [];
-    this.power = '';
-    const quantityDevices = 3;
   }
   componentDidMount () {
-    this.props.loadDevicesRequest();
+    this.props.loadDevices();
   }
   render () {
+    const listDevices = this.props.devices;
+    const arrDevices = [];
+
     console.log(this.props.devices);
     console.log(33333);
+
     let power = '';
     const quantityDevices = 3;
 
     for (let i = 0; i < quantityDevices; i++) {
-      if (this.props.devices[i].status) {
+      if (listDevices[i].status) {
         power = 'power-on';
       } else {
         power = 'power-off';
       }
-      this.arrDevices.push(
+      arrDevices.push(
         <li className="device-single" key={i}>
-          <DeviceContent device={this.props.devices[i]} power={power}/>
+          <DeviceContent device={listDevices[i]} power={power}/>
         </li>
       );
     }
     return (
       <section className="list-device">
-        {this.arrDevices}
+        {arrDevices}
       </section>
     );
   }
@@ -48,39 +50,18 @@ ListDevice.propTypes = {
   loadDevicesRequest: PropTypes.func
 };
 
-function mapStateToProps (store) {
-  return {
-    devices: store.loadDevicesReducer
-  };
-}
-function mapDispatchToProps (dispatch) {
-  return {
-    loadDevicesRequest: bindActionCreators(loadDevicesRequest, dispatch)
-  };
-}
+const mapStateToProps = state =>({
+  devices: filterItems(state)
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  loadDevices: () => dispatch(loadDevicesAsync())
+});
+
+ListDevice.propTypes = {
+  devices: PropTypes.array,
+  loadDevices: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListDevice);
 
-// const ListDevice = (props) => {
-//   const arrDevices = [];
-//   let power = '';
-//   const quantityDevices = 3;
-
-//   for (let i = 0; i < quantityDevices; i++) {
-//     if (props.data[i].status) {
-//       power = 'power-on';
-//     } else {
-//       power = 'power-off';
-//     }
-//     arrDevices.push(
-//       <li className="device-single" key={i}>
-//         <DeviceContent device={props.data[i]} power={power}/>
-//       </li>
-//     );
-//   }
-//   return (
-//       <section className="list-device">
-//         {arrDevices}
-//       </section>
-//   );
-// };

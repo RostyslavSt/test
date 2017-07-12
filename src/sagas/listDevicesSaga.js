@@ -6,6 +6,7 @@ import { loadDevicesSuccess } from '../actions/loadDashDevices';
 function *getDevicesList () {
   const devices = yield call(Api);
 
+  console.log(devices);
   yield put(loadDevicesSuccess(devices));
 }
 export default function *devicesSaga () {
