@@ -8,7 +8,7 @@ import DeviceContent from './DeviceContent.js';
 import { filterItems } from '../../selectors';
 import { loadDevicesAsync } from '../../actions/loadDevices.action';
 
-class ListDevice extends React.Component {
+class ListDevices extends React.Component {
   constructor (props) {
     super(props);
   }
@@ -39,13 +39,13 @@ class ListDevice extends React.Component {
     }
     return (
       <section className="list-device">
-        {arrDevices}
+        {/* {arrDevices}*/}
       </section>
     );
   }
 }
 
-ListDevice.propTypes = {
+ListDevices.propTypes = {
   devices: PropTypes.array,
   loadDevicesRequest: PropTypes.func
 };
@@ -58,10 +58,10 @@ const mapDispatchToProps = (dispatch) => ({
   loadDevices: () => dispatch(loadDevicesAsync())
 });
 
-ListDevice.propTypes = {
+ListDevices.propTypes = {
   devices: PropTypes.array,
   loadDevices: PropTypes.func
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListDevice);
+export default connect(mapStateToProps, mapDispatchToProps)(ListDevices);
 
