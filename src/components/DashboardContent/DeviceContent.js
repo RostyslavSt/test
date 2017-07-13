@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import './DeviceContent.scss';
 
 const DeviceContent = (props) => {
-  const classForOnOff = 'device-on_off ' + props.power;
+  let classForOnOff = '';
+
+  if (props.device.status) {
+    classForOnOff = 'device-on_off power-on';
+  } else {
+    classForOnOff = 'device-on_off power-off';
+  }
 
   return (
     <div className='device-item'>

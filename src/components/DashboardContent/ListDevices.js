@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { loadDevicesRequest } from '../../actions/loadDashDevices.js';
 import DeviceContent from './DeviceContent.js';
-import { filterItems } from '../../selectors';
+import { filterItems } from '../../selectors/';
 import { loadDevicesAsync } from '../../actions/loadDevices.action';
 
 class ListDevices extends React.Component {
@@ -16,30 +16,18 @@ class ListDevices extends React.Component {
     this.props.loadDevices();
   }
   render () {
-    const listDevices = this.props.devices;
-    const arrDevices = [];
+    const listDevices = this.props.devices.slice(1, 4);
 
-    console.log(this.props.devices);
-    console.log(33333);
-
-    let power = '';
-    const quantityDevices = 3;
-
-    for (let i = 0; i < quantityDevices; i++) {
-      if (listDevices[i].status) {
-        power = 'power-on';
-      } else {
-        power = 'power-off';
-      }
-      arrDevices.push(
-        <li className="device-single" key={i}>
-          <DeviceContent device={listDevices[i]} power={power}/>
-        </li>
-      );
-    }
     return (
       <section className="list-device">
-        {/* {arrDevices}*/}
+        {listDevices.map((item, key) => {
+          return (
+            <li className="device-single" key={key}>
+              <DeviceContent device={item}/>
+            </li>
+          );
+        })
+        }
       </section>
     );
   }
@@ -65,3 +53,14 @@ ListDevices.propTypes = {
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListDevices);
 
+
+// for (let i = 0; i < quantityDevices; i++) {
+//       if (listDevices[i].status) {
+//         power = 'power-on';
+//       } else {
+//         power = 'power-off';
+//       }
+//       arrDevices.push(
+//        <DeviceContent />
+//       );
+//     }
