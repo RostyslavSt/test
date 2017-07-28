@@ -4,13 +4,16 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "http-server -a localhost -p 8002 -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "http-server": "^0.10.0",
+    "nodemon": "^1.11.0",
     "ws": "^3.1.0"
   }
 }
