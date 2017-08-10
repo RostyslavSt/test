@@ -2,6 +2,7 @@ const status = document.getElementById('status');
 const messages = document.getElementById('messages');
 const form = document.getElementById('form');
 const input = document.getElementById('input');
+const btn = document.querySelector('.btn');
 
 const ws = new WebSocket('ws://localhost:3003');
 function setStatus(value) {
@@ -16,10 +17,20 @@ function printMessage(value) {
 }
 
 ws.onopen = () => {
-    setStatus('ONLINE');
-    console.log('d232323d');
+    setStatus('ONLINE12');
+    console.log('top');
 }
-// ws.onopen = () => console.log('dwdwd');
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    console.log(input.value);
+    ws.send(input.value);
+    input.value = '';
+})
+btn.addEventListener('click', () => {
+    console.log(input.value);
+    ws.send(input.value);
+    input.value = '';
+})
 
 ws.onclose = () => setStatus('disconnected');
 
