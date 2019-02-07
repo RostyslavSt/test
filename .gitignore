@@ -1,2 +1,6 @@
 /.idea
 test.*
+train*.*
+add.log
+error.log
+ls.log

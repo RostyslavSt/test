@@ -1,0 +1,15 @@
++ whoami
+rshtets
++ pwd
+/home/rshtets/devOps_projects/study_tasks/logrotate
++ cat /home/rshtets/111.txt
+effwf23232323232
++ ls -la
+total 20
+drwxrwxr-x 3 rshtets rshtets 4096 Фев  7 18:58 .
+drwxrwxr-x 6 rshtets rshtets 4096 Фев  7 18:48 ..
+drwxrwxr-x 2 rshtets rshtets 4096 Фев  7 18:57 log
+-rwxrwxr-x 1 rshtets rshtets 1489 Фев  7 18:47 logrotate.sh
+-rwxrwxr-x 1 rshtets rshtets  302 Фев  7 18:58 task4.sh
+-rw-rw-r-- 1 rshtets rshtets    0 Фев  7 18:53 test.txt
++ touch test.txt
