@@ -2,7 +2,7 @@
 
 This is personal training repo for Rostislav Shtets
 
-#cron
+# cron
 folder "cron" for tasks with cron
 
 "crontab.conf" - it is a file with cron jobs
@@ -11,10 +11,10 @@ folder "cron" for tasks with cron
 
 "check_file" - additional script that helps us to execute cron job
 
-#logrotate
+# logrotate
 folder "logrotate" for tasks with cron
 
-#wp-docker
+# wp-docker
 folder "wp-docker" for tasks with wp with docker-compose
 
 To run app, please, go follow steps:
