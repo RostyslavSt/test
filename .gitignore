@@ -7,12 +7,6 @@ logrotate/log/
 log/
 test/
 
-test.*
-train*.*
-add.log
-error.log
-ls.log
-
 #---wordpress in docker-compose
 wp_docker/logs/
 wp_docker/mysql/

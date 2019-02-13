@@ -20,3 +20,4 @@ folder "wp-docker" for tasks with wp with docker-compose
 To run app, please, go follow steps:
 - mkdir logs/nginx/ mysql/ wordpress/
 - docker-compose up -d
+
