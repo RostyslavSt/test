@@ -13,7 +13,7 @@ error.log
 ls.log
 
 #---wordpress
-wp_docker/logs/*
-wp_docker/mysql/*
-wp_docker/wordpress/*
-wp_docker/test/*
+#wp_docker/logs/
+wp_docker/mysql/
+wp_docker/wordpress/
+wp_docker/test/
