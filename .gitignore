@@ -6,14 +6,15 @@ testing/
 logrotate/log/
 log/
 test/
+
 test.*
 train*.*
 add.log
 error.log
 ls.log
 
-#---wordpress
-#wp_docker/logs/
+#---wordpress in docker-compose
+wp_docker/logs/
 wp_docker/mysql/
 wp_docker/wordpress/
 wp_docker/test/
