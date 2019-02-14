@@ -1,0 +1,45 @@
+version: '3.6'
+services:
+
+  ubuntu_with_php:
+    image: ubuntu16.04:php7.2
+    container_name: ubuntu_with_php
+    volumes:
+      - ./php_file:/var/www/html
+      - ./logs/php_fpm:/var/log/php-fpm
+#    environment:
+#      - WORDPRESS_DB_NAME=wordpress
+#      - WORDPRESS_TABLE_PREFIX=wp_
+#      - WORDPRESS_DB_HOST=mysql
+#      - WORDPRESS_DB_USER=root
+#      - WORDPRESS_DB_PASSWORD=password
+    depends_on:
+      - mysql
+    restart: always
+    tty: true
+
+  mysql:
+    image: mysql:5.7.12
+    container_name: mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=wordpress
+    restart: always
+
+  nginx:
+    image: nginx:1.14
+    container_name: nginx
+    ports:
+      - '8050:80'
+      - '443:443'
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+      - ./php_file:/var/www/html
+    depends_on:
+      - ubuntu_with_php
+    restart: always

@@ -12,3 +12,10 @@ wp_docker/logs/
 wp_docker/mysql/
 wp_docker/wordpress/
 wp_docker/test/
+
+#---Laravel in docker
+laravel_docker/logs/
+laravel_docker/mysql/
+laravel_docker/wordpress/
+laravel_docker/test/
+
