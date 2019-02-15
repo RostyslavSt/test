@@ -5,14 +5,8 @@ services:
     image: ubuntu16.04:php7.2
     container_name: ubuntu_with_php
     volumes:
-      - ./php_file:/var/www/html
+      - ./laravel_project:/var/www/html
       - ./logs/php_fpm:/var/log/php-fpm
-#    environment:
-#      - WORDPRESS_DB_NAME=wordpress
-#      - WORDPRESS_TABLE_PREFIX=wp_
-#      - WORDPRESS_DB_HOST=mysql
-#      - WORDPRESS_DB_USER=root
-#      - WORDPRESS_DB_PASSWORD=password
     depends_on:
       - mysql
     restart: always
@@ -39,7 +33,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./logs/nginx:/var/log/nginx
-      - ./php_file:/var/www/html
+      - ./laravel_project:/var/www/html
     depends_on:
       - ubuntu_with_php
     restart: always
